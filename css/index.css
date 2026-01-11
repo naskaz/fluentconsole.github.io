@@ -1,0 +1,51 @@
+.section-title {
+  border-left: 4px solid #e95420; /* United accent */
+  padding-left: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+section {
+  scroll-margin-top: 90px;
+}
+
+/* Section heading accent */
+.section-title {
+  border-left: 4px solid #e95420;
+  padding-left: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Carousel height consistency */
+
+.carousel-media {
+  height: 520px;                 
+  display: flex;
+  align-items: center;          
+  justify-content: center;       
+  background-color: #ffffff;
+}
+
+.carousel-media img {
+  display: block;
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  margin: 0 auto;                
+}
+
+
+/* Code blocks */
+.code-block {
+  background-color: #1e1e1e;
+  color: #e6edf3;
+  border-radius: 8px;
+  padding: 1.25rem;
+  overflow-x: auto;
+  font-size: 0.9rem;
+}
+
+
+
+
+
+
