@@ -421,65 +421,170 @@
       </div>
     </section>
 
-    <!-- EVIDENCE (ALL IMAGES, BELOW FEATURES) -->
+    <!-- ===================== -->
+    <!-- Evidence Section -->
+    <!-- ===================== -->
     <section id="evidence" class="container my-5">
-      <h2 class="section-title">
-        <i class="fa-solid fa-image me-2"></i>Evidence — Complete Output
+      <h2 class="mb-3">
+        <i class="fa-solid fa-image me-2 text-primary"></i>
+        Evidence — Complete Output
       </h2>
+
+      <p class="text-muted mb-5">
+        All outputs below are generated directly using
+        <strong>FluentConsoleBuilder</strong>. No mockups, no post-processing,
+        and no manual formatting.
+      </p>
+
+      <!-- ================= Pagination ================= -->
+      <h4 class="mt-4 d-flex align-items-center gap-2 flex-wrap">
+        <i class="fa-solid fa-layer-group text-secondary"></i>
+        Pagination
+
+        <span class="badge bg-primary">
+          <i class="fa-solid fa-keyboard me-1"></i> Interactive
+        </span>
+
+        <span class="badge bg-info text-dark">
+          <i class="fa-solid fa-film me-1"></i> GIF
+        </span>
+      </h4>
+
+      <p class="text-muted small mb-3">
+        Built-in keyboard pagination for large datasets using
+        <strong>Prev (P), Next (N), First (F), Last (L)</strong>
+        and numeric keys <strong>1–9</strong>.
+      </p>
+
+      <div class="row g-4 mb-5">
+        <div class="col-md-6">
+          <img
+            src="assets/images/ascii_pagination_on_cmd_1.png"
+            class="img-fluid rounded border"
+            alt="Pagination on command line"
+            data-bs-toggle="tooltip"
+            title="Keyboard-driven pagination rendered directly inside the console"
+          />
+        </div>
+
+        <div class="col-md-6">
+          <img
+            src="assets/images/ascii_pagination_on_cmd_3.png"
+            class="img-fluid rounded border"
+            alt="Pagination navigation hints"
+            data-bs-toggle="tooltip"
+            title="Clear pagination hints: First, Last, Next, Previous"
+          />
+        </div>
+
+        <div class="col-12">
+          <img
+            src="assets/images/pagination_demo_live_ascii_1.gif"
+            class="img-fluid rounded border"
+            alt="Live pagination demo"
+            data-bs-toggle="tooltip"
+            title="Live pagination without screen clearing or flicker"
+          />
+        </div>
+      </div>
+
+      <!-- ================= Live Table Updates ================= -->
+      <h4 class="mt-4 d-flex align-items-center gap-2 flex-wrap">
+        <i class="fa-solid fa-rotate text-secondary"></i>
+        Live Table Updates
+
+        <span class="badge bg-success">
+          <i class="fa-solid fa-bolt me-1"></i> LIVE
+        </span>
+
+        <span class="badge bg-info text-dark">
+          <i class="fa-solid fa-film me-1"></i> GIF
+        </span>
+      </h4>
+
+      <p class="text-muted small mb-3">
+        Smooth, flicker-free in-place redraws designed for real-time monitoring
+        and long-running console applications.
+      </p>
+
+      <div class="row g-4 mb-5">
+        <div class="col-md-6">
+          <img
+            src="assets/images/live_table_update_cmd.gif"
+            class="img-fluid rounded border"
+            alt="Live table update on command prompt"
+            data-bs-toggle="tooltip"
+            title="Flicker-free live table updates on CMD"
+          />
+        </div>
+
+        <div class="col-md-6">
+          <img
+            src="assets/images/live_table_update_powershell.gif"
+            class="img-fluid rounded border"
+            alt="Live table update on PowerShell"
+            data-bs-toggle="tooltip"
+            title="High-quality in-place redraw on PowerShell"
+          />
+        </div>
+      </div>
+
+      <!-- ================= Unicode Rendering ================= -->
+      <h4 class="mt-4 d-flex align-items-center gap-2 flex-wrap">
+        <i class="fa-solid fa-language text-secondary"></i>
+        Unicode & Emoji-safe Rendering
+      </h4>
+
+      <p class="text-muted small mb-3">
+        Accurate column alignment across Unicode characters, emojis, and wide
+        glyphs using grapheme-aware width calculation.
+      </p>
+
+      <div class="row g-4 mb-5">
+        <div class="col-12">
+          <img
+            src="assets/images/responsive_unicode_table_on_powershell.png"
+            class="img-fluid rounded border"
+            alt="Unicode-safe table rendering"
+            data-bs-toggle="tooltip"
+            title="Correct Unicode and emoji alignment using wcwidth-based logic"
+          />
+        </div>
+      </div>
+
+      <!-- ================= Enterprise Performance Dashboard ================= -->
+      <h4 class="mt-4 d-flex align-items-center gap-2 flex-wrap">
+        <i class="fa-solid fa-rocket text-secondary"></i>
+        Enterprise Performance Dashboard
+
+        <span class="badge bg-dark">
+          <i class="fa-solid fa-gauge-high me-1"></i> Real-time
+        </span>
+      </h4>
+
+      <p class="text-muted small mb-3">
+        Enterprise-grade monitoring dashboard demonstrating multi-metric data,
+        status indicators, and operational health views.
+      </p>
 
       <div class="row g-4">
         <div class="col-md-6">
           <img
-            src="assets/images/ascii_pagination_on_cmd_1.png"
-            class="img-fluid border rounded"
-          />
-        </div>
-        <div class="col-md-6">
-          <img
-            src="assets/images/ascii_pagination_on_cmd_3.png"
-            class="img-fluid border rounded"
-          />
-        </div>
-        <div class="col-md-6">
-          <img
-            src="assets/images/pagination_demo_live_ascii_1.gif"
-            class="img-fluid border rounded"
-          />
-        </div>
-        <div class="col-md-6">
-          <img
-            src="assets/images/color_border_table_on_powershell_5.png"
-            class="img-fluid border rounded"
-          />
-        </div>
-        <div class="col-md-6">
-          <img
-            src="assets/images/live_table_update_cmd.gif"
-            class="img-fluid border rounded"
-          />
-        </div>
-        <div class="col-md-6">
-          <img
-            src="assets/images/live_table_update_powershell.gif"
-            class="img-fluid border rounded"
-          />
-        </div>
-        <div class="col-md-6">
-          <img
             src="assets/images/performance_dashboard_on_cmd_1.png"
-            class="img-fluid border rounded"
+            class="img-fluid rounded border"
+            alt="Enterprise dashboard on command line"
+            data-bs-toggle="tooltip"
+            title="Enterprise performance dashboard rendered on CMD"
           />
         </div>
+
         <div class="col-md-6">
           <img
             src="assets/images/performance_dashboard_on_powershell_1.png"
-            class="img-fluid border rounded"
-          />
-        </div>
-        <div class="col-md-12">
-          <img
-            src="assets/images/responsive_unicode_table_on_powershell.png"
-            class="img-fluid border rounded"
+            class="img-fluid rounded border"
+            alt="Enterprise dashboard on PowerShell"
+            data-bs-toggle="tooltip"
+            title="Enterprise monitoring dashboard rendered on PowerShell"
           />
         </div>
       </div>
@@ -527,6 +632,10 @@ new TableBuilder()
     <script>
       const currentYear = new Date().getFullYear();
       document.getElementById("year").textContent = currentYear;
+
+      document
+        .querySelectorAll('[data-bs-toggle="tooltip"]')
+        .forEach((el) => new bootstrap.Tooltip(el));
     </script>
   </body>
 </html>
