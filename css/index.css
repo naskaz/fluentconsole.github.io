@@ -113,6 +113,43 @@ section {
 
 
 
+/* ===============================
+   Mobile Typography Tuning
+   Bootstrap-first, minimal
+================================ */
+
+@media (max-width: 576px) {
+
+  /* Section spacing */
+  section {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  /* Section titles (h2) */
+  section h2 {
+    font-size: 1.35rem;
+  }
+
+  /* Subsection titles (h4) */
+  section h4 {
+    font-size: 1.05rem;
+  }
+
+  /* Body text */
+  section p {
+    font-size: 0.9rem;
+  }
+
+  /* Small helper text */
+  section p.small,
+  section .small {
+    font-size: 0.8rem;
+  }
+}
+
+
+
 
 /* Mobile-first improvement */
 @media (max-width: 576px) {
