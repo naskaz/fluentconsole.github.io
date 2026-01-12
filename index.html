@@ -13,7 +13,7 @@
 
     <link rel="stylesheet" href="./css/index.css" />
   </head>
-  <body>
+  <body class="d-flex flex-column min-vh-100">
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
       <div class="container">
@@ -93,11 +93,16 @@
           <i class="fa-solid fa-database me-2"></i>
           Data-aware rendering
         </span>
+
+        <span class="badge badge-feature badge-platform">
+          <i class="fa-solid fa-desktop me-2"></i>
+          Cross-Platform Consoles
+        </span>
       </div>
     </section>
 
     <!-- SHOWCASE / CAROUSEL -->
-    <section id="showcase" class="py-5 bg-white border-bottom">
+    <!-- <section id="showcase" class="py-5 bg-white border-bottom">
       <div class="container">
         <h2 class="text-center fw-bold mb-4">Real Console Output</h2>
 
@@ -161,6 +166,134 @@
           >
             <span class="carousel-control-next-icon"></span>
           </button>
+        </div>
+      </div>
+    </section> -->
+
+    <section id="showcase" class="py-5 bg-white border-bottom">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10 col-xl-9 text-center">
+            <h2 class="fw-bold mb-4 fs-1 fs-md-2">Real Console Output</h2>
+            <p class="text-muted lead mb-5">
+              See how your logs, metrics & status look in real time
+            </p>
+          </div>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-12 col-xxl-11">
+            <div
+              id="consoleCarousel"
+              class="carousel slide carousel-dark"
+              data-bs-ride="carousel"
+            >
+              <!-- Indicators (dots) - better on mobile than arrows alone -->
+              <div class="carousel-indicators mt-4">
+                <button
+                  type="button"
+                  data-bs-target="#consoleCarousel"
+                  data-bs-slide-to="0"
+                  class="active"
+                  aria-current="true"
+                  aria-label="Slide 1"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#consoleCarousel"
+                  data-bs-slide-to="1"
+                  aria-label="Slide 2"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#consoleCarousel"
+                  data-bs-slide-to="2"
+                  aria-label="Slide 3"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#consoleCarousel"
+                  data-bs-slide-to="3"
+                  aria-label="Slide 4"
+                ></button>
+              </div>
+
+              <div
+                class="carousel-inner border rounded-4 shadow-lg overflow-hidden bg-dark"
+              >
+                <!-- Item 1 -->
+                <div class="carousel-item active">
+                  <div class="ratio ratio-21x9">
+                    <img
+                      src="assets/images/carousel_app_logs.png"
+                      class="d-block w-100 object-fit-cover"
+                      alt="Application Monitoring Dashboard"
+                    />
+                  </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="carousel-item">
+                  <div class="ratio ratio-21x9">
+                    <img
+                      src="assets/images/carousel_devops.png"
+                      class="d-block w-100 object-fit-cover"
+                      alt="DevOps Pipeline & Monitoring"
+                    />
+                  </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="carousel-item">
+                  <div class="ratio ratio-21x9">
+                    <img
+                      src="assets/images/carousel_finance.png"
+                      class="d-block w-100 object-fit-cover"
+                      alt="Finance & Trading Dashboard"
+                    />
+                  </div>
+                </div>
+
+                <!-- Item 4 - GIF -->
+                <div class="carousel-item">
+                  <div class="ratio ratio-21x9">
+                    <img
+                      src="assets/images/live_system_status.gif"
+                      class="d-block w-100 object-fit-cover"
+                      alt="Live System Status Updates"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Controls - bigger touch area on mobile -->
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#consoleCarousel"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon bg-dark bg-opacity-50 rounded-circle p-4"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#consoleCarousel"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon bg-dark bg-opacity-50 rounded-circle p-4"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -285,31 +418,38 @@
       </p>
 
       <div class="table-responsive">
-        <table class="table table-bordered align-middle">
-          <thead class="table-light d-none d-md-table-header-group">
+        <table class="table table-bordered align-middle mb-0">
+          <!-- Desktop header only -->
+          <thead class="table-light d-none d-lg-table-header-group">
             <tr>
-              <th>Capability</th>
-              <th>Common Console Libraries</th>
-              <th>FluentConsoleBuilder</th>
+              <th style="width: 30%">Capability</th>
+              <th style="width: 35%">Common Console Libraries</th>
+              <th style="width: 35%">FluentConsoleBuilder</th>
             </tr>
           </thead>
+
           <tbody>
             <!-- Unicode -->
             <tr>
-              <th>Unicode & Emoji alignment</th>
-
+              <td class="fw-bold bg-lg-light">
+                <i class="fa-solid fa-language d-lg-none me-1 text-muted"></i>
+                Unicode & Emoji alignment
+              </td>
               <td>
-                <span class="fw-semibold d-md-none"
-                  >Common Console Libraries</span
-                >
-                <div class="text-muted small small-md">
+                <div class="d-lg-none fw-semibold text-muted small mb-1">
+                  Common Console Libraries
+                </div>
+                <div class="text-muted small">
+                  <i class="fa-solid fa-xmark d-none d-lg-inline me-1"></i>
                   Inconsistent or visually broken
                 </div>
               </td>
-
               <td>
-                <span class="fw-semibold d-md-none">FluentConsoleBuilder</span>
-                <div class="fw-semibold text-success small small-md">
+                <div class="d-lg-none fw-semibold text-success small mb-1">
+                  FluentConsoleBuilder
+                </div>
+                <div class="fw-semibold text-success small">
+                  <i class="fa-solid fa-check d-none d-lg-inline me-1"></i>
                   Full grapheme-aware width (wcwidth-based)
                 </div>
               </td>
@@ -317,20 +457,25 @@
 
             <!-- Live updates -->
             <tr>
-              <th>Live updates without flicker</th>
-
+              <td class="fw-bold bg-lg-light">
+                <i class="fa-solid fa-rotate d-lg-none me-1 text-muted"></i>
+                Live updates without flicker
+              </td>
               <td>
-                <span class="fw-semibold d-md-none"
-                  >Common Console Libraries</span
-                >
-                <div class="text-muted small small-md">
+                <div class="d-lg-none fw-semibold text-muted small mb-1">
+                  Common Console Libraries
+                </div>
+                <div class="text-muted small">
+                  <i class="fa-solid fa-xmark d-none d-lg-inline me-1"></i>
                   Clunky redraws or full screen refresh
                 </div>
               </td>
-
               <td>
-                <span class="fw-semibold d-md-none">FluentConsoleBuilder</span>
-                <div class="fw-semibold text-success small small-md">
+                <div class="d-lg-none fw-semibold text-success small mb-1">
+                  FluentConsoleBuilder
+                </div>
+                <div class="fw-semibold text-success small">
+                  <i class="fa-solid fa-check d-none d-lg-inline me-1"></i>
                   Native, smooth in-place redraw
                 </div>
               </td>
@@ -338,20 +483,25 @@
 
             <!-- Pagination -->
             <tr>
-              <th>Keyboard pagination for large datasets</th>
-
+              <td class="fw-bold bg-lg-light">
+                <i class="fa-solid fa-keyboard d-lg-none me-1 text-muted"></i>
+                Keyboard pagination for large datasets
+              </td>
               <td>
-                <span class="fw-semibold d-md-none"
-                  >Common Console Libraries</span
-                >
-                <div class="text-muted small small-md">
+                <div class="d-lg-none fw-semibold text-muted small mb-1">
+                  Common Console Libraries
+                </div>
+                <div class="text-muted small">
+                  <i class="fa-solid fa-xmark d-none d-lg-inline me-1"></i>
                   Missing or limited to basic navigation
                 </div>
               </td>
-
               <td>
-                <span class="fw-semibold d-md-none">FluentConsoleBuilder</span>
-                <div class="fw-semibold text-success small small-md">
+                <div class="d-lg-none fw-semibold text-success small mb-1">
+                  FluentConsoleBuilder
+                </div>
+                <div class="fw-semibold text-success small">
+                  <i class="fa-solid fa-check d-none d-lg-inline me-1"></i>
                   Full support — Prev (P), Next (N), First (F), Last (L),
                   numeric keys (1–9)
                 </div>
@@ -360,20 +510,25 @@
 
             <!-- Conditional styling -->
             <tr>
-              <th>Per-cell / row conditional styling</th>
-
+              <td class="fw-bold bg-lg-light">
+                <i class="fa-solid fa-palette d-lg-none me-1 text-muted"></i>
+                Conditional styling
+              </td>
               <td>
-                <span class="fw-semibold d-md-none"
-                  >Common Console Libraries</span
-                >
-                <div class="text-muted small small-md">
+                <div class="d-lg-none fw-semibold text-muted small mb-1">
+                  Common Console Libraries
+                </div>
+                <div class="text-muted small">
+                  <i class="fa-solid fa-xmark d-none d-lg-inline me-1"></i>
                   Basic or not supported
                 </div>
               </td>
-
               <td>
-                <span class="fw-semibold d-md-none">FluentConsoleBuilder</span>
-                <div class="fw-semibold text-success small small-md">
+                <div class="d-lg-none fw-semibold text-success small mb-1">
+                  FluentConsoleBuilder
+                </div>
+                <div class="fw-semibold text-success small">
+                  <i class="fa-solid fa-check d-none d-lg-inline me-1"></i>
                   Fine-grained, fluent styling rules
                 </div>
               </td>
@@ -381,20 +536,25 @@
 
             <!-- Dashboards -->
             <tr>
-              <th>Real-time dashboard experience</th>
-
+              <td class="fw-bold bg-lg-light">
+                <i class="fa-solid fa-chart-line d-lg-none me-1 text-muted"></i>
+                Real-time dashboard experience
+              </td>
               <td>
-                <span class="fw-semibold d-md-none"
-                  >Common Console Libraries</span
-                >
-                <div class="text-muted small small-md">
+                <div class="d-lg-none fw-semibold text-muted small mb-1">
+                  Common Console Libraries
+                </div>
+                <div class="text-muted small">
+                  <i class="fa-solid fa-xmark d-none d-lg-inline me-1"></i>
                   Requires heavy custom code
                 </div>
               </td>
-
               <td>
-                <span class="fw-semibold d-md-none">FluentConsoleBuilder</span>
-                <div class="fw-semibold text-success small small-md">
+                <div class="d-lg-none fw-semibold text-success small mb-1">
+                  FluentConsoleBuilder
+                </div>
+                <div class="fw-semibold text-success small">
+                  <i class="fa-solid fa-check d-none d-lg-inline me-1"></i>
                   Natural, data-aware rendering
                 </div>
               </td>
@@ -402,20 +562,25 @@
 
             <!-- Production readiness -->
             <tr>
-              <th>Production readiness</th>
-
+              <td class="fw-bold bg-lg-light">
+                <i class="fa-solid fa-industry d-lg-none me-1 text-muted"></i>
+                Production readiness
+              </td>
               <td>
-                <span class="fw-semibold d-md-none"
-                  >Common Console Libraries</span
-                >
-                <div class="text-muted small small-md">
+                <div class="d-lg-none fw-semibold text-muted small mb-1">
+                  Common Console Libraries
+                </div>
+                <div class="text-muted small">
+                  <i class="fa-solid fa-xmark d-none d-lg-inline me-1"></i>
                   Tooling-oriented or demo-level
                 </div>
               </td>
-
               <td>
-                <span class="fw-semibold d-md-none">FluentConsoleBuilder</span>
-                <div class="fw-semibold text-success small small-md">
+                <div class="d-lg-none fw-semibold text-success small mb-1">
+                  FluentConsoleBuilder
+                </div>
+                <div class="fw-semibold text-success small">
+                  <i class="fa-solid fa-check d-none d-lg-inline me-1"></i>
                   Designed for long-running, operational workloads
                 </div>
               </td>
@@ -428,7 +593,7 @@
     <!-- ===================== -->
     <!-- Evidence Section -->
     <!-- ===================== -->
-    <section id="evidence" class="container my-5">
+    <section id="evidence" class="container mt-5 mb-0">
       <h2 class="mb-3">
         <i class="fa-solid fa-image me-2 text-primary"></i>
         Evidence — Complete Output
@@ -612,28 +777,65 @@ new TableBuilder()
     </section>
 
     <!-- CONTACT -->
-    <section id="contact" class="container my-5">
+    <section id="contact" class="container mt-5">
       <h2 class="section-title">
         <i class="fa-solid fa-envelope me-2"></i>Contact
       </h2>
 
-      <p>
+      <p class="mb-1">
         For licensing, commercial usage, or enterprise inquiries, please
         contact:
       </p>
 
-      <p class="fs-5 fw-semibold">
+      <p class="fs-5 fw-semibold mb-1">
         <i class="fa-solid fa-at me-2 text-primary"></i>
         nasrullahkazmi@gmail.com
       </p>
+
+      <p class="mb-4">
+        <i class="fa-solid fa-share-nodes me-2 text-muted"></i>
+        <a
+          href="#"
+          id="shareSiteLink"
+          class="text-decoration-none"
+          data-bs-toggle="tooltip"
+          data-bs-placement="top"
+          title="Share this link"
+        >
+          https://naskaz.github.io/fluentconsole.github.io
+        </a>
+      </p>
     </section>
 
-    <footer class="bg-light border-top py-4 text-center">
+    <footer class="bg-light border-top mt-auto py-3 text-center">
       <span id="year"></span> FluentConsoleBuilder — All rights reserved
     </footer>
 
-    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
     <script>
+      (function () {
+        const link = document.getElementById("shareSiteLink");
+        if (!link) return;
+
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const url = "https://naskaz.github.io/fluentconsole.github.io";
+
+          if (navigator.share) {
+            navigator.share({
+              title: "FluentConsoleBuilder",
+              text: "Professional, data-aware console output for .NET",
+              url: url,
+            });
+          } else {
+            navigator.clipboard.writeText(url).then(() => {
+              alert("Link copied to clipboard");
+            });
+          }
+        });
+      })();
+
       const currentYear = new Date().getFullYear();
       document.getElementById("year").textContent = currentYear;
 

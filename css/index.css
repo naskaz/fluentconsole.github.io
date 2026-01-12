@@ -1,3 +1,9 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
 .section-title {
   border-left: 4px solid #e95420; /* United accent */
   padding-left: 0.75rem;
@@ -17,11 +23,11 @@ section {
 
 /* Carousel height consistency */
 
-.carousel-media {
-  height: 520px;                 
+/* .carousel-media {
+  height: 520px;
   display: flex;
-  align-items: center;          
-  justify-content: center;       
+  align-items: center;
+  justify-content: center;
   background-color: #ffffff;
 }
 
@@ -30,8 +36,46 @@ section {
   max-height: 100%;
   max-width: 100%;
   object-fit: contain;
-  margin: 0 auto;                
+  margin: 0 auto;
+} */
+
+
+.carousel-dark .carousel-control-prev-icon,
+.carousel-dark .carousel-control-next-icon {
+  filter: invert(1) grayscale(100);
 }
+
+.carousel-indicators [data-bs-target] {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #666;
+  opacity: 0.5;
+  margin: 0 6px;
+}
+
+.carousel-indicators .active {
+  opacity: 1;
+  background-color: #0d6efd;
+}
+
+/* Better mobile experience */
+@media (max-width: 576px) {
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 15%;
+  }
+  
+  .carousel-indicators {
+    margin-bottom: 1rem !important;
+  }
+}
+
+/* Prevent image stretching on very wide screens */
+.ratio-21x9 img {
+  object-position: top center;
+}
+
 
 
 /* Code blocks */
@@ -43,7 +87,6 @@ section {
   overflow-x: auto;
   font-size: 0.9rem;
 }
-
 
 .comparison-table th {
   white-space: nowrap;
@@ -111,7 +154,18 @@ section {
   outline-offset: 2px;
 }
 
+/* badge styling capability badges */
+.badge-platform {
+  background-color: #f0f2f5;
+  color: #2c2f33;
+  border-color: #d6d9dd;
+}
 
+/* section comparison styling desktop */
+
+#comparison table tbody tr:not(:last-child) {
+  border-bottom: 1px solid #e9ecef;
+}
 
 /* ===============================
    Mobile Typography Tuning
@@ -119,7 +173,6 @@ section {
 ================================ */
 
 @media (max-width: 576px) {
-
   /* Section spacing */
   section {
     padding-top: 2rem;
@@ -148,12 +201,8 @@ section {
   }
 }
 
-
-
-
 /* Mobile-first improvement */
 @media (max-width: 576px) {
-
   .badges-container {
     flex-direction: column;
     align-items: stretch;
@@ -170,12 +219,21 @@ section {
     font-size: 1rem;
   }
 
-.small-md {
+  .small-md {
     font-size: 0.95rem;
   }
-
 }
 
+/* section comparison styling mobile */
 
+@media (min-width: 992px) {
+  .bg-lg-light {
+    background-color: #f8f9fa;
+  }
+}
 
-
+@media (min-width: 992px) {
+  #comparison table tbody tr:not(:last-child) {
+    border-bottom: 2px solid #f8f9fa;
+  }
+}
