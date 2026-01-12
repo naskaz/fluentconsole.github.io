@@ -1,358 +1,497 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>FluentConsoleBuilder — Console UI Framework for .NET</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <head>
+    <meta charset="UTF-8" />
+    <title>FluentConsoleBuilder — Console UI Framework for .NET</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Bootswatch United -->
-  <link
-    href="./css/bstrap/bootstrap.min.css"
-    rel="stylesheet">
+    <!-- Bootswatch United -->
+    <link href="./css/bstrap/bootstrap.min.css" rel="stylesheet" />
 
-  <!-- Font Awesome Free 7.1.0 -->
-  <link
-    href="./css/fawesome/all.min.css"
-    rel="stylesheet">
+    <!-- Font Awesome Free 7.1.0 -->
+    <link href="./css/fawesome/all.min.css" rel="stylesheet" />
 
-  <link rel="stylesheet" href="./css/index.css">
-</head>
-<body>
+    <link rel="stylesheet" href="./css/index.css" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+      <div class="container">
+        <a class="navbar-brand fw-semibold" href="#">
+          <i class="fa-solid fa-terminal me-2"></i>
+          FluentConsoleBuilder
+        </a>
 
-<!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
-  <div class="container">
-    <a class="navbar-brand fw-semibold" href="#">
-      <i class="fa-solid fa-terminal me-2"></i>
-      FluentConsoleBuilder
-    </a>
+        <button
+          class="navbar-toggler"
+          data-bs-toggle="collapse"
+          data-bs-target="#nav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+        <div id="nav" class="collapse navbar-collapse">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#showcase">Showcase</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#overview">Overview</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#features">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#evidence">Evidence</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#code">Code</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
-    <div id="nav" class="collapse navbar-collapse">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="#showcase">Showcase</a></li>
-        <li class="nav-item"><a class="nav-link" href="#overview">Overview</a></li>
-        <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
-        <li class="nav-item"><a class="nav-link" href="#evidence">Evidence</a></li>
-        <li class="nav-item"><a class="nav-link" href="#code">Code</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+    <!-- HERO -->
+    <header class="bg-light border-bottom pt-5">
+      <div class="container text-center py-5">
+        <h1 class="fw-bold">Console UI Framework for .NET</h1>
+        <p class="lead text-muted mt-3">
+          FluentConsoleBuilder provides structured tables, pagination, live
+          dashboards, Unicode-safe rendering, and professional console output
+          for .NET applications.
+        </p>
+      </div>
+    </header>
 
-<!-- HERO -->
-<header class="bg-light border-bottom pt-5">
-  <div class="container text-center py-5">
-    <h1 class="fw-bold">Console UI Framework for .NET</h1>
-    <p class="lead text-muted mt-3">
-      FluentConsoleBuilder provides structured tables, pagination,
-      live dashboards, Unicode-safe rendering, and professional
-      console output for .NET applications.
-    </p>
-  </div>
-</header>
+    <!-- CAPABILITY BADGES -->
+    <section id="badges" class="container my-4">
+      <div
+        class="d-flex flex-wrap gap-3 justify-content-center badges-container"
+      >
+        <span class="badge badge-feature badge-unicode">
+          <i class="fa-solid fa-language me-2"></i>
+          Unicode-safe rendering
+        </span>
 
-<!-- CAPABILITY BADGES -->
-<section id="badges" class="container my-4">
-  <div class="d-flex flex-wrap gap-3 justify-content-center badges-container">
+        <span class="badge badge-feature badge-pagination">
+          <i class="fa-solid fa-keyboard me-2"></i>
+          Full keyboard pagination
+        </span>
 
-    <span class="badge badge-feature badge-unicode">
-      <i class="fa-solid fa-language me-2"></i>
-      Unicode-safe rendering
-    </span>
+        <span class="badge badge-feature badge-live">
+          <i class="fa-solid fa-rotate me-2"></i>
+          Flicker-free live updates
+        </span>
 
-    <span class="badge badge-feature badge-pagination">
-      <i class="fa-solid fa-keyboard me-2"></i>
-      Full keyboard pagination
-    </span>
+        <span class="badge badge-feature badge-data">
+          <i class="fa-solid fa-database me-2"></i>
+          Data-aware rendering
+        </span>
+      </div>
+    </section>
 
-    <span class="badge badge-feature badge-live">
-      <i class="fa-solid fa-rotate me-2"></i>
-      Flicker-free live updates
-    </span>
+    <!-- SHOWCASE / CAROUSEL -->
+    <section id="showcase" class="py-5 bg-white border-bottom">
+      <div class="container">
+        <h2 class="text-center fw-bold mb-4">Real Console Output</h2>
 
-    <span class="badge badge-feature badge-data">
-      <i class="fa-solid fa-database me-2"></i>
-      Data-aware rendering
-    </span>
+        <div
+          id="consoleCarousel"
+          class="carousel slide carousel-dark"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-inner border rounded shadow-sm">
+            <div class="carousel-item active">
+              <div class="carousel-media">
+                <img
+                  src="assets/images/carousel_app_logs.png"
+                  alt="Application Monitoring"
+                />
+              </div>
+            </div>
 
-  </div>
-</section>
+            <div class="carousel-item">
+              <div class="carousel-media">
+                <img
+                  src="assets/images/carousel_devops.png"
+                  alt="DevOps Monitoring"
+                />
+              </div>
+            </div>
 
-<!-- SHOWCASE / CAROUSEL -->
-<section id="showcase" class="py-5 bg-white border-bottom">
-  <div class="container">
-    <h2 class="text-center fw-bold mb-4">Real Console Output</h2>
+            <div class="carousel-item">
+              <div class="carousel-media">
+                <img
+                  src="assets/images/carousel_finance.png"
+                  alt="Finance Dashboard"
+                />
+              </div>
+            </div>
 
-    <div id="consoleCarousel" class="carousel slide carousel-dark" data-bs-ride="carousel">
-      <div class="carousel-inner border rounded shadow-sm">
+            <div class="carousel-item">
+              <div class="carousel-media">
+                <img
+                  src="assets/images/live_system_status.gif"
+                  alt="Live System Status"
+                />
+              </div>
+            </div>
+          </div>
 
-        <div class="carousel-item active">
-          <div class="carousel-media">
-            <img src="assets/images/carousel_app_logs.png" alt="Application Monitoring">
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#consoleCarousel"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#consoleCarousel"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon"></span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- OVERVIEW -->
+    <section id="overview" class="container my-5">
+      <h2 class="section-title">
+        <i class="fa-solid fa-circle-info me-2"></i>Overview
+      </h2>
+
+      <p>
+        Console applications remain essential for DevOps, monitoring, system
+        administration, and internal tooling. Producing consistent, readable,
+        and professional console output across platforms is complex and
+        error-prone.
+      </p>
+
+      <p>
+        FluentConsoleBuilder abstracts layout, alignment, Unicode width,
+        pagination, ANSI styling, and live rendering into a single fluent API
+        designed for production environments.
+      </p>
+    </section>
+
+    <!-- FEATURE LIST (RESTORED + EXPANDED) -->
+    <section id="features" class="container my-5">
+      <h2 class="section-title">
+        <i class="fa-solid fa-list-check me-2"></i>Feature List
+      </h2>
+
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <i class="fa-solid fa-table-columns text-primary fa-lg mb-2"></i>
+              <h5>Fluent Table Builder</h5>
+              <p class="text-muted">
+                Build complex console tables using a readable fluent API. No
+                manual spacing or string formatting required.
+              </p>
+            </div>
           </div>
         </div>
 
-        <div class="carousel-item">
-          <div class="carousel-media">
-            <img src="assets/images/carousel_devops.png" alt="DevOps Monitoring">
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <i class="fa-solid fa-language text-primary fa-lg mb-2"></i>
+              <h5>Unicode-safe Rendering</h5>
+              <p class="text-muted">
+                Accurate width calculation for Unicode, emojis, and wide
+                characters across terminals.
+              </p>
+            </div>
           </div>
         </div>
 
-        <div class="carousel-item">
-          <div class="carousel-media">
-            <img src="assets/images/carousel_finance.png" alt="Finance Dashboard">
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <i class="fa-solid fa-layer-group text-primary fa-lg mb-2"></i>
+              <h5>Pagination</h5>
+              <p class="text-muted">
+                Built-in keyboard-driven pagination for large datasets with
+                consistent navigation.
+              </p>
+            </div>
           </div>
         </div>
 
-        <div class="carousel-item">
-          <div class="carousel-media">
-            <img src="assets/images/live_system_status.gif" alt="Live System Status">
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <i class="fa-solid fa-rotate text-primary fa-lg mb-2"></i>
+              <h5>Live Table Updates</h5>
+              <p class="text-muted">
+                Efficient table redraws for real-time dashboards without
+                flicker.
+              </p>
+            </div>
           </div>
         </div>
 
-      </div>
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <i class="fa-solid fa-palette text-primary fa-lg mb-2"></i>
+              <h5>ANSI Styling</h5>
+              <p class="text-muted">
+                Colorized borders, headers, numeric highlighting, and
+                conditional formatting.
+              </p>
+            </div>
+          </div>
+        </div>
 
-      <button class="carousel-control-prev" type="button" data-bs-target="#consoleCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon"></span>
-      </button>
-
-      <button class="carousel-control-next" type="button" data-bs-target="#consoleCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon"></span>
-      </button>
-    </div>
-  </div>
-</section>
-
-<!-- OVERVIEW -->
-<section id="overview" class="container my-5">
-  <h2 class="section-title">
-    <i class="fa-solid fa-circle-info me-2"></i>Overview
-  </h2>
-
-  <p>
-    Console applications remain essential for DevOps, monitoring,
-    system administration, and internal tooling. Producing consistent,
-    readable, and professional console output across platforms is
-    complex and error-prone.
-  </p>
-
-  <p>
-    FluentConsoleBuilder abstracts layout, alignment, Unicode width,
-    pagination, ANSI styling, and live rendering into a single fluent
-    API designed for production environments.
-  </p>
-</section>
-
-<!-- FEATURE LIST (RESTORED + EXPANDED) -->
-<section id="features" class="container my-5">
-  <h2 class="section-title">
-    <i class="fa-solid fa-list-check me-2"></i>Feature List
-  </h2>
-
-  <div class="row g-4">
-
-    <div class="col-md-4">
-      <div class="card h-100 shadow-sm">
-        <div class="card-body">
-          <i class="fa-solid fa-table-columns text-primary fa-lg mb-2"></i>
-          <h5>Fluent Table Builder</h5>
-          <p class="text-muted">
-            Build complex console tables using a readable fluent API.
-            No manual spacing or string formatting required.
-          </p>
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <i class="fa-solid fa-gauge-high text-primary fa-lg mb-2"></i>
+              <h5>Performance Focused</h5>
+              <p class="text-muted">
+                Optimized rendering with minimal allocations for long-running
+                console applications.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="col-md-4">
-      <div class="card h-100 shadow-sm">
-        <div class="card-body">
-          <i class="fa-solid fa-language text-primary fa-lg mb-2"></i>
-          <h5>Unicode-safe Rendering</h5>
-          <p class="text-muted">
-            Accurate width calculation for Unicode, emojis, and
-            wide characters across terminals.
-          </p>
+    <!-- COMPARISON -->
+    <section id="comparison" class="container my-5">
+      <h2 class="section-title">
+        <i class="fa-solid fa-scale-balanced me-2"></i>
+        Why FluentConsoleBuilder
+      </h2>
+
+      <p class="mb-4 text-muted">
+        A practical comparison focused on real-world console requirements for
+        data-heavy and operational workloads.
+      </p>
+
+      <div class="table-responsive">
+        <table class="table table-bordered align-middle">
+          <thead class="table-light d-none d-md-table-header-group">
+            <tr>
+              <th>Capability</th>
+              <th>Common Console Libraries</th>
+              <th>FluentConsoleBuilder</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Unicode -->
+            <tr>
+              <th>Unicode & Emoji alignment</th>
+
+              <td>
+                <span class="fw-semibold d-md-none"
+                  >Common Console Libraries</span
+                >
+                <div class="text-muted small small-md">
+                  Inconsistent or visually broken
+                </div>
+              </td>
+
+              <td>
+                <span class="fw-semibold d-md-none">FluentConsoleBuilder</span>
+                <div class="fw-semibold text-success small small-md">
+                  Full grapheme-aware width (wcwidth-based)
+                </div>
+              </td>
+            </tr>
+
+            <!-- Live updates -->
+            <tr>
+              <th>Live updates without flicker</th>
+
+              <td>
+                <span class="fw-semibold d-md-none"
+                  >Common Console Libraries</span
+                >
+                <div class="text-muted small small-md">
+                  Clunky redraws or full screen refresh
+                </div>
+              </td>
+
+              <td>
+                <span class="fw-semibold d-md-none">FluentConsoleBuilder</span>
+                <div class="fw-semibold text-success small small-md">
+                  Native, smooth in-place redraw
+                </div>
+              </td>
+            </tr>
+
+            <!-- Pagination -->
+            <tr>
+              <th>Keyboard pagination for large datasets</th>
+
+              <td>
+                <span class="fw-semibold d-md-none"
+                  >Common Console Libraries</span
+                >
+                <div class="text-muted small small-md">
+                  Missing or limited to basic navigation
+                </div>
+              </td>
+
+              <td>
+                <span class="fw-semibold d-md-none">FluentConsoleBuilder</span>
+                <div class="fw-semibold text-success small small-md">
+                  Full support — Prev (P), Next (N), First (F), Last (L),
+                  numeric keys (1–9)
+                </div>
+              </td>
+            </tr>
+
+            <!-- Conditional styling -->
+            <tr>
+              <th>Per-cell / row conditional styling</th>
+
+              <td>
+                <span class="fw-semibold d-md-none"
+                  >Common Console Libraries</span
+                >
+                <div class="text-muted small small-md">
+                  Basic or not supported
+                </div>
+              </td>
+
+              <td>
+                <span class="fw-semibold d-md-none">FluentConsoleBuilder</span>
+                <div class="fw-semibold text-success small small-md">
+                  Fine-grained, fluent styling rules
+                </div>
+              </td>
+            </tr>
+
+            <!-- Dashboards -->
+            <tr>
+              <th>Real-time dashboard experience</th>
+
+              <td>
+                <span class="fw-semibold d-md-none"
+                  >Common Console Libraries</span
+                >
+                <div class="text-muted small small-md">
+                  Requires heavy custom code
+                </div>
+              </td>
+
+              <td>
+                <span class="fw-semibold d-md-none">FluentConsoleBuilder</span>
+                <div class="fw-semibold text-success small small-md">
+                  Natural, data-aware rendering
+                </div>
+              </td>
+            </tr>
+
+            <!-- Production readiness -->
+            <tr>
+              <th>Production readiness</th>
+
+              <td>
+                <span class="fw-semibold d-md-none"
+                  >Common Console Libraries</span
+                >
+                <div class="text-muted small small-md">
+                  Tooling-oriented or demo-level
+                </div>
+              </td>
+
+              <td>
+                <span class="fw-semibold d-md-none">FluentConsoleBuilder</span>
+                <div class="fw-semibold text-success small small-md">
+                  Designed for long-running, operational workloads
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- EVIDENCE (ALL IMAGES, BELOW FEATURES) -->
+    <section id="evidence" class="container my-5">
+      <h2 class="section-title">
+        <i class="fa-solid fa-image me-2"></i>Evidence — Complete Output
+      </h2>
+
+      <div class="row g-4">
+        <div class="col-md-6">
+          <img
+            src="assets/images/ascii_pagination_on_cmd_1.png"
+            class="img-fluid border rounded"
+          />
+        </div>
+        <div class="col-md-6">
+          <img
+            src="assets/images/ascii_pagination_on_cmd_3.png"
+            class="img-fluid border rounded"
+          />
+        </div>
+        <div class="col-md-6">
+          <img
+            src="assets/images/pagination_demo_live_ascii_1.gif"
+            class="img-fluid border rounded"
+          />
+        </div>
+        <div class="col-md-6">
+          <img
+            src="assets/images/color_border_table_on_powershell_5.png"
+            class="img-fluid border rounded"
+          />
+        </div>
+        <div class="col-md-6">
+          <img
+            src="assets/images/live_table_update_cmd.gif"
+            class="img-fluid border rounded"
+          />
+        </div>
+        <div class="col-md-6">
+          <img
+            src="assets/images/live_table_update_powershell.gif"
+            class="img-fluid border rounded"
+          />
+        </div>
+        <div class="col-md-6">
+          <img
+            src="assets/images/performance_dashboard_on_cmd_1.png"
+            class="img-fluid border rounded"
+          />
+        </div>
+        <div class="col-md-6">
+          <img
+            src="assets/images/performance_dashboard_on_powershell_1.png"
+            class="img-fluid border rounded"
+          />
+        </div>
+        <div class="col-md-12">
+          <img
+            src="assets/images/responsive_unicode_table_on_powershell.png"
+            class="img-fluid border rounded"
+          />
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="col-md-4">
-      <div class="card h-100 shadow-sm">
-        <div class="card-body">
-          <i class="fa-solid fa-layer-group text-primary fa-lg mb-2"></i>
-          <h5>Pagination</h5>
-          <p class="text-muted">
-            Built-in keyboard-driven pagination for large datasets
-            with consistent navigation.
-          </p>
-        </div>
-      </div>
-    </div>
+    <!-- CODE -->
+    <section id="code" class="container my-5">
+      <h2 class="section-title">
+        <i class="fa-solid fa-code me-2"></i>TableBuilder Example
+      </h2>
 
-    <div class="col-md-4">
-      <div class="card h-100 shadow-sm">
-        <div class="card-body">
-          <i class="fa-solid fa-rotate text-primary fa-lg mb-2"></i>
-          <h5>Live Table Updates</h5>
-          <p class="text-muted">
-            Efficient table redraws for real-time dashboards
-            without flicker.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-4">
-      <div class="card h-100 shadow-sm">
-        <div class="card-body">
-          <i class="fa-solid fa-palette text-primary fa-lg mb-2"></i>
-          <h5>ANSI Styling</h5>
-          <p class="text-muted">
-            Colorized borders, headers, numeric highlighting,
-            and conditional formatting.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-4">
-      <div class="card h-100 shadow-sm">
-        <div class="card-body">
-          <i class="fa-solid fa-gauge-high text-primary fa-lg mb-2"></i>
-          <h5>Performance Focused</h5>
-          <p class="text-muted">
-            Optimized rendering with minimal allocations
-            for long-running console applications.
-          </p>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- COMPARISON -->
-<section id="comparison" class="container my-5">
-  <h2 class="section-title">
-    <i class="fa-solid fa-scale-balanced me-2"></i>
-    Why FluentConsoleBuilder
-  </h2>
-
-  <p class="mb-4 text-muted">
-    A practical comparison focused on real-world console requirements
-    for data-heavy and operational workloads.
-  </p>
-
-  <div class="table-responsive">
-    <table class="table table-bordered align-middle comparison-table">
-      <thead class="table-light">
-        <tr>
-          <th>Capability</th>
-          <th>Common Console Libraries</th>
-          <th>FluentConsoleBuilder</th>
-        </tr>
-      </thead>
-      <tbody>
-
-        <tr>
-          <td>Unicode & Emoji alignment</td>
-          <td class="text-muted">
-            Inconsistent or visually broken
-          </td>
-          <td class="fw-semibold text-success">
-            Full grapheme-aware width (wcwidth-based)
-          </td>
-        </tr>
-
-        <tr>
-          <td>Live updates without flicker</td>
-          <td class="text-muted">
-            Clunky redraws or full screen refresh
-          </td>
-          <td class="fw-semibold text-success">
-            Native, smooth in-place redraw
-          </td>
-        </tr>
-
-        <tr>
-          <td>Keyboard pagination for large datasets</td>
-          <td class="text-muted">
-            Missing or limited to basic navigation
-          </td>
-          <td class="fw-semibold text-success">
-            Full support — Prev (P), Next (N), First (F), Last (L),
-            numeric keys (1–9)
-          </td>
-        </tr>
-
-        <tr>
-          <td>Per-cell / row conditional styling</td>
-          <td class="text-muted">
-            Basic or not supported
-          </td>
-          <td class="fw-semibold text-success">
-            Fine-grained, fluent styling rules
-          </td>
-        </tr>
-
-        <tr>
-          <td>Real-time dashboard experience</td>
-          <td class="text-muted">
-            Requires heavy custom code
-          </td>
-          <td class="fw-semibold text-success">
-            Natural, data-aware rendering
-          </td>
-        </tr>
-
-        <tr>
-          <td>Production readiness</td>
-          <td class="text-muted">
-            Tooling-oriented or demo-level
-          </td>
-          <td class="fw-semibold text-success">
-            Designed for long-running, operational workloads
-          </td>
-        </tr>
-
-      </tbody>
-    </table>
-  </div>
-</section>
-
-
-<!-- EVIDENCE (ALL IMAGES, BELOW FEATURES) -->
-<section id="evidence" class="container my-5">
-  <h2 class="section-title">
-    <i class="fa-solid fa-image me-2"></i>Evidence — Complete Output
-  </h2>
-
-  <div class="row g-4">
-    <div class="col-md-6"><img src="assets/images/ascii_pagination_on_cmd_1.png" class="img-fluid border rounded"></div>
-    <div class="col-md-6"><img src="assets/images/ascii_pagination_on_cmd_3.png" class="img-fluid border rounded"></div>
-    <div class="col-md-6"><img src="assets/images/pagination_demo_live_ascii_1.gif" class="img-fluid border rounded"></div>
-    <div class="col-md-6"><img src="assets/images/color_border_table_on_powershell_5.png" class="img-fluid border rounded"></div>
-    <div class="col-md-6"><img src="assets/images/live_table_update_cmd.gif" class="img-fluid border rounded"></div>
-    <div class="col-md-6"><img src="assets/images/live_table_update_powershell.gif" class="img-fluid border rounded"></div>
-    <div class="col-md-6"><img src="assets/images/performance_dashboard_on_cmd_1.png" class="img-fluid border rounded"></div>
-    <div class="col-md-6"><img src="assets/images/performance_dashboard_on_powershell_1.png" class="img-fluid border rounded"></div>
-    <div class="col-md-12"><img src="assets/images/responsive_unicode_table_on_powershell.png" class="img-fluid border rounded"></div>
-  </div>
-</section>
-
-<!-- CODE -->
-<section id="code" class="container my-5">
-  <h2 class="section-title">
-    <i class="fa-solid fa-code me-2"></i>TableBuilder Example
-  </h2>
-
-  <pre class="code-block"><code>
+      <pre class="code-block"><code>
 new TableBuilder()
   .WithTitle("APPLICATION MONITORING", center: true, withBorder: true)
   .SetHeaders("App", "Env", "Version", "Status", "Users", "Response")
@@ -361,34 +500,33 @@ new TableBuilder()
   .WithAccurateUnicodeWidth(true)
   .Print();
   </code></pre>
-</section>
+    </section>
 
-<!-- CONTACT -->
-<section id="contact" class="container my-5">
-  <h2 class="section-title">
-    <i class="fa-solid fa-envelope me-2"></i>Contact
-  </h2>
+    <!-- CONTACT -->
+    <section id="contact" class="container my-5">
+      <h2 class="section-title">
+        <i class="fa-solid fa-envelope me-2"></i>Contact
+      </h2>
 
-  <p>
-    For licensing, commercial usage, or enterprise inquiries, please contact:
-  </p>
+      <p>
+        For licensing, commercial usage, or enterprise inquiries, please
+        contact:
+      </p>
 
-  <p class="fs-5 fw-semibold">
-    <i class="fa-solid fa-at me-2 text-primary"></i>
-    nasrullahkazmi@gmail.com
-  </p>
-</section>
+      <p class="fs-5 fw-semibold">
+        <i class="fa-solid fa-at me-2 text-primary"></i>
+        nasrullahkazmi@gmail.com
+      </p>
+    </section>
 
+    <footer class="bg-light border-top py-4 text-center">
+      <span id="year"></span> FluentConsoleBuilder — All rights reserved
+    </footer>
 
-<footer class="bg-light border-top py-4 text-center">
-  <span id="year"></span> FluentConsoleBuilder — All rights reserved
-</footer>
-
-<script src="./js/bootstrap.min.js"></script>
-<script> 
-
-  const currentYear = new Date().getFullYear();
-  document.getElementById("year").textContent = currentYear; 
-</script>
-</body>
+    <script src="./js/bootstrap.min.js"></script>
+    <script>
+      const currentYear = new Date().getFullYear();
+      document.getElementById("year").textContent = currentYear;
+    </script>
+  </body>
 </html>

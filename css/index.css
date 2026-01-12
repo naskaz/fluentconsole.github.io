@@ -120,7 +120,13 @@ section {
   .badge-feature i {
     font-size: 1rem;
   }
+
+.small-md {
+    font-size: 0.95rem;
+  }
+
 }
+
 
 
 
