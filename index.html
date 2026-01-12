@@ -23,11 +23,15 @@
         </a>
 
         <button
-          class="navbar-toggler"
+          class="navbar-toggler collapsed"
+          type="button"
           data-bs-toggle="collapse"
           data-bs-target="#nav"
+          aria-controls="nav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
+          <i class="fa-solid fa-bars"></i>
         </button>
 
         <div id="nav" class="collapse navbar-collapse">
@@ -636,6 +640,28 @@ new TableBuilder()
       document
         .querySelectorAll('[data-bs-toggle="tooltip"]')
         .forEach((el) => new bootstrap.Tooltip(el));
+
+      const toggler = document.querySelector(".navbar-toggler");
+      const navCollapse = document.getElementById("nav");
+
+      toggler.addEventListener("click", () => {
+        toggler.innerHTML = toggler.classList.contains("collapsed")
+          ? '<i class="fa-solid fa-bars"></i>'
+          : '<i class="fa-solid fa-xmark"></i>';
+      });
+
+      navCollapse.querySelectorAll(".nav-link").forEach((link) => {
+        link.addEventListener("click", () => {
+          const bsCollapse = bootstrap.Collapse.getInstance(navCollapse);
+          if (bsCollapse) {
+            bsCollapse.hide();
+          }
+
+          // Reset icon back to hamburger
+          toggler.classList.add("collapsed");
+          toggler.innerHTML = '<i class="fa-solid fa-bars"></i>';
+        });
+      });
     </script>
   </body>
 </html>
