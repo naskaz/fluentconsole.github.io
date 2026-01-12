@@ -56,6 +56,33 @@
   </div>
 </header>
 
+<!-- CAPABILITY BADGES -->
+<section id="badges" class="container my-4">
+  <div class="d-flex flex-wrap gap-3 justify-content-center badges-container">
+
+    <span class="badge badge-feature badge-unicode">
+      <i class="fa-solid fa-language me-2"></i>
+      Unicode-safe rendering
+    </span>
+
+    <span class="badge badge-feature badge-pagination">
+      <i class="fa-solid fa-keyboard me-2"></i>
+      Full keyboard pagination
+    </span>
+
+    <span class="badge badge-feature badge-live">
+      <i class="fa-solid fa-rotate me-2"></i>
+      Flicker-free live updates
+    </span>
+
+    <span class="badge badge-feature badge-data">
+      <i class="fa-solid fa-database me-2"></i>
+      Data-aware rendering
+    </span>
+
+  </div>
+</section>
+
 <!-- SHOWCASE / CAROUSEL -->
 <section id="showcase" class="py-5 bg-white border-bottom">
   <div class="container">
@@ -209,6 +236,96 @@
 
   </div>
 </section>
+
+<!-- COMPARISON -->
+<section id="comparison" class="container my-5">
+  <h2 class="section-title">
+    <i class="fa-solid fa-scale-balanced me-2"></i>
+    Why FluentConsoleBuilder
+  </h2>
+
+  <p class="mb-4 text-muted">
+    A practical comparison focused on real-world console requirements
+    for data-heavy and operational workloads.
+  </p>
+
+  <div class="table-responsive">
+    <table class="table table-bordered align-middle comparison-table">
+      <thead class="table-light">
+        <tr>
+          <th>Capability</th>
+          <th>Common Console Libraries</th>
+          <th>FluentConsoleBuilder</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr>
+          <td>Unicode & Emoji alignment</td>
+          <td class="text-muted">
+            Inconsistent or visually broken
+          </td>
+          <td class="fw-semibold text-success">
+            Full grapheme-aware width (wcwidth-based)
+          </td>
+        </tr>
+
+        <tr>
+          <td>Live updates without flicker</td>
+          <td class="text-muted">
+            Clunky redraws or full screen refresh
+          </td>
+          <td class="fw-semibold text-success">
+            Native, smooth in-place redraw
+          </td>
+        </tr>
+
+        <tr>
+          <td>Keyboard pagination for large datasets</td>
+          <td class="text-muted">
+            Missing or limited to basic navigation
+          </td>
+          <td class="fw-semibold text-success">
+            Full support — Prev (P), Next (N), First (F), Last (L),
+            numeric keys (1–9)
+          </td>
+        </tr>
+
+        <tr>
+          <td>Per-cell / row conditional styling</td>
+          <td class="text-muted">
+            Basic or not supported
+          </td>
+          <td class="fw-semibold text-success">
+            Fine-grained, fluent styling rules
+          </td>
+        </tr>
+
+        <tr>
+          <td>Real-time dashboard experience</td>
+          <td class="text-muted">
+            Requires heavy custom code
+          </td>
+          <td class="fw-semibold text-success">
+            Natural, data-aware rendering
+          </td>
+        </tr>
+
+        <tr>
+          <td>Production readiness</td>
+          <td class="text-muted">
+            Tooling-oriented or demo-level
+          </td>
+          <td class="fw-semibold text-success">
+            Designed for long-running, operational workloads
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+</section>
+
 
 <!-- EVIDENCE (ALL IMAGES, BELOW FEATURES) -->
 <section id="evidence" class="container my-5">
