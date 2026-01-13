@@ -167,6 +167,10 @@ section {
   border-bottom: 1px solid #e9ecef;
 }
 
+
+
+
+
 /* ===============================
    Mobile Typography Tuning
    Bootstrap-first, minimal
@@ -237,3 +241,13 @@ section {
     border-bottom: 2px solid #f8f9fa;
   }
 }
+
+/* section comparison styling mobile */
+
+@media (max-width: 575.98px) {  
+  footer small {
+    font-size: 0.75rem;     
+    opacity: 0.65;           
+  }
+}
+
