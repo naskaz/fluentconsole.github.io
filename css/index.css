@@ -21,23 +21,19 @@ section {
   margin-bottom: 1.5rem;
 }
 
-/* Carousel height consistency */
-
-/* .carousel-media {
-  height: 520px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #ffffff;
+/* hero section style */
+/* NuGet Button Styling */
+.nuget-btn {
+  border-radius: 6px;
+  min-height: 44px;
 }
 
-.carousel-media img {
-  display: block;
-  max-height: 100%;
-  max-width: 100%;
-  object-fit: contain;
-  margin: 0 auto;
-} */
+
+
+
+
+/* Carousel height consistency */
+
 
 
 .carousel-dark .carousel-control-prev-icon,
@@ -251,3 +247,16 @@ section {
   }
 }
 
+
+/* hero section style Mobile optimization nuget button */
+@media (max-width: 576px) {
+  .nuget-btn {
+    min-height: 48px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .nuget-subtitle {
+    font-size: 0.75rem;
+  }
+}
