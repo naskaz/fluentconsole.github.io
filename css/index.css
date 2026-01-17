@@ -28,8 +28,117 @@ section {
   min-height: 44px;
 }
 
+/* Make header a flex container */
+header.bg-light {
+  display: flex;
+  flex-direction: column;
+  min-height: 0; /* Override any min-height */
+}
+
+/* FluentConsoleTable Banner */
+
+.header_hero_container{
+  padding-bottom: 0px !important;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+
+.header_hero_banner_advtable{
+  margin-top: 16px !important;
+}
 
 
+.fluent-banner {
+  border-top: 1px solid #495057;
+}
+
+.fluent-banner a:hover {
+  color: #f8f9fa !important;
+  text-decoration: underline !important;
+  opacity: 0.9;
+}
+
+.fluent-banner-content {
+  font-size: 1.05rem;
+}
+
+.advanced-text,.contact-label{
+  color: #fff !important;
+}
+
+/* Desktop layout - everything in one line with nice spacing */
+@media (min-width: 768px) {
+  .fluent-banner-content {
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 2.5rem;           
+  }
+  
+  .advanced-text {
+    display: inline;
+    color: #adb5bd;
+    font-weight: 400;
+  }
+  
+  .contact-label {
+    color: #ced4da;
+  }
+}
+
+/* Mobile - two clean lines */
+@media (max-width: 767.98px) {
+  .fluent-banner-content {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  
+  .contact-part {
+    margin-top: 0.25rem;
+  }
+  
+  /* Hide advanced text on mobile */
+  .advanced-text {
+    display: none;
+  }
+  
+  /* Optional: make contact label visible only on mobile */
+  .contact-label {
+    display: inline;
+  }
+  
+  /* Slightly smaller text on very small screens */
+  @media (max-width: 400px) {
+    .fluent-banner-content {
+      font-size: 0.97rem;
+    }
+  }
+}
+
+/* Make sure advanced text is hidden on mobile */
+.advanced-text {
+  display: none;           /* default mobile */
+}
+
+@media (min-width: 769px) {
+  .advanced-text {
+    display: inline;       /* show only on desktop/tablet */
+  }
+}
+
+/* Fine-tuning spacing on very small screens */
+@media (max-width: 400px) {
+  .fluent-banner-content {
+    gap: 0.5rem;
+  }
+  
+  .line-1 {
+    font-size: 0.95rem;
+  }
+  
+  .contact-line {
+    font-size: 0.95rem;
+  }
+}
 
 
 /* Carousel height consistency */
@@ -260,3 +369,14 @@ section {
     font-size: 0.75rem;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
