@@ -1,0 +1,17 @@
+{
+  "examples": [
+    
+    { "folder": "example1", "file": "TestIndianRupee.cs" },
+    { "folder": "example2", "file": "TestUSDDollar.cs" },
+    { "folder": "example3", "file": "TestChineseYuan.cs" },
+    { "folder": "example4", "file": "TestEuro.cs" },
+    { "folder": "example5", "file": "TestBritishPound.cs" },
+    { "folder": "example6", "file": "TestJapaneseYen.cs" },
+    { "folder": "example7", "file": "TestKoreanWon.cs" },
+    { "folder": "example8", "file": "TestRussianRuble.cs" },
+    { "folder": "example9", "file": "TestTurkishLira.cs" },
+    { "folder": "example10", "file": "TestPolishZloty.cs" },
+    { "folder": "example11", "file": "TestIsraeliShekel.cs" }
+    
+  ]
+}

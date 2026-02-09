@@ -1,0 +1,68 @@
+{
+  "examples": [
+    {
+      "folder": "example1",
+      "file": "TestBasicSemVer.cs"
+    },
+    {
+      "folder": "example2",
+      "file": "TestNumericPrerelease.cs"
+    },
+    {
+      "folder": "example3",
+      "file": "TestPatchWithPrerelease.cs"
+    },
+    {
+      "folder": "example4",
+      "file": "TestVPrefix.cs"
+    },
+    {
+      "folder": "example5",
+      "file": "TestWindowsBuildNumbers.cs"
+    },
+    {
+      "folder": "example6",
+      "file": "TestWindowsSegmentLengths.cs"
+    },
+    {
+      "folder": "example7",
+      "file": "TestWindowsServerVersions.cs"
+    },
+    {
+      "folder": "example8",
+      "file": "TestWindowsInsiderBuilds.cs"
+    },
+    {
+      "folder": "example9",
+      "file": "TestJavaUnderscoreUpdates.cs"
+    },
+    {
+      "folder": "example10",
+      "file": "TestJavaLegacyVsModern.cs"
+    },
+    {
+      "folder": "example11",
+      "file": "TestJavaEarlyAccess.cs"
+    },
+    {
+      "folder": "example12",
+      "file": "TestJavaPatchOrdering.cs"
+    },
+    {
+      "folder": "example13",
+      "file": "TestAndroidBetaRc.cs"
+    },
+    {
+      "folder": "example14",
+      "file": "TestLinuxKernelVersions.cs"
+    },
+    {
+      "folder": "example15",
+      "file": "TestMacOSVersions.cs"
+    },
+    {
+      "folder": "example16",
+      "file": "TestIOSVersions.cs"
+    }
+  ]
+}

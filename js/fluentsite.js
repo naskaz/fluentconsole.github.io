@@ -49,3 +49,35 @@ navCollapse.querySelectorAll(".nav-link").forEach((link) => {
     toggler.innerHTML = '<i class="fa-solid fa-bars"></i>';
   });
 });
+
+
+// Fix dropdown persistence inside collapsed navbar
+document.addEventListener('DOMContentLoaded', () => {
+  const dropdownToggle = document.getElementById('productsDropdown');
+  const dropdownMenu = dropdownToggle?.nextElementSibling;
+
+  if (!dropdownToggle || !dropdownMenu) return;
+
+  // Prevent dropdown from being hidden when navbar collapses
+  const navbarCollapse = document.getElementById('nav');
+  if (navbarCollapse) {
+    navbarCollapse.addEventListener('hide.bs.collapse', (e) => {
+      // If dropdown is open, prevent collapse from hiding it
+      if (dropdownMenu.classList.contains('show')) {
+        e.preventDefault();
+        // Optionally: manually re-open after collapse hides
+        setTimeout(() => {
+          if (!dropdownMenu.classList.contains('show')) {
+            const bsDropdown = bootstrap.Dropdown.getInstance(dropdownToggle);
+            if (bsDropdown) bsDropdown.show();
+          }
+        }, 10);
+      }
+    });
+  }
+
+  // Also handle click on toggle to ensure clean state
+  dropdownToggle.addEventListener('click', (e) => {
+    e.stopPropagation(); // prevent collapsing navbar on dropdown toggle click
+  });
+});

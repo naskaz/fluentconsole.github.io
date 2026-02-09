@@ -1,0 +1,692 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>IntelliDataSort — Documentation</title>
+
+
+  <link href="/css/bstrap/bootstrap.min.css" rel="stylesheet" />
+  <link href="/css/fawesome/all.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="/css/docs.css" />
+  <link rel="stylesheet" href="/css/intellidatasort.css" />
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+
+  <!-- SAME NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-semibold" href="/index.html">
+        <i class="fa-solid fa-terminal me-2"></i>
+        FluentConsoleBuilder
+      </a>
+
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+        <span class="visually-hidden">Toggle navigation</span>
+      </button>
+
+
+
+
+
+      <div id="nav" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="/index.html#showcase">Showcase</a></li>
+          <li class="nav-item"><a class="nav-link" href="/index.html#overview">Overview</a></li>
+          <li class="nav-item"><a class="nav-link" href="/index.html#features">Features</a></li>
+          <li class="nav-item"><a class="nav-link" href="/index.html#evidence">Evidence</a></li>
+          <li class="nav-item"><a class="nav-link" href="/index.html#code">Code</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Documents</a>
+            <ul class="dropdown-menu dropdown-menu-end shadow-sm">
+              <li><a class="dropdown-item d-flex align-items-center gap-2" href="/docs/intellidatasort/index.html"
+                  aria-current="page">
+                  <i class="fa-solid fa-arrow-up-wide-short text-primary"></i> IntelliDataSort
+                </a></li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li><a class="dropdown-item d-flex align-items-center gap-2" href="/docs/fluidwidth/index.html">
+                  <i class="fa-solid fa-ruler-horizontal text-primary"></i> FluidWidth
+                </a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="/index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- LAYOUT -->
+  <div class="flex-grow-1 d-flex docs-main-layout" style="margin-top: 56px;">
+    <aside id="sidebar" class="bg-light border-end overflow-y-auto">
+
+      <!-- MOBILE CLOSE BUTTON -->
+      <button id="sidebar-close-btn" class="btn position-absolute top-0 end-0 m-2 d-md-none" aria-label="Close sidebar">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+
+      <div class="p-3">
+        <h5 class="text-primary mb-3">IntelliDataSort Docs</h5>
+        <ul class="nav flex-column nav-pills">
+          <li class="nav-item"><a class="nav-link active" href="#introduction">Introduction</a></li>
+          <li class="nav-item"><a class="nav-link" href="#installation">Installation</a></li>
+          <li class="nav-item"><a class="nav-link" href="#basic-usage">Basic Usage</a></li>
+
+
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="collapse" href="#features-collapse" role="button" aria-expanded="false">
+              Examples <i class="fa-solid fa-chevron-down ms-2"></i>
+            </a>
+            <div class="collapse" id="features-collapse">
+              <ul class="nav flex-column ms-3 mt-1">
+                <li class="nav-item"><a class="nav-link" href="#number">Number</a></li>
+                <li class="nav-item"><a class="nav-link" href="#datetime">DateTime</a></li>
+                <li class="nav-item"><a class="nav-link" href="#naturalstring">NaturalString</a></li>
+                <li class="nav-item"><a class="nav-link" href="#plainstring">PlainString</a></li>
+                <li class="nav-item"><a class="nav-link" href="#ipaddress">IpAddress</a></li>
+                <li class="nav-item"><a class="nav-link" href="#percentage">Percentage</a></li>
+                <li class="nav-item"><a class="nav-link" href="#filesize">FileSize</a></li>
+                <li class="nav-item"><a class="nav-link" href="#version">Version</a></li>
+                <li class="nav-item"><a class="nav-link" href="#currency">Currency</a></li>
+              </ul>
+            </div>
+          </li>
+
+
+        </ul>
+      </div>
+    </aside>
+
+    <button id="sidebar-toggle-btn"
+      class="btn btn-outline-primary d-md-none position-fixed start-0 top-50 translate-middle-y z-3 rounded-0 rounded-end">
+      <i class="fa-solid fa-chevron-right"></i>
+    </button>
+
+    <!-- <main id="main-content" class="flex-grow-1 p-3 p-md-4 overflow-auto"> -->
+    <main id="main-content" class="flex-grow-1 p-3 p-md-4">
+      <div class="container-fluid">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <h1>IntelliDataSort Documentation</h1>
+          <span class="badge bg-secondary">v1.0.0</span>
+        </div>
+
+
+        <section id="introduction" class="mb-5 active">
+          <h2><i class="fa-solid fa-circle-info me-2 text-primary"></i>Introduction</h2>
+
+          <hr class="intellidatasort-hr my-4">
+          <h3 class="intellidatasort-title fw-bold text-success mb-3">
+            ✅ <strong>IntelliDataSort: Intelligent, Secure, Type-Aware Sorting for Real-World Data</strong>
+          </h3>
+          <blockquote class="intellidatasort-blockquote border-start border-primary ps-3 mb-4 fst-italic">
+            “Sort like a human — but with enterprise-grade validation and security.”
+          </blockquote>
+
+          <p class="intellidatasort-paragraph mb-4">
+            <code class="intellidatasort-code bg-light px-1 rounded">IntelliDataSort</code> is a high-fidelity sorting
+            library for .NET that intelligently sorts
+            <strong>mixed-type data</strong> (numbers, dates, versions, currencies, IP addresses, file sizes, etc.) in a
+            way that matches human expectations —
+            <em>without</em> the fragility, security risks, or ambiguity of naive string sorting.
+          </p>
+
+          <div class="intellidatasort-alert alert alert-info d-flex align-items-start p-3 mb-4">
+            <i class="fa-solid fa-lightbulb fs-4 text-info me-3 mt-1 flex-shrink-0"></i>
+            <div>
+              <strong>Unlike generic sort helpers,</strong> IntelliDataSort:
+              <ul class="intellidatasort-list mb-0 mt-2">
+                <li>✅ <strong>Detects and validates data types explicitly</strong> (no guesswork)</li>
+                <li>✅ <strong>Prevents injection attacks & malformed input crashes</strong></li>
+                <li>✅ <strong>Respects cultural nuances</strong> (e.g., <code
+                    class="intellidatasort-inline-code">1,234.56</code> vs <code
+                    class="intellidatasort-inline-code">1.234,56</code>)</li>
+                <li>✅ <strong>Preserves stability and null handling</strong></li>
+                <li>✅ <strong>Returns parsed values</strong> (e.g., <code
+                    class="intellidatasort-inline-code">Version → { Major=2, Minor=5 }</code>)</li>
+              </ul>
+            </div>
+          </div>
+
+          <h4 class="intellidatasort-subtitle fw-bold mb-3">🔍 Why It’s Better Than Generic Sort Helpers</h4>
+          <div class="intellidatasort-table-container table-responsive mb-4">
+            <table class="intellidatasort-table table table-striped table-bordered">
+              <thead class="table-dark">
+                <tr>
+                  <th scope="col" class="d-none d-md-table-cell intellidatasort-feature-col" style="width: 40%">Feature
+                  </th>
+                  <th scope="col" class="text-center intellidatasort-intelli-col">IntelliDataSort</th>
+                  <th scope="col" class="text-center intellidatasort-generic-col">Generic Helpers</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row" class="d-none d-md-table-cell">Type-aware sorting</th>
+                  <td class="text-center"><span class="intellidatasort-badge intellidatasort-badge-success">✅ Explicit
+                      <code>ColumnType</code></span></td>
+                  <td class="text-center"><span class="intellidatasort-badge intellidatasort-badge-danger">❌
+                      Heuristic-only</span></td>
+                </tr>
+                <tr>
+                  <th scope="row" class="d-none d-md-table-cell">Security hardening</th>
+                  <td class="text-center"><span class="intellidatasort-badge intellidatasort-badge-success">✅ Rejects
+                      <code>"1e999"</code>, Roman numerals</span></td>
+                  <td class="text-center"><span class="intellidatasort-badge intellidatasort-badge-danger">❌ Vulnerable
+                      to DoS</span></td>
+                </tr>
+                <tr>
+                  <th scope="row" class="d-none d-md-table-cell">Currency/Version parsing</th>
+                  <td class="text-center"><span class="intellidatasort-badge intellidatasort-badge-success">✅ Full ISO
+                      4217 + SemVer 2.0</span></td>
+                  <td class="text-center"><span class="intellidatasort-badge intellidatasort-badge-danger">❌
+                      Limited/none</span></td>
+                </tr>
+                <tr>
+                  <th scope="row" class="d-none d-md-table-cell">File size & IP sorting</th>
+                  <td class="text-center"><span class="intellidatasort-badge intellidatasort-badge-success">✅ Parses
+                      <code>1.5KB</code>, <code>192.168.1.1</code></span></td>
+                  <td class="text-center"><span class="intellidatasort-badge intellidatasort-badge-danger">❌ String sort
+                      fails</span></td>
+                </tr>
+                <tr>
+                  <th scope="row" class="d-none d-md-table-cell">Input validation & injection protection</th>
+                  <td class="text-center"><span class="intellidatasort-badge intellidatasort-badge-success">✅ Blocks
+                      malformed/malicious inputs</span></td>
+                  <td class="text-center"><span class="intellidatasort-badge intellidatasort-badge-danger">❌ No
+                      validation layer</span></td>
+                </tr>
+                <tr>
+                  <th scope="row" class="d-none d-md-table-cell">Stable output</th>
+                  <td class="text-center"><span class="intellidatasort-badge intellidatasort-badge-success">✅ Preserves
+                      order for equal keys</span></td>
+                  <td class="text-center"><span class="intellidatasort-badge intellidatasort-badge-warning">⚠️ Often
+                      unstable</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h4 class="intellidatasort-subtitle fw-bold mb-3">💡 Perfect For:</h4>
+          <ul class="intellidatasort-list mb-4">
+            <li>Data grids & reporting tools (Blazor, WinForms, WPF)</li>
+            <li>CSV/Excel import pipelines</li>
+            <li>Log analyzers, configuration managers</li>
+            <li>Any mixed-data scenario (<code class="intellidatasort-inline-code">"file10.txt"</code>, <code
+                class="intellidatasort-inline-code">"$1,250.50"</code>, <code
+                class="intellidatasort-inline-code">"v2.1.0-beta"</code>)</li>
+          </ul>
+
+          <div class="intellidatasort-code-block mb-4">
+            <pre class="line-numbers">
+    <code class="language-csharp">var sorter = new HumanSort();
+var sorted = sorter.Sort(
+    new[] { "01/15/2024", "2024-02-01", "15-Mar-2024", "03.04.2024", "May 5, 2024" },
+    ColumnType.DateTime,
+    ascending: true
+);
+// → ["01/15/2024", "03.04.2024", "2024-02-01", "15-Mar-2024", "May 5, 2024"]</code>
+  </pre>
+          </div>
+
+          <blockquote class="intellidatasort-blockquote-footer border-start border-success ps-3 mb-0 bg-light">
+            🛡️ <strong>Built for production</strong>: Zero dependencies, .NET 6+ compatible, obfuscated, and rigorously
+            tested against edge cases.
+          </blockquote>
+          <hr class="intellidatasort-hr mt-4">
+        </section>
+
+
+        <section id="installation" class="mb-5">
+          <h2><i class="fa-solid fa-download me-2 text-primary"></i>Installation</h2>
+
+          <p class="mb-3">IntelliDataSort is available as a NuGet package. Install version <span
+              class="badge bg-secondary">1.0.0</span>:</p>
+
+          <h4 class="fw-semibold mb-2"><i class="fa-solid fa-terminal text-info me-2"></i> .NET CLI</h4>
+          <div class="intellidatasort-code-block mb-4">
+            <pre class="line-numbers">
+      <code class="language-bash">dotnet add package IntelliDataSort --version 1.0.0</code>
+    </pre>
+          </div>
+
+          <h4 class="fw-semibold mb-2"><i class="fa-brands fa-microsoft text-danger me-2"></i> Nuget Package Manager
+            Console
+          </h4>
+          <div class="intellidatasort-code-block mb-4">
+            <pre class="line-numbers">
+      <code class="language-powershell">Install-Package IntelliDataSort -Version 1.0.0</code>
+    </pre>
+          </div>
+
+          <h4 class="fw-semibold mb-2"><i class="fa-solid fa-file-code text-success me-2"></i> PackageReference (csproj)
+          </h4>
+          <div class="intellidatasort-code-block mb-4">
+            <pre class="line-numbers">
+      <code class="language-xml">&lt;PackageReference Include="IntelliDataSort" Version="1.0.0" /&gt;</code>
+    </pre>
+          </div>
+        </section>
+
+
+        <section id="basic-usage" class="mb-5">
+          <h2><i class="fa-solid fa-code me-2 text-primary"></i>Basic Usage</h2>
+
+          <hr class="intellidatasort-hr my-4">
+
+          <h3 class="fw-bold mb-3">
+            <i class="fa-solid fa-money-bill-wave text-success me-2"></i>
+            💰 <strong>Currency Sorting</strong>
+          </h3>
+          <div class="intellidatasort-code-block mb-4">
+            <pre class="line-numbers">
+    <code class="language-csharp">var sorter = new HumanSort();
+var currencies = new[] { "€75.25", "$100.50", "£200.00", "¥10000" };
+var sorted = sorter.Sort(currencies, ColumnType.Currency, ascending: true);
+// → ["€75.25", "$100.50", "£200.00", "¥10000"]</code>
+  </pre>
+          </div>
+          <p><strong>✅ What it does:</strong></p>
+          <ul class="intellidatasort-list mb-4">
+            <li>Parses and validates standard currency formats (USD, EUR, GBP, JPY, etc.)</li>
+            <li>Sorts **numerically within the same currency**</li>
+            <li>For mixed currencies, maintains stable order (no cross-currency conversion)</li>
+            <li>Rejects malformed inputs like <code>"USD$100"</code> or <code>"100 dollars"</code></li>
+          </ul>
+
+          <hr class="intellidatasort-hr my-4">
+
+          <h3 class="fw-bold mb-3">
+            <i class="fa-solid fa-percentage text-info me-2"></i>
+            📊 <strong>Percentage Sorting</strong>
+          </h3>
+          <div class="intellidatasort-code-block mb-4">
+            <pre class="line-numbers">
+      <code class="language-csharp">var sorter = new HumanSort();
+var percentages = new[] { "50%", "100%", "-25%", "(10%)" };
+var sorted = sorter.Sort(percentages, ColumnType.Percentage, ascending: true);
+// → ["(10%)", "-25%", "50%", "100%"] 
+// Note: "(10%)" = -10% (parentheses = negative)</code>
+    </pre>
+          </div>
+          <p><strong>✅ What it does:</strong></p>
+          <ul class="intellidatasort-list mb-4">
+            <li>Handles explicit signs (<code>-25%</code>) and accounting notation (<code>(10%)</code> =
+              <code>-10%</code>)
+            </li>
+            <li>Sorts numerically: <code>-25% &lt; -10% &lt; 50% &lt; 100%</code></li>
+            <li>Blocks invalid formats like <code>"50 percent"</code> or <code>"100/2%"</code></li>
+          </ul>
+
+          <hr class="intellidatasort-hr my-4">
+
+          <h3 class="fw-bold mb-3">
+            <i class="fa-solid fa-file-alt text-warning me-2"></i>
+            📁 <strong>File Size Sorting</strong>
+          </h3>
+          <div class="intellidatasort-code-block mb-4">
+            <pre class="line-numbers">
+      <code class="language-csharp">var sorter = new HumanSort();
+var filesizes = new[] { "1.5KB", "10.2GiB", "500B", "2MB" };
+var sorted = sorter.Sort(filesizes, ColumnType.FileSize, ascending: true);
+// → ["500B", "1.5KB", "2MB", "10.2GiB"]</code>
+    </pre>
+          </div>
+          <p><strong>✅ What it does:</strong></p>
+          <ul class="intellidatasort-list mb-4">
+            <li>Converts mixed units (B, KB, MB, GiB) to bytes for accurate comparison</li>
+            <li>Distinguishes decimal (KB = 1000) vs. binary (KiB = 1024) units</li>
+            <li>Rejects ambiguous inputs like <code>"10MB/s"</code> or <code>"100 GB"</code> (space before unit)</li>
+          </ul>
+
+          <hr class="intellidatasort-hr my-4">
+
+          <h3 class="fw-bold mb-3">
+            <i class="fa-solid fa-shield-halved text-danger me-2"></i>
+            🔒 <strong>Security Note</strong>
+          </h3>
+          <p>All examples <strong>automatically reject malicious inputs</strong> like:</p>
+          <ul class="intellidatasort-list mb-3">
+            <li>Scientific notation abuse (<code>"1e999"</code>)</li>
+            <li>Rejects command injection attempts like <code>"1.0.0+$(rm -rf /)"</code></li>
+            <li>Invalid currency symbols (<code>"100 ₿"</code>)</li>
+            <li>Blocks homoglyph attack, sql injection attack</li>
+          </ul>
+          <p class="mb-0">Perfect for enterprise data grids, log analyzers, and financial applications!</p>
+        </section>
+
+
+        <!-- Feature sections -->
+        <section id="number" class="mb-5 feature-section">
+          <h2>
+            <i class="fa-solid fa-hashtag me-2 text-primary"></i>
+            Number
+          </h2>
+          <p>Numeric-aware sorting with hex/binary/octal support</p>
+          <div class="feature-examples" data-feature="number">
+            <div class="mb-3">
+              <label class="form-label">Examples</label>
+              <select class="form-select example-select" disabled>
+                <option>Loading examples...</option>
+              </select>
+            </div>
+
+            <div class="example-loader text-center py-3 d-none">
+              <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </div>
+
+            <div class="example-error alert alert-danger d-none" role="alert"></div>
+
+            <div class="position-relative">
+              <pre class="line-numbers d-none">
+        <code class="language-csharp example-code"></code>
+      </pre>
+
+              <button class="btn btn-sm btn-outline-secondary copy-code-btn position-absolute top-0 end-0 m-2"
+                type="button" aria-label="Copy code to clipboard">
+                <i class="fa-regular fa-copy"></i>
+              </button>
+            </div>
+          </div>
+        </section>
+
+
+        <section id="datetime" class="mb-5 feature-section">
+          <h2><i class="fa-solid fa-clock me-2 text-primary"></i>DateTime</h2>
+          <p>Culture-aware date/time comparison and sorting.</p>
+          <div class="feature-examples" data-feature="datetime">
+
+            <select class="form-select example-select" disabled>
+              <option>Loading examples...</option>
+            </select>
+
+            <div class="example-loader text-center py-3 d-none">
+              <div class="spinner-border text-primary" role="status"></div>
+            </div>
+
+            <div class="example-error alert alert-danger d-none"></div>
+
+            <div class="position-relative">
+              <pre class="line-numbers d-none">
+    <code class="language-csharp example-code"></code>
+  </pre>
+
+              <button class="btn btn-sm btn-outline-secondary copy-code-btn position-absolute top-0 end-0 m-2"
+                type="button">
+                <i class="fa-regular fa-copy"></i>
+              </button>
+            </div>
+
+
+          </div>
+        </section>
+
+        <section id="naturalstring" class="mb-5">
+          <h2><i class="fa-solid fa-sort-amount-down me-2 text-primary"></i>NaturalString</h2>
+          <p>Human-readable sort: "file2.txt" < "file10.txt" .</p>
+
+              <div class="feature-examples" data-feature="naturalstring">
+
+                <select class="form-select example-select" disabled>
+                  <option>Loading examples...</option>
+                </select>
+
+                <div class="example-loader text-center py-3 d-none">
+                  <div class="spinner-border text-primary" role="status"></div>
+                </div>
+
+                <div class="example-error alert alert-danger d-none"></div>
+
+                <div class="position-relative">
+                  <pre class="line-numbers d-none">
+    <code class="language-csharp example-code"></code>
+  </pre>
+
+                  <button class="btn btn-sm btn-outline-secondary copy-code-btn position-absolute top-0 end-0 m-2"
+                    type="button">
+                    <i class="fa-regular fa-copy"></i>
+                  </button>
+                </div>
+
+
+              </div>
+
+        </section>
+
+        <section id="plainstring" class="mb-5">
+          <h2><i class="fa-solid fa-font me-2 text-primary"></i>PlainString</h2>
+          <p>Lexicographic (ASCII-baseline) sorting.</p>
+
+          <div class="feature-examples" data-feature="plainstring">
+
+            <select class="form-select example-select" disabled>
+              <option>Loading examples...</option>
+            </select>
+
+            <div class="example-loader text-center py-3 d-none">
+              <div class="spinner-border text-primary" role="status"></div>
+            </div>
+
+            <div class="example-error alert alert-danger d-none"></div>
+
+            <div class="position-relative">
+              <pre class="line-numbers d-none">
+    <code class="language-csharp example-code"></code>
+  </pre>
+
+              <button class="btn btn-sm btn-outline-secondary copy-code-btn position-absolute top-0 end-0 m-2"
+                type="button">
+                <i class="fa-regular fa-copy"></i>
+              </button>
+            </div>
+
+
+          </div>
+
+        </section>
+
+        <section id="ipaddress" class="mb-5">
+          <h2><i class="fa-solid fa-globe me-2 text-primary"></i>IpAddress</h2>
+          <p>IPv4 aware sorting.</p>
+
+          <div class="feature-examples" data-feature="ipaddress">
+
+            <select class="form-select example-select" disabled>
+              <option>Loading examples...</option>
+            </select>
+
+            <div class="example-loader text-center py-3 d-none">
+              <div class="spinner-border text-primary" role="status"></div>
+            </div>
+
+            <div class="example-error alert alert-danger d-none"></div>
+
+            <div class="position-relative">
+              <pre class="line-numbers d-none">
+    <code class="language-csharp example-code"></code>
+  </pre>
+
+              <button class="btn btn-sm btn-outline-secondary copy-code-btn position-absolute top-0 end-0 m-2"
+                type="button">
+                <i class="fa-regular fa-copy"></i>
+              </button>
+            </div>
+
+
+          </div>
+
+        </section>
+
+        <section id="percentage" class="mb-5">
+          <h2><i class="fa-solid fa-percentage me-2 text-primary"></i>Percentage</h2>
+          <p>Sort by numeric value (e.g., "50%" < "100%" ).</p>
+
+
+              <div class="feature-examples" data-feature="percentage">
+
+                <select class="form-select example-select" disabled>
+                  <option>Loading examples...</option>
+                </select>
+
+                <div class="example-loader text-center py-3 d-none">
+                  <div class="spinner-border text-primary" role="status"></div>
+                </div>
+
+                <div class="example-error alert alert-danger d-none"></div>
+
+                <div class="position-relative">
+                  <pre class="line-numbers d-none">
+    <code class="language-csharp example-code"></code>
+  </pre>
+
+                  <button class="btn btn-sm btn-outline-secondary copy-code-btn position-absolute top-0 end-0 m-2"
+                    type="button">
+                    <i class="fa-regular fa-copy"></i>
+                  </button>
+                </div>
+
+
+              </div>
+
+
+        </section>
+
+        <section id="filesize" class="mb-5">
+          <h2><i class="fa-solid fa-file-alt me-2 text-primary"></i>FileSize</h2>
+          <p>Sort by byte size: "1KB" < "1MB" .</p>
+
+
+
+              <div class="feature-examples" data-feature="filesize">
+
+                <select class="form-select example-select" disabled>
+                  <option>Loading examples...</option>
+                </select>
+
+                <div class="example-loader text-center py-3 d-none">
+                  <div class="spinner-border text-primary" role="status"></div>
+                </div>
+
+                <div class="example-error alert alert-danger d-none"></div>
+
+                <div class="position-relative">
+                  <pre class="line-numbers d-none">
+    <code class="language-csharp example-code"></code>
+  </pre>
+
+                  <button class="btn btn-sm btn-outline-secondary copy-code-btn position-absolute top-0 end-0 m-2"
+                    type="button">
+                    <i class="fa-regular fa-copy"></i>
+                  </button>
+                </div>
+
+
+              </div>
+
+
+
+        </section>
+
+        <section id="version" class="mb-5">
+          <h2><i class="fa-solid fa-tag me-2 text-primary"></i>Version</h2>
+          <p>SemVer-compatible version string sorting.</p>
+
+          
+              <div class="feature-examples" data-feature="version">
+
+                <select class="form-select example-select" disabled>
+                  <option>Loading examples...</option>
+                </select>
+
+                <div class="example-loader text-center py-3 d-none">
+                  <div class="spinner-border text-primary" role="status"></div>
+                </div>
+
+                <div class="example-error alert alert-danger d-none"></div>
+
+                <div class="position-relative">
+                  <pre class="line-numbers d-none">
+    <code class="language-csharp example-code"></code>
+  </pre>
+
+                  <button class="btn btn-sm btn-outline-secondary copy-code-btn position-absolute top-0 end-0 m-2"
+                    type="button">
+                    <i class="fa-regular fa-copy"></i>
+                  </button>
+                </div>
+
+
+              </div>
+
+
+
+
+        </section>
+
+        <section id="currency" class="mb-5">
+          <h2><i class="fa-solid fa-money-bill-wave me-2 text-primary"></i>Currency</h2>
+          <p>Parse and sort monetary values (e.g., "$10" < "$100" ).</p>
+
+          
+              <div class="feature-examples" data-feature="currency">
+
+                <select class="form-select example-select" disabled>
+                  <option>Loading examples...</option>
+                </select>
+
+                <div class="example-loader text-center py-3 d-none">
+                  <div class="spinner-border text-primary" role="status"></div>
+                </div>
+
+                <div class="example-error alert alert-danger d-none"></div>
+
+                <div class="position-relative">
+                  <pre class="line-numbers d-none">
+    <code class="language-csharp example-code"></code>
+  </pre>
+
+                  <button class="btn btn-sm btn-outline-secondary copy-code-btn position-absolute top-0 end-0 m-2"
+                    type="button">
+                    <i class="fa-regular fa-copy"></i>
+                  </button>
+                </div>
+
+
+              </div>
+
+
+
+
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+  <footer class="bg-primary text-white py-3 mt-auto">
+    <div class="container-fluid text-center">
+      <span>2026</span> FluentConsoleBuilder — All rights reserved
+  </footer>
+  </footer>
+
+  <script src="/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-csharp.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+  <script src="/js/docs.js"></script>
+  <script src="/js/intellidatasort.js"></script>
+  <script src="../docsjs/renderer.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FluidWidth — Documentation</title>
+
+  <!-- Your existing assets -->
+  <link href="/css/bstrap/bootstrap.min.css" rel="stylesheet" />
+  <link href="/css/fawesome/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/docs.css" />
+  <link rel="stylesheet" href="/css/fluidwidth.css" />
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+
+  <!-- EXACT NAVBAR FROM MAIN SITE -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-semibold" href="/index.html">
+        <i class="fa-solid fa-terminal me-2"></i>
+        FluentConsoleBuilder
+      </a>
+
+
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+        <span class="visually-hidden">Toggle navigation</span>
+      </button>
+
+
+
+
+      <div id="nav" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="/index.html#showcase">Showcase</a></li>
+          <li class="nav-item"><a class="nav-link" href="/index.html#overview">Overview</a></li>
+          <li class="nav-item"><a class="nav-link" href="/index.html#features">Features</a></li>
+          <li class="nav-item"><a class="nav-link" href="/index.html#evidence">Evidence</a></li>
+          <li class="nav-item"><a class="nav-link" href="/index.html#code">Code</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Documents</a>
+            <ul class="dropdown-menu dropdown-menu-end shadow-sm">
+              <li><a class="dropdown-item d-flex align-items-center gap-2" href="/docs/intellidatasort/index.html">
+                  <i class="fa-solid fa-arrow-up-wide-short text-primary"></i> IntelliDataSort
+                </a></li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li><a class="dropdown-item d-flex align-items-center gap-2" href="/docs/fluidwidth/index.html"
+                  aria-current="page">
+                  <i class="fa-solid fa-ruler-horizontal text-primary"></i> FluidWidth
+                </a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="/index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MAIN LAYOUT -->
+  <div class="flex-grow-1 d-flex docs-main-layout" style="margin-top: 56px;">
+    <!-- SIDEBAR -->
+    <aside id="sidebar" class="bg-light border-end overflow-y-auto">
+
+      <!-- MOBILE CLOSE BUTTON -->
+      <button id="sidebar-close-btn" class="btn position-absolute top-0 end-0 m-2 d-md-none" aria-label="Close sidebar">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+
+
+      <div class="p-3">
+        <h5 class="text-primary mb-3">FluidWidth Docs</h5>
+        <ul class="nav flex-column nav-pills">
+          <li class="nav-item"><a class="nav-link active" href="#introduction">Introduction</a></li>
+          <li class="nav-item"><a class="nav-link" href="#installation">Installation</a></li>
+          <li class="nav-item"><a class="nav-link" href="#basic-usage">Basic Usage</a></li>
+          <li class="nav-item"><a class="nav-link" href="#unicode-support">Unicode Support</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- MOBILE TOGGLE -->
+    <button id="sidebar-toggle-btn"
+      class="btn btn-outline-primary d-md-none position-fixed start-0 top-50 translate-middle-y z-3 rounded-0 rounded-end">
+      <i class="fa-solid fa-chevron-right"></i>
+    </button>
+
+    <!-- MAIN CONTENT -->
+    <main id="main-content" class="flex-grow-1 p-3 p-md-4 overflow-auto">
+      <div class="container-fluid">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <h1>FluidWidth Documentation</h1>
+          <span class="badge bg-secondary">v1.1.1</span>
+        </div>
+
+        <!-- Sections — all static, no JS injection -->
+        <section id="introduction" class="mb-5 active">
+          <h2><i class="fa-solid fa-circle-info me-2 text-primary"></i>Introduction</h2>
+          <p>Loading… (replace with real content)</p>
+        </section>
+
+        <section id="installation" class="mb-5">
+          <h2><i class="fa-solid fa-download me-2 text-primary"></i>Installation</h2>
+          <pre><code>Install-Package FluidWidth</code></pre>
+        </section>
+
+        <section id="basic-usage" class="mb-5">
+          <h2><i class="fa-solid fa-code me-2 text-primary"></i>Basic Usage</h2>
+          <pre><code>// Example code here</code></pre>
+        </section>
+
+
+        <section id="unicode-support" class="mb-5">
+          <h2><i class="fa-solid fa-language me-2 text-primary"></i>Unicode Support</h2>
+          <p>Full grapheme-aware width calculation.</p>
+        </section>
+
+
+      </div>
+    </main>
+  </div>
+
+  <footer class="bg-primary text-white py-3 mt-auto">
+    <div class="container-fluid text-center">
+      <span>2026</span> FluentConsoleBuilder — All rights reserved
+  </footer>
+  </footer>
+
+  <script src="/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/docs.js"></script>
+  <script src="/js/fluidwidth.js"></script>
+</body>
+
+</html>

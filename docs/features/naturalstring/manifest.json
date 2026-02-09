@@ -1,0 +1,14 @@
+{
+  "examples": [
+    { "folder": "example1", "file": "TestLeadingZeros.cs" },
+    { "folder": "example2", "file": "TestMixedNumbersAndText.cs" },
+    { "folder": "example3", "file": "TestMultipleNumbers.cs" },
+    { "folder": "example4", "file": "TestCaseSensitivity.cs" },
+    { "folder": "example5", "file": "TestYearMonthPatterns.cs" },
+    { "folder": "example6", "file": "TestNumbersAtBeginning.cs" },
+    { "folder": "example7", "file": "TestNumbersAtEnd.cs" },
+    { "folder": "example8", "file": "TestFileNamesWithNumbers.cs" },
+    { "folder": "example9", "file": "TestDocumentVersions.cs" },
+    { "folder": "example10", "file": "TestAppVersionNames.cs" }
+  ]
+}

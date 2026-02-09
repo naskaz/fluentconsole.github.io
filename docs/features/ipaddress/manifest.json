@@ -1,0 +1,10 @@
+{
+  "examples": [
+    { "folder": "example1", "file": "TestClassA.cs" },
+    { "folder": "example2", "file": "TestClassB.cs" },
+    { "folder": "example3", "file": "TestClassC.cs" },
+    { "folder": "example4", "file": "TestClassD.cs" },
+    { "folder": "example5", "file": "TestClassE.cs" },
+    { "folder": "example6", "file": "TestAllClassesMixed.cs" }
+  ]
+}

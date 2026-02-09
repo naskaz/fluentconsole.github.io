@@ -1,0 +1,15 @@
+{
+  "examples": [
+    { "folder": "example1", "file": "DateTimeSortingDemoDayFirst.cs" },
+    { "folder": "example2", "file": "DateTimeSortingDemoMonthFirst.cs" },
+    { "folder": "example3", "file": "DateTimeSortingDemoYearFirst.cs" },
+    { "folder": "example4", "file": "DateTimeSorting24HourDemo.cs" },
+    { "folder": "example5", "file": "DateTimeSorting12HourDemo.cs" },
+    { "folder": "example6", "file": "DateTimeSortingMixAMPMDemo.cs" },
+    { "folder": "example7", "file": "DateTimeSortingMidnightNoonDemo.cs" },
+    { "folder": "example8", "file": "DateTimeSortingStabilityTestDemo.cs" },
+    { "folder": "example9", "file": "DateTimeSortingMixedPrecisionDemo.cs" },
+    { "folder": "example10", "file": "DateTimeSortingTimeZoneDSTDemo.cs" },
+    { "folder": "example11", "file": "DateTimeSortingInvalidInputsDemo.cs" }
+  ]
+}

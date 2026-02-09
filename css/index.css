@@ -259,6 +259,12 @@ header.bg-light {
   outline-offset: 2px;
 }
 
+
+.navbar-toggler i.fa-solid {
+  color: #fff !important;
+}
+
+
 /* badge styling capability badges */
 .badge-platform {
   background-color: #f0f2f5;
@@ -369,12 +375,6 @@ header.bg-light {
     font-size: 0.75rem;
   }
 }
-
-
-
-
-
-
 
 
 

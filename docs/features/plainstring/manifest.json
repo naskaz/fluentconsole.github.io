@@ -1,0 +1,12 @@
+{
+  "examples": [
+    { "folder": "example1", "file": "TestBasicAlphabetical.cs" },
+    { "folder": "example2", "file": "TestCaseSensitivity.cs" },
+    { "folder": "example3", "file": "TestSpecialCharacters.cs" },
+    { "folder": "example4", "file": "TestMixedContent.cs" },
+    { "folder": "example5", "file": "TestWhitespaceHandling.cs" },
+    { "folder": "example6", "file": "TestUnicodeCharacters.cs" },
+    { "folder": "example7", "file": "TestEmptyAndNullHandling.cs" },
+    { "folder": "example8", "file": "TestRealWorldExamples.cs" }
+  ]
+}

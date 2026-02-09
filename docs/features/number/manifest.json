@@ -1,0 +1,17 @@
+{
+  "examples": [
+    { "folder": "example1", "file": "Test1_PositiveIntegers.cs" },
+    { "folder": "example2", "file": "Test2_NegativeIntegers.cs" },
+    { "folder": "example3", "file": "Test3_MixedIntegers.cs" },
+    { "folder": "example4", "file": "Test4_PositiveDecimals.cs" },
+    { "folder": "example5", "file": "Test5_PositiveMixedDecimals.cs" },
+    { "folder": "example6", "file": "Test6_NegativeDecimals.cs" },
+    { "folder": "example7", "file": "Test7_NegativeMixedDecimals.cs" },
+    { "folder": "example8", "file": "Test8_MixedPositiveNegativeDecimals.cs" },
+    { "folder": "example9", "file": "Test9_AllDecimals.cs" },
+    { "folder": "example10", "file": "Test10_AllTypesMixed.cs" },
+    { "folder": "example11", "file": "Test11_ScientificNotation.cs" },
+    { "folder": "example12", "file": "InvalidInputRejectionTest.cs" },
+    { "folder": "example13", "file": "NumberParserOWASPSecurityTest.cs" }
+  ]
+}

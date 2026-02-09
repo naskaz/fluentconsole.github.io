@@ -1,0 +1,8 @@
+{
+  "examples": [
+    { "folder": "example1", "file": "TestPercentSymbol.cs" },
+    { "folder": "example2", "file": "TestPctAbbreviation.cs" },
+    { "folder": "example3", "file": "TestPercentWord.cs" },
+    { "folder": "example4", "file": "TestAllMixedFormats.cs" }
+  ]
+}

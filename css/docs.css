@@ -1,0 +1,345 @@
+/* docs.css file */
+
+:root {
+  --sidebar-width: 260px;
+  --navbar-height: 56px;
+}
+
+
+/*  hamburger boorstrap default styles  */
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.navbar-toggler:focus-visible {
+  outline: 2px solid rgba(13, 110, 253, 0.5);
+  outline-offset: 2px;
+}
+
+.navbar-toggler i.fa-solid {
+  color: #fff !important;
+}
+
+/*  full sidebar height  */
+#sidebar {
+  width: var(--sidebar-width);
+  position: sticky;
+  top: var(--navbar-height);
+  height: calc(100vh - var(--navbar-height));
+  flex-shrink: 0;
+}
+
+/*  MAIN LAYOUT height  */
+.docs-main-layout {
+  flex-grow: 1;
+  display: flex;
+}
+
+#main-content {
+  flex-grow: 1;
+  overflow: visible;
+}
+
+/* Add this if not present: */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+footer {
+  margin-top: auto;
+  flex-shrink: 0;
+}
+
+
+#main-content > .container-fluid {
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+
+@media (max-width: 767.98px) {
+  #main-content > .container-fluid {
+    padding-top: var(--navbar-height);
+  }
+}
+
+
+/* Desktop: let browser handle scroll; main content should not scroll internally */
+@media (min-width: 768px) {
+  #main-content {
+    overflow: visible !important;
+  }
+}
+
+/* Mobile: sidebar hidden → main must be scrollable within viewport */
+@media (max-width: 767.98px) {
+  #main-content {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    min-height: calc(100vh - var(--navbar-height) - 56px);
+  }
+
+  #main-content > .container-fluid {
+    padding-top: 1rem;
+  }
+}
+
+
+
+/* Close button for mobile sidebar */
+#sidebar-close-btn {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: none;
+  background: none;
+
+  color: var(--bs-primary); /* theme color */
+  z-index: 10;
+}
+
+/* Show close button when sidebar is open on mobile */
+@media (max-width: 767.98px) {
+  #sidebar.show #sidebar-close-btn {
+    display: block !important;
+  }
+
+  #sidebar.show {
+    padding-top: 1rem;
+  }
+}
+
+
+
+
+
+
+
+/*  full sidebar height mobile  */
+@media (max-width: 767.98px) {
+  #sidebar {
+    position: fixed;
+    top: var(--navbar-height);
+    left: calc(-1 * var(--sidebar-width));
+    height: 100vh;
+    transition: left 0.3s ease;
+    z-index: 1000;
+  }
+
+  #sidebar.show {
+    left: 0;
+  }
+
+  #sidebar-toggle-btn {
+    display: block !important;
+  }
+
+}
+
+
+/* Show sidebar on desktop */
+@media (min-width: 768px) {
+  #sidebar {
+    width: var(--sidebar-width);
+    flex-shrink: 0;
+  }
+  #sidebar-toggle-btn {
+    display: none !important;
+  }
+}
+
+/* Sidebar styling */
+#sidebar {
+  background-color: #f8f9fa;
+}
+#sidebar-nav .nav-link {
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  color: #495057;
+}
+#sidebar-nav .nav-link.active,
+#sidebar-nav .nav-link:hover {
+  background-color: #e9ecef;
+  color: #0d6efd;
+  font-weight: 600;
+}
+
+/* Mobile toggle button */
+#sidebar-toggle-btn {
+  display: none;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+}
+#sidebar-toggle-btn.show i {
+  transform: rotate(180deg);
+}
+
+
+
+/* Section spacing */
+section {
+  scroll-margin-top: 80px; /* Account for fixed navbar */
+}
+
+/* Back to top */
+#back-to-top {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+#back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Responsive containers */
+.container-fluid {
+  max-width: 1200px;
+}
+
+
+/* documentation example style */
+/* Ensure error/loader messages are readable */
+.feature-examples .alert,
+.feature-examples .spinner-border {
+  margin-top: 0.5rem;
+}
+
+.feature-examples pre.line-numbers {
+  font-family: 'SFMono-Regular', Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+  tab-size: 2;
+}
+
+
+
+
+
+/* documentation example mobile style */
+
+
+@media (max-width: 767.98px) {
+  /* Ensure main content uses full width on mobile */
+  #main-content {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .container-fluid {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+
+  /* Feature examples container spacing */
+  .feature-examples {
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .feature-examples > * {
+    margin-bottom: 0.75rem;
+  }
+
+  /* Full-width dropdown */
+  .feature-examples .form-select {
+    width: 100%;
+    font-size: 0.95rem;
+    padding: 0.375rem 0.75rem;
+  }
+}
+
+.feature-examples .example-select,
+.feature-examples .example-select:focus {
+  box-shadow: none !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+
+/* === CODE BLOCKS — MOBILE & DESKTOP === */
+.feature-examples pre.line-numbers {
+  font-family: 'SFMono-Regular', Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+  font-size: 0.875rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: #f8f9fa;
+  tab-size: 2;
+  position: relative;
+  padding-left: 3.8em; 
+}
+
+.feature-examples pre.line-numbers > code {
+  display: block;
+  padding-left: 0 !important;
+  white-space: inherit;
+  overflow: visible;
+}
+
+
+@media (min-width: 768px) {
+  .feature-examples pre.line-numbers {
+    overflow-x: auto;
+    white-space: pre;
+  }
+}
+
+
+/* For very narrow screens (< 480px): reduce font size slightly, but keep horizontal scroll */
+@media (max-width: 480px) {
+  .feature-examples pre.line-numbers {
+    font-size: 0.8125rem;
+    padding: 0.75rem;
+    padding-left: 3.2em; /* slightly less padding */
+  }
+}
+
+/* Ensure copy button stays visible & doesn’t interfere */
+.feature-examples .copy-code-btn {
+  z-index: 2;
+}
+
+
+/* === MOBILE CODE BLOCK FIXES === */
+@media (max-width: 767.98px) {
+  /* Ensure main content allows horizontal overflow */
+  #main-content,
+  #main-content > .container-fluid,
+  .feature-examples {
+    min-width: 0; 
+  }
+
+
+  /* Prevent copy button from pushing content out of view */
+  .feature-examples .position-relative {
+    position: relative;
+    overflow: visible;
+  }
+
+  .feature-examples pre.line-numbers {
+    overflow-x: visible;
+    white-space: pre-wrap; 
+    word-break: normal; 
+    overflow-wrap: break-word;
+    min-width: 100%;
+    -webkit-overflow-scrolling: touch;
+     padding-left: 3.2em;
+  }
+
+  /* Ensure copy button doesn’t interfere with wrapped layout */
+  .feature-examples .copy-code-btn {
+    top: 0.5rem;
+    right: 0.5rem;
+  }
+
+}
+
+

@@ -1,0 +1,11 @@
+{
+  "examples": [
+    { "folder": "example1", "file": "TestBytes.cs" },
+    { "folder": "example2", "file": "TestKilobytes.cs" },
+    { "folder": "example3", "file": "TestMegabytes.cs" },
+    { "folder": "example4", "file": "TestGigabytes.cs" },
+    { "folder": "example5", "file": "TestTerabytes.cs" },
+    { "folder": "example6", "file": "TestAllUnitsMixed.cs" },
+    { "folder": "example7", "file": "TestBinaryAndDecimalMixed.cs" }
+  ]
+}

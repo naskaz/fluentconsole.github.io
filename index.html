@@ -14,48 +14,44 @@
     <link rel="stylesheet" href="./css/index.css" />
   </head>
   <body class="d-flex flex-column min-vh-100">
-    <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
-      <div class="container">
-        <a class="navbar-brand fw-semibold" href="#">
-          <i class="fa-solid fa-terminal me-2"></i>
-          FluentConsoleBuilder
-        </a>
 
-        <button
-          class="navbar-toggler collapsed"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#nav"
-          aria-controls="nav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <i class="fa-solid fa-bars"></i>
-        </button>
 
-        <div id="nav" class="collapse navbar-collapse">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="#showcase">Showcase</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#overview">Overview</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#features">Features</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#evidence">Evidence</a>
-            </li>
-            <li class="nav-item"><a class="nav-link" href="#code">Code</a></li>
-            <li class="nav-item">
-              <a class="nav-link" href="#contact">Contact</a>
-            </li>
-          </ul>
-        </div>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-semibold" href="/index.html">
+        <i class="fa-solid fa-terminal me-2"></i>
+        FluentConsoleBuilder
+      </a>
+      <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <div id="nav" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="/index.html#showcase">Showcase</a></li>
+          <li class="nav-item"><a class="nav-link" href="/index.html#overview">Overview</a></li>
+          <li class="nav-item"><a class="nav-link" href="/index.html#features">Features</a></li>
+          <li class="nav-item"><a class="nav-link" href="/index.html#evidence">Evidence</a></li>
+          <li class="nav-item"><a class="nav-link" href="/index.html#code">Code</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
+             data-bs-display="static" id="productsDropdown"
+             data-bs-auto-close="inside">Documents</a>
+            <ul class="dropdown-menu dropdown-menu-end shadow-sm">
+              <li><a class="dropdown-item d-flex align-items-center gap-2" href="/docs/intellidatasort/index.html">
+                <i class="fa-solid fa-arrow-up-wide-short text-primary"></i> IntelliDataSort
+              </a></li>
+              <li><hr class="dropdown-divider" /></li>
+              <li><a class="dropdown-item d-flex align-items-center gap-2" href="/docs/fluidwidth/index.html" aria-current="page">
+                <i class="fa-solid fa-ruler-horizontal text-primary"></i> FluidWidth
+              </a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="/index.html#contact">Contact</a></li>
+        </ul>
       </div>
-    </nav>
+    </div>
+  </nav>
+    
 
     <!-- HERO -->
     <header class="bg-light border-bottom pt-5 position-relative header_hero">
@@ -67,33 +63,39 @@
           for .NET applications.
         </p>
 
-        <!-- Polished NuGet Button -->
-        <div class="mt-4">
-          <div class="d-inline-block">
-            <a
-              href="https://www.nuget.org/packages/FluidWidth"
-              target="_blank"
-              class="btn btn-outline-primary d-inline-flex align-items-center px-4 py-2 nuget-btn"
-            >
-              <!-- Left content -->
-              <div class="text-start me-3">
-                <div class="fw-bold">FluidWidth</div>
-                <div class="small text-muted">Character Width Control</div>
-              </div>
+        <div class="mt-4 d-flex flex-wrap justify-content-center gap-3">
+  <!-- FluidWidth Button -->
+  <div class="text-center">
+    <a href="https://www.nuget.org/packages/FluidWidth" target="_blank"
+       class="btn btn-outline-primary d-inline-flex align-items-center px-4 py-2 nuget-btn">
+      <div class="text-start me-3">
+        <div class="fw-bold">FluidWidth</div>
+        <div class="small text-muted">Character Width Control</div>
+      </div>
+      <i class="fa-solid fa-external-link-alt ms-2"></i>
+    </a>
+    <div class="mt-2 text-muted small">
+      <i class="fa-solid fa-box me-1"></i>
+      Available on NuGet
+    </div>
+  </div>
 
-              <!-- Right arrow -->
-              <i class="fa-solid fa-external-link-alt ms-2"></i>
-            </a>
-
-            <!-- Download text with icon -->
-            <div class="mt-2">
-              <span class="text-muted small">
-                <i class="fa-solid fa-box me-1"></i>
-                Available on NuGet
-              </span>
-            </div>
-          </div>
-        </div>
+  <!-- IntelliDataSort Button -->
+  <div class="text-center">
+    <a href="https://www.nuget.org/packages/IntelliDataSort" target="_blank"
+       class="btn btn-outline-primary d-inline-flex align-items-center px-4 py-2 nuget-btn">
+      <div class="text-start me-3">
+        <div class="fw-bold">IntelliDataSort</div>
+        <div class="small text-muted">Intelligent, Type-Aware Sorting</div>
+      </div>
+      <i class="fa-solid fa-external-link-alt ms-2"></i>
+    </a>
+    <div class="mt-2 text-muted small">
+      <i class="fa-solid fa-box me-1"></i>
+      Available on NuGet
+    </div>
+  </div>
+</div>
 
         <!-- FluentConsoleTable Banner -->
         <div
