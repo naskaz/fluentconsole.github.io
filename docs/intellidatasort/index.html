@@ -7,13 +7,13 @@
   <title>IntelliDataSort — Documentation</title>
 
 
-  <link href="/css/bstrap/bootstrap.min.css" rel="stylesheet" />
-  <link href="/css/fawesome/all.min.css" rel="stylesheet" />
+  <link href="../../css/bstrap/bootstrap.min.css" rel="stylesheet" />
+  <link href="../../css/fawesome/all.min.css" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css"
     rel="stylesheet" />
-  <link rel="stylesheet" href="/css/docs.css" />
-  <link rel="stylesheet" href="/css/intellidatasort.css" />
+  <link rel="stylesheet" href="../../css/docs.css" />
+  <link rel="stylesheet" href="../../css//intellidatasort.css" />
 </head>
 
 <body class="d-flex flex-column min-vh-100">
@@ -600,32 +600,32 @@ var sorted = sorter.Sort(filesizes, ColumnType.FileSize, ascending: true);
           <h2><i class="fa-solid fa-tag me-2 text-primary"></i>Version</h2>
           <p>SemVer-compatible version string sorting.</p>
 
-          
-              <div class="feature-examples" data-feature="version">
 
-                <select class="form-select example-select" disabled>
-                  <option>Loading examples...</option>
-                </select>
+          <div class="feature-examples" data-feature="version">
 
-                <div class="example-loader text-center py-3 d-none">
-                  <div class="spinner-border text-primary" role="status"></div>
-                </div>
+            <select class="form-select example-select" disabled>
+              <option>Loading examples...</option>
+            </select>
 
-                <div class="example-error alert alert-danger d-none"></div>
+            <div class="example-loader text-center py-3 d-none">
+              <div class="spinner-border text-primary" role="status"></div>
+            </div>
 
-                <div class="position-relative">
-                  <pre class="line-numbers d-none">
+            <div class="example-error alert alert-danger d-none"></div>
+
+            <div class="position-relative">
+              <pre class="line-numbers d-none">
     <code class="language-csharp example-code"></code>
   </pre>
 
-                  <button class="btn btn-sm btn-outline-secondary copy-code-btn position-absolute top-0 end-0 m-2"
-                    type="button">
-                    <i class="fa-regular fa-copy"></i>
-                  </button>
-                </div>
+              <button class="btn btn-sm btn-outline-secondary copy-code-btn position-absolute top-0 end-0 m-2"
+                type="button">
+                <i class="fa-regular fa-copy"></i>
+              </button>
+            </div>
 
 
-              </div>
+          </div>
 
 
 
@@ -636,7 +636,7 @@ var sorted = sorter.Sort(filesizes, ColumnType.FileSize, ascending: true);
           <h2><i class="fa-solid fa-money-bill-wave me-2 text-primary"></i>Currency</h2>
           <p>Parse and sort monetary values (e.g., "$10" < "$100" ).</p>
 
-          
+
               <div class="feature-examples" data-feature="currency">
 
                 <select class="form-select example-select" disabled>
@@ -674,18 +674,21 @@ var sorted = sorter.Sort(filesizes, ColumnType.FileSize, ascending: true);
 
   <footer class="bg-primary text-white py-3 mt-auto">
     <div class="container-fluid text-center">
-      <span>2026</span> FluentConsoleBuilder — All rights reserved
+      <span id="footer_year">2026</span> FluentConsoleBuilder — All rights reserved
   </footer>
   </footer>
-
-  <script src="/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const currentYear = new Date().getFullYear();
+    document.getElementById("footer_year").textContent = currentYear;
+  </script>
+  <script src="../../js//bootstrap.bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-csharp.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
   <script
     src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
-  <script src="/js/docs.js"></script>
-  <script src="/js/intellidatasort.js"></script>
+  <script src="../../js/docs.js"></script>
+  <script src="../../js/intellidatasort.js"></script>
   <script src="../docsjs/renderer.js"></script>
 </body>
 

@@ -7,10 +7,10 @@
   <title>FluidWidth — Documentation</title>
 
   <!-- Your existing assets -->
-  <link href="/css/bstrap/bootstrap.min.css" rel="stylesheet" />
-  <link href="/css/fawesome/all.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/docs.css" />
-  <link rel="stylesheet" href="/css/fluidwidth.css" />
+  <link href="../../css//bstrap/bootstrap.min.css" rel="stylesheet" />
+  <link href="../../css/fawesome/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../../css/docs.css" />
+  <link rel="stylesheet" href="../../css/fluidwidth.css" />
 </head>
 
 <body class="d-flex flex-column min-vh-100">
@@ -127,13 +127,16 @@
 
   <footer class="bg-primary text-white py-3 mt-auto">
     <div class="container-fluid text-center">
-      <span>2026</span> FluentConsoleBuilder — All rights reserved
+      <span id="footer_year">2026</span> FluentConsoleBuilder — All rights reserved
   </footer>
   </footer>
-
-  <script src="/js/bootstrap.bundle.min.js"></script>
-  <script src="/js/docs.js"></script>
-  <script src="/js/fluidwidth.js"></script>
+  <script>
+    const currentYear = new Date().getFullYear();
+    document.getElementById("footer_year").textContent = currentYear;
+  </script>
+  <script src="../../js//bootstrap.bundle.min.js"></script>
+  <script src="../../js/docs.js"></script>
+  <script src="../../js/fluidwidth.js"></script>
 </body>
 
 </html>
