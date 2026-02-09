@@ -13,7 +13,7 @@
   let currentExample = null;
   let examplesList = []; // Will store { folder, file }
 
-  const FEATURES_BASE = '/docs/features';
+  const FEATURES_BASE = '../features';
 
   function init() {
     if (document.readyState === 'loading') {
