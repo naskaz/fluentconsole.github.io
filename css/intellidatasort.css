@@ -210,3 +210,79 @@ i.fa-chevron-down.rotated {
     padding-top: 0.75rem;
   }
 }
+
+
+
+/* Level selector styling */
+
+.example-selector:not(:disabled) {
+  border-left: 4px solid #0d6efd;
+}
+
+
+
+/* Level selector - Add to prevent visual clipping */
+
+pre.line-numbers {
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+/* Better: Set max height with scroll for very long files */
+pre.line-numbers {
+  max-height: 600px;
+  overflow: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* Ensure code wrapping for long lines */
+code.language-csharp {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* green copy button */
+
+.copy-code-btn.btn-success {
+  background-color: #198754 !important;
+  border-color: #198754 !important;
+  color: white !important;
+}
+
+.copy-code-btn.btn-success i {
+  color: white !important;
+}
+
+.copy-code-btn {
+  transition: all 0.2s ease;
+}
+
+
+/* ============================================
+   ESSENTIAL MOBILE DROPDOWN FIXES
+   ============================================ */
+
+
+@media (max-width: 767.98px) {
+  select,
+  .form-select {
+    font-size: 16px !important; 
+  }
+}
+
+
+select option,
+.form-select option {
+  white-space: normal;      
+  word-wrap: break-word;   
+  padding: 8px 12px;      
+}
+
+
+@media (max-width: 767.98px) {
+  select,
+  .form-select {
+    height: 44px;           
+  }
+}

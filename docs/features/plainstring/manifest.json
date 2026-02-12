@@ -1,12 +1,46 @@
 {
-  "examples": [
-    { "folder": "example1", "file": "TestBasicAlphabetical.cs" },
-    { "folder": "example2", "file": "TestCaseSensitivity.cs" },
-    { "folder": "example3", "file": "TestSpecialCharacters.cs" },
-    { "folder": "example4", "file": "TestMixedContent.cs" },
-    { "folder": "example5", "file": "TestWhitespaceHandling.cs" },
-    { "folder": "example6", "file": "TestUnicodeCharacters.cs" },
-    { "folder": "example7", "file": "TestEmptyAndNullHandling.cs" },
-    { "folder": "example8", "file": "TestRealWorldExamples.cs" }
-  ]
+  "Variation 1": [
+    {
+      "folder": "example1",
+      "file": "TestBasicAlphabetical.cs",
+      "name": "TestBasicAlphabetical.cs - Basic alphabetical sorting"
+    },
+    {
+      "folder": "example2",
+      "file": "TestCaseSensitivity.cs",
+      "name": "TestCaseSensitivity.cs - Case sensitivity"
+    },
+    {
+      "folder": "example3",
+      "file": "TestSpecialCharacters.cs",
+      "name": "TestSpecialCharacters.cs - Special characters and symbols"
+    },
+    {
+      "folder": "example4",
+      "file": "TestMixedContent.cs",
+      "name": "TestMixedContent.cs - Mixed content (numbers as strings)"
+    },
+    {
+      "folder": "example5",
+      "file": "TestWhitespaceHandling.cs",
+      "name": "TestWhitespaceHandling.cs - Whitespace handling"
+    },
+    {
+      "folder": "example6",
+      "file": "TestUnicodeCharacters.cs",
+      "name": "TestUnicodeCharacters.cs - Unicode and international characters"
+    },
+    {
+      "folder": "example7",
+      "file": "TestEmptyAndNullHandling.cs",
+      "name": "TestEmptyAndNullHandling.cs - Empty and null handling"
+    },
+    {
+      "folder": "example8",
+      "file": "TestRealWorldExamples.cs",
+      "name": "TestRealWorldExamples.cs - Real-world examples"
+    }
+  ],
+  "intermediate": [],
+  "advanced": []
 }

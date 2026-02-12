@@ -1,10 +1,36 @@
 {
-  "examples": [
-    { "folder": "example1", "file": "TestClassA.cs" },
-    { "folder": "example2", "file": "TestClassB.cs" },
-    { "folder": "example3", "file": "TestClassC.cs" },
-    { "folder": "example4", "file": "TestClassD.cs" },
-    { "folder": "example5", "file": "TestClassE.cs" },
-    { "folder": "example6", "file": "TestAllClassesMixed.cs" }
-  ]
+  "Variation 1": [
+    {
+      "folder": "example1",
+      "file": "TestClassA.cs",
+      "name": "TestClassA.cs - Class A IP addresses (1.0.0.0 to 126.255.255.255)"
+    },
+    {
+      "folder": "example2",
+      "file": "TestClassB.cs",
+      "name": "TestClassB.cs - Class B IP addresses (128.0.0.0 to 191.255.255.255)"
+    },
+    {
+      "folder": "example3",
+      "file": "TestClassC.cs",
+      "name": "TestClassC.cs - Class C IP addresses (192.0.0.0 to 223.255.255.255)"
+    },
+    {
+      "folder": "example4",
+      "file": "TestClassD.cs",
+      "name": "TestClassD.cs - Class D IP addresses (224.0.0.0 to 239.255.255.255) - Multicast"
+    },
+    {
+      "folder": "example5",
+      "file": "TestClassE.cs",
+      "name": "TestClassE.cs - Class E IP addresses (240.0.0.0 to 255.255.255.255) - Reserved"
+    },
+    {
+      "folder": "example6",
+      "file": "TestAllClassesMixed.cs",
+      "name": "TestAllClassesMixed.cs - All IP classes mixed"
+    }
+  ],
+  "intermediate": [],
+  "advanced": []
 }

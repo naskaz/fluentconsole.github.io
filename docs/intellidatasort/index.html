@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
   <title>IntelliDataSort — Documentation</title>
 
 
@@ -45,8 +45,7 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Documents</a>
             <ul class="dropdown-menu dropdown-menu-end shadow-sm">
-              <li><a class="dropdown-item d-flex align-items-center gap-2" href="./index.html"
-                  aria-current="page">
+              <li><a class="dropdown-item d-flex align-items-center gap-2" href="./index.html" aria-current="page">
                   <i class="fa-solid fa-arrow-up-wide-short text-primary"></i> IntelliDataSort
                 </a></li>
               <li>
@@ -363,20 +362,48 @@ var sorted = sorter.Sort(filesizes, ColumnType.FileSize, ascending: true);
 
 
         <!-- Feature sections -->
+
+        <!-- Number Section with Level + Example Dropdowns -->
         <section id="number" class="mb-5 feature-section">
           <h2>
             <i class="fa-solid fa-hashtag me-2 text-primary"></i>
             Number
           </h2>
-          <p>Numeric-aware sorting with hex/binary/octal support</p>
+          <p class="text-muted mb-3">Numeric-aware sorting with hex/binary/octal support.</p>
+
           <div class="feature-examples" data-feature="number">
-            <div class="mb-3">
-              <label class="form-label">Examples</label>
-              <select class="form-select example-select" disabled>
-                <option>Loading examples...</option>
-              </select>
+
+
+            <!-- TWO-DROPDOWN SYSTEM - DYNAMIC VARIATIONS -->
+            <div class="row g-3 mb-4">
+              <!-- Variation Selector - dynamically populated from manifest.json -->
+              <div class="col-md-5">
+                <label class="form-label fw-semibold">
+                  <i class="fa-solid fa-layer-group me-1 text-primary"></i> Variation
+                </label>
+                <select class="form-select variation-selector">
+                  <option value="" selected disabled>— Loading variations... —</option>
+                </select>
+              </div>
+
+              <!-- Example Selector -->
+              <div class="col-md-7">
+                <label class="form-label fw-semibold">
+                  <i class="fa-solid fa-code me-1 text-primary"></i> Example
+                </label>
+                <select class="form-select example-selector" disabled>
+                  <option value="" selected>— First select a variation —</option>
+                </select>
+              </div>
             </div>
 
+            <!-- Just show count -->
+            <div class="d-flex justify-content-end mb-2">
+              <small class="text-muted example-count"></small>
+            </div>
+
+
+            <!-- EXISTING ELEMENTS - NO CHANGE -->
             <div class="example-loader text-center py-3 d-none">
               <div class="spinner-border text-primary" role="status">
                 <span class="visually-hidden">Loading...</span>
@@ -385,11 +412,10 @@ var sorted = sorter.Sort(filesizes, ColumnType.FileSize, ascending: true);
 
             <div class="example-error alert alert-danger d-none" role="alert"></div>
 
-            <div class="position-relative">
+            <div class="position-relative mt-3">
               <pre class="line-numbers d-none">
         <code class="language-csharp example-code"></code>
       </pre>
-
               <button class="btn btn-sm btn-outline-secondary copy-code-btn position-absolute top-0 end-0 m-2"
                 type="button" aria-label="Copy code to clipboard">
                 <i class="fa-regular fa-copy"></i>
@@ -399,35 +425,64 @@ var sorted = sorter.Sort(filesizes, ColumnType.FileSize, ascending: true);
         </section>
 
 
+        <!-- docs/intellidatasort/index.html -->
         <section id="datetime" class="mb-5 feature-section">
           <h2><i class="fa-solid fa-clock me-2 text-primary"></i>DateTime</h2>
-          <p>Culture-aware date/time comparison and sorting.</p>
+          <p class="text-muted mb-3">Culture-aware date/time comparison and sorting.</p>
+
           <div class="feature-examples" data-feature="datetime">
 
-            <select class="form-select example-select" disabled>
-              <option>Loading examples...</option>
-            </select>
+            <!-- TWO-DROPDOWN SYSTEM - DYNAMIC VARIATIONS -->
+            <div class="row g-3 mb-4">
+              <!-- Variation Selector - dynamically populated from manifest.json -->
+              <div class="col-md-5">
+                <label class="form-label fw-semibold">
+                  <i class="fa-solid fa-layer-group me-1 text-primary"></i> Variation
+                </label>
+                <select class="form-select variation-selector">
+                  <option value="" selected disabled>— Loading variations... —</option>
+                </select>
+              </div>
 
+              <!-- Example Selector -->
+              <div class="col-md-7">
+                <label class="form-label fw-semibold">
+                  <i class="fa-solid fa-code me-1 text-primary"></i> Example
+                </label>
+                <select class="form-select example-selector" disabled>
+                  <option value="" selected>— First select a variation —</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Just show count -->
+            <div class="d-flex justify-content-end mb-2">
+              <small class="text-muted example-count"></small>
+            </div>
+
+
+            <!-- EXISTING ELEMENTS - NO CHANGE -->
             <div class="example-loader text-center py-3 d-none">
-              <div class="spinner-border text-primary" role="status"></div>
+              <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
             </div>
 
             <div class="example-error alert alert-danger d-none"></div>
 
-            <div class="position-relative">
+            <div class="position-relative mt-3">
               <pre class="line-numbers d-none">
-    <code class="language-csharp example-code"></code>
-  </pre>
-
-              <button class="btn btn-sm btn-outline-secondary copy-code-btn position-absolute top-0 end-0 m-2"
-                type="button">
+        <code class="language-csharp example-code"></code>
+      </pre>
+              <button class="btn btn-sm btn-outline-secondary copy-code-btn position-absolute top-0 end-0 m-2">
                 <i class="fa-regular fa-copy"></i>
               </button>
             </div>
-
-
           </div>
+
         </section>
+
+
 
         <section id="naturalstring" class="mb-5">
           <h2><i class="fa-solid fa-sort-amount-down me-2 text-primary"></i>NaturalString</h2>
@@ -435,95 +490,182 @@ var sorted = sorter.Sort(filesizes, ColumnType.FileSize, ascending: true);
 
               <div class="feature-examples" data-feature="naturalstring">
 
-                <select class="form-select example-select" disabled>
-                  <option>Loading examples...</option>
+              
+            <!-- TWO-DROPDOWN SYSTEM - DYNAMIC VARIATIONS -->
+            <div class="row g-3 mb-4">
+              <!-- Variation Selector - dynamically populated from manifest.json -->
+              <div class="col-md-5">
+                <label class="form-label fw-semibold">
+                  <i class="fa-solid fa-layer-group me-1 text-primary"></i> Variation
+                </label>
+                <select class="form-select variation-selector">
+                  <option value="" selected disabled>— Loading variations... —</option>
                 </select>
+              </div>
 
+              <!-- Example Selector -->
+              <div class="col-md-7">
+                <label class="form-label fw-semibold">
+                  <i class="fa-solid fa-code me-1 text-primary"></i> Example
+                </label>
+                <select class="form-select example-selector" disabled>
+                  <option value="" selected>— First select a variation —</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Just show count -->
+            <div class="d-flex justify-content-end mb-2">
+              <small class="text-muted example-count"></small>
+            </div>
+
+
+                <!-- EXISTING ELEMENTS - NO CHANGE -->
                 <div class="example-loader text-center py-3 d-none">
-                  <div class="spinner-border text-primary" role="status"></div>
+                  <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                  </div>
                 </div>
 
                 <div class="example-error alert alert-danger d-none"></div>
 
-                <div class="position-relative">
+                <div class="position-relative mt-3">
                   <pre class="line-numbers d-none">
-    <code class="language-csharp example-code"></code>
-  </pre>
-
-                  <button class="btn btn-sm btn-outline-secondary copy-code-btn position-absolute top-0 end-0 m-2"
-                    type="button">
+        <code class="language-csharp example-code"></code>
+      </pre>
+                  <button class="btn btn-sm btn-outline-secondary copy-code-btn position-absolute top-0 end-0 m-2">
                     <i class="fa-regular fa-copy"></i>
                   </button>
                 </div>
-
-
               </div>
 
         </section>
+
+
 
         <section id="plainstring" class="mb-5">
           <h2><i class="fa-solid fa-font me-2 text-primary"></i>PlainString</h2>
           <p>Lexicographic (ASCII-baseline) sorting.</p>
 
+
           <div class="feature-examples" data-feature="plainstring">
 
-            <select class="form-select example-select" disabled>
-              <option>Loading examples...</option>
-            </select>
 
+           
+            <!-- TWO-DROPDOWN SYSTEM - DYNAMIC VARIATIONS -->
+            <div class="row g-3 mb-4">
+              <!-- Variation Selector - dynamically populated from manifest.json -->
+              <div class="col-md-5">
+                <label class="form-label fw-semibold">
+                  <i class="fa-solid fa-layer-group me-1 text-primary"></i> Variation
+                </label>
+                <select class="form-select variation-selector">
+                  <option value="" selected disabled>— Loading variations... —</option>
+                </select>
+              </div>
+
+              <!-- Example Selector -->
+              <div class="col-md-7">
+                <label class="form-label fw-semibold">
+                  <i class="fa-solid fa-code me-1 text-primary"></i> Example
+                </label>
+                <select class="form-select example-selector" disabled>
+                  <option value="" selected>— First select a variation —</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Just show count -->
+            <div class="d-flex justify-content-end mb-2">
+              <small class="text-muted example-count"></small>
+            </div>
+
+
+            <!-- EXISTING ELEMENTS - NO CHANGE -->
             <div class="example-loader text-center py-3 d-none">
-              <div class="spinner-border text-primary" role="status"></div>
+              <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
             </div>
 
             <div class="example-error alert alert-danger d-none"></div>
 
-            <div class="position-relative">
+            <div class="position-relative mt-3">
               <pre class="line-numbers d-none">
-    <code class="language-csharp example-code"></code>
-  </pre>
-
-              <button class="btn btn-sm btn-outline-secondary copy-code-btn position-absolute top-0 end-0 m-2"
-                type="button">
+        <code class="language-csharp example-code"></code>
+      </pre>
+              <button class="btn btn-sm btn-outline-secondary copy-code-btn position-absolute top-0 end-0 m-2">
                 <i class="fa-regular fa-copy"></i>
               </button>
             </div>
-
-
           </div>
 
+
+
         </section>
+
+
 
         <section id="ipaddress" class="mb-5">
           <h2><i class="fa-solid fa-globe me-2 text-primary"></i>IpAddress</h2>
           <p>IPv4 aware sorting.</p>
 
+
           <div class="feature-examples" data-feature="ipaddress">
 
-            <select class="form-select example-select" disabled>
-              <option>Loading examples...</option>
-            </select>
+            
+            <!-- TWO-DROPDOWN SYSTEM - DYNAMIC VARIATIONS -->
+            <div class="row g-3 mb-4">
+              <!-- Variation Selector - dynamically populated from manifest.json -->
+              <div class="col-md-5">
+                <label class="form-label fw-semibold">
+                  <i class="fa-solid fa-layer-group me-1 text-primary"></i> Variation
+                </label>
+                <select class="form-select variation-selector">
+                  <option value="" selected disabled>— Loading variations... —</option>
+                </select>
+              </div>
 
+              <!-- Example Selector -->
+              <div class="col-md-7">
+                <label class="form-label fw-semibold">
+                  <i class="fa-solid fa-code me-1 text-primary"></i> Example
+                </label>
+                <select class="form-select example-selector" disabled>
+                  <option value="" selected>— First select a variation —</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Just show count -->
+            <div class="d-flex justify-content-end mb-2">
+              <small class="text-muted example-count"></small>
+            </div>
+
+
+            <!-- EXISTING ELEMENTS - NO CHANGE -->
             <div class="example-loader text-center py-3 d-none">
-              <div class="spinner-border text-primary" role="status"></div>
+              <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
             </div>
 
             <div class="example-error alert alert-danger d-none"></div>
 
-            <div class="position-relative">
+            <div class="position-relative mt-3">
               <pre class="line-numbers d-none">
-    <code class="language-csharp example-code"></code>
-  </pre>
-
-              <button class="btn btn-sm btn-outline-secondary copy-code-btn position-absolute top-0 end-0 m-2"
-                type="button">
+        <code class="language-csharp example-code"></code>
+      </pre>
+              <button class="btn btn-sm btn-outline-secondary copy-code-btn position-absolute top-0 end-0 m-2">
                 <i class="fa-regular fa-copy"></i>
               </button>
             </div>
-
-
           </div>
 
+
         </section>
+
+
 
         <section id="percentage" class="mb-5">
           <h2><i class="fa-solid fa-percentage me-2 text-primary"></i>Percentage</h2>
@@ -532,32 +674,58 @@ var sorted = sorter.Sort(filesizes, ColumnType.FileSize, ascending: true);
 
               <div class="feature-examples" data-feature="percentage">
 
-                <select class="form-select example-select" disabled>
-                  <option>Loading examples...</option>
+                    
+            <!-- TWO-DROPDOWN SYSTEM - DYNAMIC VARIATIONS -->
+            <div class="row g-3 mb-4">
+              <!-- Variation Selector - dynamically populated from manifest.json -->
+              <div class="col-md-5">
+                <label class="form-label fw-semibold">
+                  <i class="fa-solid fa-layer-group me-1 text-primary"></i> Variation
+                </label>
+                <select class="form-select variation-selector">
+                  <option value="" selected disabled>— Loading variations... —</option>
                 </select>
+              </div>
 
+              <!-- Example Selector -->
+              <div class="col-md-7">
+                <label class="form-label fw-semibold">
+                  <i class="fa-solid fa-code me-1 text-primary"></i> Example
+                </label>
+                <select class="form-select example-selector" disabled>
+                  <option value="" selected>— First select a variation —</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Just show count -->
+            <div class="d-flex justify-content-end mb-2">
+              <small class="text-muted example-count"></small>
+            </div>
+
+                <!-- EXISTING ELEMENTS - NO CHANGE -->
                 <div class="example-loader text-center py-3 d-none">
-                  <div class="spinner-border text-primary" role="status"></div>
+                  <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                  </div>
                 </div>
 
                 <div class="example-error alert alert-danger d-none"></div>
 
-                <div class="position-relative">
+                <div class="position-relative mt-3">
                   <pre class="line-numbers d-none">
-    <code class="language-csharp example-code"></code>
-  </pre>
-
-                  <button class="btn btn-sm btn-outline-secondary copy-code-btn position-absolute top-0 end-0 m-2"
-                    type="button">
+        <code class="language-csharp example-code"></code>
+      </pre>
+                  <button class="btn btn-sm btn-outline-secondary copy-code-btn position-absolute top-0 end-0 m-2">
                     <i class="fa-regular fa-copy"></i>
                   </button>
                 </div>
-
-
               </div>
 
 
         </section>
+
+
 
         <section id="filesize" class="mb-5">
           <h2><i class="fa-solid fa-file-alt me-2 text-primary"></i>FileSize</h2>
@@ -567,33 +735,58 @@ var sorted = sorter.Sort(filesizes, ColumnType.FileSize, ascending: true);
 
               <div class="feature-examples" data-feature="filesize">
 
-                <select class="form-select example-select" disabled>
-                  <option>Loading examples...</option>
+            <!-- TWO-DROPDOWN SYSTEM - DYNAMIC VARIATIONS -->
+            <div class="row g-3 mb-4">
+              <!-- Variation Selector - dynamically populated from manifest.json -->
+              <div class="col-md-5">
+                <label class="form-label fw-semibold">
+                  <i class="fa-solid fa-layer-group me-1 text-primary"></i> Variation
+                </label>
+                <select class="form-select variation-selector">
+                  <option value="" selected disabled>— Loading variations... —</option>
                 </select>
+              </div>
 
+              <!-- Example Selector -->
+              <div class="col-md-7">
+                <label class="form-label fw-semibold">
+                  <i class="fa-solid fa-code me-1 text-primary"></i> Example
+                </label>
+                <select class="form-select example-selector" disabled>
+                  <option value="" selected>— First select a variation —</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Just show count -->
+            <div class="d-flex justify-content-end mb-2">
+              <small class="text-muted example-count"></small>
+            </div>
+
+
+                <!-- EXISTING ELEMENTS - NO CHANGE -->
                 <div class="example-loader text-center py-3 d-none">
-                  <div class="spinner-border text-primary" role="status"></div>
+                  <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                  </div>
                 </div>
 
                 <div class="example-error alert alert-danger d-none"></div>
 
-                <div class="position-relative">
+                <div class="position-relative mt-3">
                   <pre class="line-numbers d-none">
-    <code class="language-csharp example-code"></code>
-  </pre>
-
-                  <button class="btn btn-sm btn-outline-secondary copy-code-btn position-absolute top-0 end-0 m-2"
-                    type="button">
+        <code class="language-csharp example-code"></code>
+      </pre>
+                  <button class="btn btn-sm btn-outline-secondary copy-code-btn position-absolute top-0 end-0 m-2">
                     <i class="fa-regular fa-copy"></i>
                   </button>
                 </div>
-
-
               </div>
 
 
 
         </section>
+
 
         <section id="version" class="mb-5">
           <h2><i class="fa-solid fa-tag me-2 text-primary"></i>Version</h2>
@@ -602,66 +795,114 @@ var sorted = sorter.Sort(filesizes, ColumnType.FileSize, ascending: true);
 
           <div class="feature-examples" data-feature="version">
 
-            <select class="form-select example-select" disabled>
-              <option>Loading examples...</option>
-            </select>
+            <!-- TWO-DROPDOWN SYSTEM - DYNAMIC VARIATIONS -->
+            <div class="row g-3 mb-4">
+              <!-- Variation Selector - dynamically populated from manifest.json -->
+              <div class="col-md-5">
+                <label class="form-label fw-semibold">
+                  <i class="fa-solid fa-layer-group me-1 text-primary"></i> Variation
+                </label>
+                <select class="form-select variation-selector">
+                  <option value="" selected disabled>— Loading variations... —</option>
+                </select>
+              </div>
 
+              <!-- Example Selector -->
+              <div class="col-md-7">
+                <label class="form-label fw-semibold">
+                  <i class="fa-solid fa-code me-1 text-primary"></i> Example
+                </label>
+                <select class="form-select example-selector" disabled>
+                  <option value="" selected>— First select a variation —</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Just show count -->
+            <div class="d-flex justify-content-end mb-2">
+              <small class="text-muted example-count"></small>
+            </div>
+
+
+            <!-- EXISTING ELEMENTS - NO CHANGE -->
             <div class="example-loader text-center py-3 d-none">
-              <div class="spinner-border text-primary" role="status"></div>
+              <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
             </div>
 
             <div class="example-error alert alert-danger d-none"></div>
 
-            <div class="position-relative">
+            <div class="position-relative mt-3">
               <pre class="line-numbers d-none">
-    <code class="language-csharp example-code"></code>
-  </pre>
-
-              <button class="btn btn-sm btn-outline-secondary copy-code-btn position-absolute top-0 end-0 m-2"
-                type="button">
+        <code class="language-csharp example-code"></code>
+      </pre>
+              <button class="btn btn-sm btn-outline-secondary copy-code-btn position-absolute top-0 end-0 m-2">
                 <i class="fa-regular fa-copy"></i>
               </button>
             </div>
-
-
           </div>
 
 
 
-
         </section>
+
 
         <section id="currency" class="mb-5">
           <h2><i class="fa-solid fa-money-bill-wave me-2 text-primary"></i>Currency</h2>
           <p>Parse and sort monetary values (e.g., "$10" < "$100" ).</p>
 
 
+
               <div class="feature-examples" data-feature="currency">
 
-                <select class="form-select example-select" disabled>
-                  <option>Loading examples...</option>
+                        <!-- TWO-DROPDOWN SYSTEM - DYNAMIC VARIATIONS -->
+            <div class="row g-3 mb-4">
+              <!-- Variation Selector - dynamically populated from manifest.json -->
+              <div class="col-md-5">
+                <label class="form-label fw-semibold">
+                  <i class="fa-solid fa-layer-group me-1 text-primary"></i> Variation
+                </label>
+                <select class="form-select variation-selector">
+                  <option value="" selected disabled>— Loading variations... —</option>
                 </select>
+              </div>
 
+              <!-- Example Selector -->
+              <div class="col-md-7">
+                <label class="form-label fw-semibold">
+                  <i class="fa-solid fa-code me-1 text-primary"></i> Example
+                </label>
+                <select class="form-select example-selector" disabled>
+                  <option value="" selected>— First select a variation —</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Just show count -->
+            <div class="d-flex justify-content-end mb-2">
+              <small class="text-muted example-count"></small>
+            </div>
+
+
+                <!-- EXISTING ELEMENTS - NO CHANGE -->
                 <div class="example-loader text-center py-3 d-none">
-                  <div class="spinner-border text-primary" role="status"></div>
+                  <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                  </div>
                 </div>
 
                 <div class="example-error alert alert-danger d-none"></div>
 
-                <div class="position-relative">
+                <div class="position-relative mt-3">
                   <pre class="line-numbers d-none">
-    <code class="language-csharp example-code"></code>
-  </pre>
-
-                  <button class="btn btn-sm btn-outline-secondary copy-code-btn position-absolute top-0 end-0 m-2"
-                    type="button">
+        <code class="language-csharp example-code"></code>
+      </pre>
+                  <button class="btn btn-sm btn-outline-secondary copy-code-btn position-absolute top-0 end-0 m-2">
                     <i class="fa-regular fa-copy"></i>
                   </button>
                 </div>
-
-
               </div>
-
 
 
 
@@ -680,12 +921,14 @@ var sorted = sorter.Sort(filesizes, ColumnType.FileSize, ascending: true);
     const currentYear = new Date().getFullYear();
     document.getElementById("footer_year").textContent = currentYear;
   </script>
+
   <script src="../../js/bootstrap.bundle.min.js"></script>
   <script src="../../js/prismjs/prism-core.min.js"></script>
   <script src="../../js/prismjs/prism-markup.min.js"></script>
   <script src="../../js/prismjs/prism-clike.min.js"></script>
   <script src="../../js/prismjs/prism-csharp.min.js"></script>
   <script src="../../js/prismjs/prism-line-numbers.min.js"></script>
+
   <script src="../../js/docs.js"></script>
   <script src="../../js/intellidatasort.js"></script>
   <script src="../docsjs/renderer.js"></script>

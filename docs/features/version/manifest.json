@@ -1,68 +1,87 @@
 {
-  "examples": [
+  "Variation 1": [
     {
       "folder": "example1",
-      "file": "TestBasicSemVer.cs"
+      "file": "TestBasicSemVer.cs",
+      "name": "TestBasicSemVer.cs - Major.Minor.Patch"
     },
     {
       "folder": "example2",
-      "file": "TestNumericPrerelease.cs"
+      "file": "TestNumericPrerelease.cs",
+      "name": "TestNumericPrerelease.cs - Numeric pre-release (1.0.0-1, 1.0.0-2, 1.0.0-10)"
     },
     {
       "folder": "example3",
-      "file": "TestPatchWithPrerelease.cs"
+      "file": "TestPatchWithPrerelease.cs",
+      "name": "TestPatchWithPrerelease.cs - Patch with pre-release"
     },
     {
       "folder": "example4",
-      "file": "TestVPrefix.cs"
+      "file": "TestVPrefix.cs",
+      "name": "TestVPrefix.cs - v-prefix handling (v1.0.0, v1.1.0, v1.10.0)"
     },
     {
       "folder": "example5",
-      "file": "TestWindowsBuildNumbers.cs"
+      "file": "TestWindowsBuildNumbers.cs",
+      "name": "TestWindowsBuildNumbers.cs - Windows build numbers"
     },
     {
       "folder": "example6",
-      "file": "TestWindowsSegmentLengths.cs"
+      "file": "TestWindowsSegmentLengths.cs",
+      "name": "TestWindowsSegmentLengths.cs - Windows different segment lengths"
     },
     {
       "folder": "example7",
-      "file": "TestWindowsServerVersions.cs"
+      "file": "TestWindowsServerVersions.cs",
+      "name": "TestWindowsServerVersions.cs - Windows Server versions"
     },
     {
       "folder": "example8",
-      "file": "TestWindowsInsiderBuilds.cs"
-    },
+      "file": "TestWindowsInsiderBuilds.cs",
+      "name": "TestWindowsInsiderBuilds.cs - Windows Insider builds"
+    }
+  ],
+  "Variation 2": [
     {
       "folder": "example9",
-      "file": "TestJavaUnderscoreUpdates.cs"
+      "file": "TestJavaUnderscoreUpdates.cs",
+      "name": "TestJavaUnderscoreUpdates.cs - Java underscore update numbers"
     },
     {
       "folder": "example10",
-      "file": "TestJavaLegacyVsModern.cs"
+      "file": "TestJavaLegacyVsModern.cs",
+      "name": "TestJavaLegacyVsModern.cs - Java legacy (1.7.0) vs modern (11.0.2)"
     },
     {
       "folder": "example11",
-      "file": "TestJavaEarlyAccess.cs"
+      "file": "TestJavaEarlyAccess.cs",
+      "name": "TestJavaEarlyAccess.cs - Java early-access builds"
     },
     {
       "folder": "example12",
-      "file": "TestJavaPatchOrdering.cs"
+      "file": "TestJavaPatchOrdering.cs",
+      "name": "TestJavaPatchOrdering.cs - Java patch ordering"
     },
     {
       "folder": "example13",
-      "file": "TestAndroidBetaRc.cs"
+      "file": "TestAndroidBetaRc.cs",
+      "name": "TestAndroidBetaRc.cs - Android beta/rc ordering"
     },
     {
       "folder": "example14",
-      "file": "TestLinuxKernelVersions.cs"
+      "file": "TestLinuxKernelVersions.cs",
+      "name": "TestLinuxKernelVersions.cs - Linux kernel versions"
     },
     {
       "folder": "example15",
-      "file": "TestMacOSVersions.cs"
+      "file": "TestMacOSVersions.cs",
+      "name": "TestMacOSVersions.cs - macOS versions"
     },
     {
       "folder": "example16",
-      "file": "TestIOSVersions.cs"
+      "file": "TestIOSVersions.cs",
+      "name": "TestIOSVersions.cs - iOS versions"
     }
-  ]
+  ],
+  "advanced": []
 }

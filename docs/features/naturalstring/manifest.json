@@ -1,14 +1,59 @@
 {
-  "examples": [
-    { "folder": "example1", "file": "TestLeadingZeros.cs" },
-    { "folder": "example2", "file": "TestMixedNumbersAndText.cs" },
-    { "folder": "example3", "file": "TestMultipleNumbers.cs" },
-    { "folder": "example4", "file": "TestCaseSensitivity.cs" },
-    { "folder": "example5", "file": "TestYearMonthPatterns.cs" },
-    { "folder": "example6", "file": "TestNumbersAtBeginning.cs" },
-    { "folder": "example7", "file": "TestNumbersAtEnd.cs" },
-    { "folder": "example8", "file": "TestFileNamesWithNumbers.cs" },
-    { "folder": "example9", "file": "TestDocumentVersions.cs" },
-    { "folder": "example10", "file": "TestAppVersionNames.cs" }
+  "Variation 1": [
+    {
+      "folder": "example1",
+      "file": "TestLeadingZeros.cs",
+      "name": "TestLeadingZeros.cs - Leading zeros (file001, file010, file100)"
+    },
+    {
+      "folder": "example2",
+      "file": "TestMixedNumbersAndText.cs",
+      "name": "TestMixedNumbersAndText.cs - Mixed numbers and text"
+    },
+    {
+      "folder": "example6",
+      "file": "TestNumbersAtBeginning.cs",
+      "name": "TestNumbersAtBeginning.cs - Numbers at beginning"
+    },
+    {
+      "folder": "example7",
+      "file": "TestNumbersAtEnd.cs",
+      "name": "TestNumbersAtEnd.cs - Numbers at end"
+    },
+    {
+      "folder": "example8",
+      "file": "TestFileNamesWithNumbers.cs",
+      "name": "TestFileNamesWithNumbers.cs - File names with numbers"
+    }
+  ],
+  "Variation 2": [
+    {
+      "folder": "example3",
+      "file": "TestMultipleNumbers.cs",
+      "name": "TestMultipleNumbers.cs - Multiple numbers in string"
+    },
+    {
+      "folder": "example4",
+      "file": "TestCaseSensitivity.cs",
+      "name": "TestCaseSensitivity.cs - Case sensitivity"
+    },
+    {
+      "folder": "example9",
+      "file": "TestDocumentVersions.cs",
+      "name": "TestDocumentVersions.cs - Document versions"
+    },
+    {
+      "folder": "example10",
+      "file": "TestAppVersionNames.cs",
+      "name": "TestAppVersionNames.cs - App version names"
+    }
+  ],
+  "Variation 3": [
+    {
+      "folder": "example5",
+      "file": "TestYearMonthPatterns.cs",
+      "name": "TestYearMonthPatterns.cs - Year-month patterns",
+      "badge": "Advanced"
+    }
   ]
 }

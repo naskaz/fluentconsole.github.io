@@ -1,8 +1,26 @@
 {
-  "examples": [
-    { "folder": "example1", "file": "TestPercentSymbol.cs" },
-    { "folder": "example2", "file": "TestPctAbbreviation.cs" },
-    { "folder": "example3", "file": "TestPercentWord.cs" },
-    { "folder": "example4", "file": "TestAllMixedFormats.cs" }
-  ]
+  "Variation 1": [
+    {
+      "folder": "example1",
+      "file": "TestPercentSymbol.cs",
+      "name": "TestPercentSymbol.cs - % symbol format"
+    },
+    {
+      "folder": "example2",
+      "file": "TestPctAbbreviation.cs",
+      "name": "TestPctAbbreviation.cs - 'pct' abbreviation"
+    },
+    {
+      "folder": "example3",
+      "file": "TestPercentWord.cs",
+      "name": "TestPercentWord.cs - 'percent' word format"
+    },
+    {
+      "folder": "example4",
+      "file": "TestAllMixedFormats.cs",
+      "name": "TestAllMixedFormats.cs - All formats mixed together"
+    }
+  ],
+  "intermediate": [],
+  "advanced": []
 }

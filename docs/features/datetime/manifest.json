@@ -1,15 +1,83 @@
 {
-  "examples": [
-    { "folder": "example1", "file": "DateTimeSortingDemoDayFirst.cs" },
-    { "folder": "example2", "file": "DateTimeSortingDemoMonthFirst.cs" },
-    { "folder": "example3", "file": "DateTimeSortingDemoYearFirst.cs" },
-    { "folder": "example4", "file": "DateTimeSorting24HourDemo.cs" },
-    { "folder": "example5", "file": "DateTimeSorting12HourDemo.cs" },
-    { "folder": "example6", "file": "DateTimeSortingMixAMPMDemo.cs" },
-    { "folder": "example7", "file": "DateTimeSortingMidnightNoonDemo.cs" },
-    { "folder": "example8", "file": "DateTimeSortingStabilityTestDemo.cs" },
-    { "folder": "example9", "file": "DateTimeSortingMixedPrecisionDemo.cs" },
-    { "folder": "example10", "file": "DateTimeSortingTimeZoneDSTDemo.cs" },
-    { "folder": "example11", "file": "DateTimeSortingInvalidInputsDemo.cs" }
+  "Variation 1": [
+    { "folder": "example1", "file": "DateTimeSortingDemoDayFirst.cs", "name": "Day-First Culture (en-GB)" },
+    { "folder": "example2", "file": "DateTimeSortingDemoMonthFirst.cs", "name": "Month-First Culture (en-US)" },
+    { "folder": "example3", "file": "DateTimeSortingDemoYearFirst.cs", "name": "Year-First Culture (ja-JP)" },
+    { "folder": "example4", "file": "DateTimeSorting24HourDemo.cs", "name": "24-Hour Time Format" },
+    { "folder": "example5", "file": "DateTimeSorting12HourDemo.cs", "name": "12-Hour AM/PM Format" },
+    { "folder": "example6", "file": "DateTimeSortingMixAMPMDemo.cs", "name": "AM/PM with Seconds" }
+  ],
+  "Variation 2": [
+    { 
+      "folder": "example7", 
+      "file": "DateTimeSortingMidnightNoonDemo.cs", 
+      "name": "Midnight & Noon Edge Cases" 
+    },
+    { 
+      "folder": "example8", 
+      "file": "DateTimeSortingStabilityTestDemo.cs", 
+      "name": "Stability Test (Identical Timestamps)" 
+    },
+    { 
+      "folder": "example9", 
+      "file": "DateTimeSortingMixedPrecisionDemo.cs", 
+      "name": "Mixed Precision (with/without seconds)" 
+    },
+    { 
+      "folder": "example10", 
+      "file": "DateTimeSortingTimeZoneDSTDemo.cs", 
+      "name": "Timezone & DST Transition",
+      "badge": "DST"
+    },
+    { 
+      "folder": "example11", 
+      "file": "DateTimeSortingInvalidInputsDemo.cs", 
+      "name": "Invalid Date Handling",
+      "badge": "Edge Case"
+    }
+  ],
+
+ "Variation 3": [
+    { 
+      "folder": "example12", 
+      "file": "DateTimeSortingDemoMonthNameFormat.cs",
+      "name": "DateTimeSortingDemo FullMonthName Format"
+    },
+    { 
+      "folder": "example13", 
+      "file": "DateTimeSortingDemoDayMonthAbbrYear.cs",
+      "name": "DateTimeSortingDemoDay MonthAbbr Year"
+    },
+    { 
+      "folder": "example14", 
+      "file": "DateTimeSortingDemoDayMonthFullYear.cs",
+      "name": "DateTimeSortingDemo DayMonth FullYear"
+    },
+    { 
+      "folder": "example15", 
+      "file": "DateTimeSortingDemoDayMonthAbbrYearTime.cs",
+      "name": "DateTimeSortingDemoDay MonthAbbr Year Time"
+    },
+    { 
+      "folder": "example16", 
+      "file": "DateTimeSortingDemoDayMonthFullYearTime.cs",
+      "name": "DateTimeSortingDemo DayMonth FullYear Time"
+    },
+    { 
+      "folder": "example17", 
+      "file": "DateTimeSortingDemoMixedFormats.cs",
+      "name": "DateTimeSortingDemo Mixed Formats"
+    },
+     { 
+      "folder": "example18", 
+      "file": "MonthNameVariationsSortTest.cs",
+      "name": "MonthName Variations Sort Test"
+    }
   ]
+
 }
+
+
+
+
+

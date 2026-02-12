@@ -1,226 +1,234 @@
-/**
- * Dynamic Documentation Renderer for GitHub Pages
- * - Loads feature manifests & examples via hash routing
- * - Uses Prism.js for syntax highlighting
- * - No hardcoded filenames — uses manifest.json metadata
- */
-
+// js/renderer.js - DYNAMIC VARIATION SUPPORT (uses manifest keys directly)
 (() => {
-  'use strict';
+  "use strict";
 
-  let selectEl, loaderEl, errorEl, codeEl, preEl;
-  let currentFeature = null;
-  let currentExample = null;
-  let examplesList = []; // Will store { folder, file }
+  const manifestCache = new Map();
+  const codeCache = new Map();
 
-  const FEATURES_BASE = '../features';
-
-  function init() {
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', setup);
-    } else {
-      setup();
+  // ============================================
+  // LOAD MANIFEST
+  // ============================================
+  async function loadManifest(feature) {
+    if (manifestCache.has(feature)) {
+      return manifestCache.get(feature);
+    }
+    
+    try {
+      const response = await fetch(`../../docs/features/${feature}/manifest.json`);
+      if (!response.ok) throw new Error(`Failed to load manifest for ${feature}`);
+      const manifest = await response.json();
+      manifestCache.set(feature, manifest);
+      return manifest;
+    } catch (error) {
+      console.error(`Error loading ${feature} manifest:`, error);
+      return {};
     }
   }
 
-  function setup() {
-    window.addEventListener('hashchange', handleHashChange);
-    handleHashChange();
+  // ============================================
+  // POPULATE VARIATION DROPDOWN FROM MANIFEST KEYS
+  // ============================================
+  async function populateVariationDropdown(feature, variationSelect) {
+    const manifest = await loadManifest(feature);
+    const variationKeys = Object.keys(manifest).sort(); // Sorts "Variation 1", "Variation 2", etc.
+    
+    variationSelect.innerHTML = '<option value="" selected disabled>— Select variation —</option>';
+    
+    variationKeys.forEach(key => {
+      const option = document.createElement('option');
+      option.value = key; // Use the full key name like "Variation 1"
+      option.textContent = key; // Display "Variation 1", "Variation 2", etc.
+      
+      // Optional: Show count in dropdown
+      const count = manifest[key].length;
+      if (count > 0) {
+        option.textContent += ` (${count} ${count === 1 ? 'example' : 'examples'})`;
+      }
+      
+      variationSelect.appendChild(option);
+    });
   }
 
-  function handleHashChange() {
-    const hash = window.location.hash.substring(1);
-    if (!hash) return;
-
-    const validFeatures = ['number', 'datetime', 'naturalstring', 'plainstring', 'ipaddress', 'percentage', 'filesize', 'version', 'currency'];
-    if (!validFeatures.includes(hash)) return;
-
-    loadFeature(hash);
+  // ============================================
+  // POPULATE EXAMPLE DROPDOWN BASED ON SELECTED VARIATION
+  // ============================================
+  async function populateExamplesByVariation(feature, variationKey, exampleSelect) {
+    const manifest = await loadManifest(feature);
+    const examples = manifest[variationKey] || [];
+    
+    exampleSelect.innerHTML = '<option value="" selected>— Select an example —</option>';
+    exampleSelect.disabled = false;
+    
+    examples.forEach((ex, index) => {
+      const option = document.createElement('option');
+      option.value = `docs/features/${feature}/${ex.folder}/${ex.file}`;
+      
+      let displayName = `${index + 1}. ${ex.name}`;
+      if (ex.badge) displayName += ` [${ex.badge}]`;
+      
+      option.textContent = displayName;
+      option.dataset.folder = ex.folder;
+      if (ex.badge) option.dataset.badge = ex.badge;
+      
+      exampleSelect.appendChild(option);
+    });
+    
+    const countEl = document.querySelector(`[data-feature="${feature}"] .example-count`);
+    if (countEl) {
+      const count = examples.length;
+      countEl.textContent = `${count} ${count === 1 ? 'example' : 'examples'} in ${variationKey}`;
+    }
   }
 
-  async function loadFeature(featureName) {
+  // ============================================
+  // LOAD EXAMPLE CODE
+  // ============================================
+  async function loadExampleCode(filePath) {
+    if (codeCache.has(filePath)) {
+      return codeCache.get(filePath);
+    }
+    
+    try {
+      const response = await fetch(`../../${filePath}`);
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      const content = await response.text();
+      
+      let code = cleanCodeForDisplay(content);
+      
+      codeCache.set(filePath, code);
+      return code;
+    } catch (error) {
+      console.error(`Failed to load ${filePath}:`, error);
+      return `// Failed to load example: ${filePath}\n// ${error.message}`;
+    }
+  }
 
-    if (featureName === currentFeature) return;
+  // ============================================
+  // CLEAN CODE FOR DISPLAY
+  // ============================================
+  function cleanCodeForDisplay(content) {
+    let lines = content.split('\n');
+    
+    while (lines.length > 0 && lines[0].trim() === '') lines.shift();
+    while (lines.length > 0 && lines[lines.length - 1].trim() === '') lines.pop();
+    
+    return lines.join('\n');
+  }
 
-    resetUI();
-    currentFeature = featureName;
-    currentExample = null;
-    examplesList = [];
-
-    const container = document.querySelector(
-      `[data-feature="${featureName}"]`
-    );
-    if (!container) {
-      console.warn('[renderer] No [data-feature-section] found');
+  // ============================================
+// SETUP EVENT LISTENERS
+// ============================================
+function setupEventListeners(feature) {
+  const container = document.querySelector(`[data-feature="${feature}"]`);
+  if (!container) return;
+  
+  const variationSelect = container.querySelector('.variation-selector');
+  const exampleSelect = container.querySelector('.example-selector');
+  const loader = container.querySelector('.example-loader');
+  const errorDiv = container.querySelector('.example-error');
+  const preBlock = container.querySelector('pre.line-numbers');
+  const codeElement = container.querySelector('.example-code');
+  const copyBtn = container.querySelector('.copy-code-btn'); // ✅ Defined here
+  
+  // Populate variation dropdown on page load
+  if (variationSelect) {
+    populateVariationDropdown(feature, variationSelect);
+  }
+  
+  variationSelect?.addEventListener('change', async (e) => {
+    const variationKey = e.target.value;
+    if (!variationKey) return;
+    
+    exampleSelect.value = '';
+    preBlock?.classList.add('d-none');
+    
+    exampleSelect.innerHTML = '<option value="" selected>Loading examples...</option>';
+    exampleSelect.disabled = true;
+    
+    await populateExamplesByVariation(feature, variationKey, exampleSelect);
+  });
+  
+  exampleSelect?.addEventListener('change', async (e) => {
+    const filePath = e.target.value;
+    if (!filePath) {
+      preBlock?.classList.add('d-none');
       return;
     }
-
-    selectEl = container.querySelector('.example-select');
-    loaderEl = container.querySelector('.example-loader');
-    errorEl = container.querySelector('.example-error');
-    codeEl = container.querySelector('.example-code');
-    preEl = container.querySelector('pre.line-numbers');
-
-
+    
+    loader?.classList.remove('d-none');
+    errorDiv?.classList.add('d-none');
+    preBlock?.classList.add('d-none');
+    
     try {
-      showLoader();
-
-      const manifestUrl = `${FEATURES_BASE}/${featureName}/manifest.json`;
-      const manifestResp = await fetch(manifestUrl);
-
-
-      if (!manifestResp.ok) {
-        const text = await manifestResp.text().catch(() => '—');
-        throw new Error(`Manifest fetch failed: ${manifestResp.status} ${manifestResp.statusText}\nResponse: ${text}`);
+      const code = await loadExampleCode(filePath);
+      codeElement.textContent = code;
+      preBlock?.classList.remove('d-none');
+      
+      if (window.Prism) {
+        codeElement.classList.remove('language-csharp');
+        void codeElement.offsetWidth;
+        codeElement.classList.add('language-csharp');
+        Prism.highlightElement(codeElement);
       }
-
-      const manifest = await manifestResp.json();
-
-      examplesList = manifest.examples
-        .map(ex => ({ folder: ex.folder, file: ex.file || 'demo.cs' }))
-        .filter(ex => ex.folder);
-
-      if (examplesList.length === 0) throw new Error('No examples in manifest');
-
-      renderExampleSelector();
-      await loadExample(examplesList[0]);
-
-    } catch (err) {
-      console.error('[renderer] CRITICAL ERROR:', err);
-      showError(`Failed to load feature "${featureName}": ${err.message}`);
+      
+    } catch (error) {
+      errorDiv.textContent = `Error loading example: ${error.message}`;
+      errorDiv.classList.remove('d-none');
     } finally {
-      hideLoader();
+      loader?.classList.add('d-none');
+    }
+  });
+  
+  // ✅ FIXED: Copy button event listener - now inside setupEventListeners
+  copyBtn?.addEventListener('click', () => {
+    if (!codeElement?.textContent) return;
+    
+    navigator.clipboard.writeText(codeElement.textContent);
+    
+    // Add success class
+    copyBtn.classList.add('btn-success');
+    const icon = copyBtn.querySelector('i');
+    icon.className = 'fa-solid fa-check';
+    
+    // Remove after 2 seconds
+    setTimeout(() => {
+      copyBtn.classList.remove('btn-success');
+      icon.className = 'fa-regular fa-copy';
+    }, 2000);
+  });
+  
+  variationSelect?.addEventListener('change', (e) => {
+    if (!e.target.value) {
+      exampleSelect.innerHTML = '<option value="" selected>— First select a variation —</option>';
+      exampleSelect.disabled = true;
+      preBlock?.classList.add('d-none');
+      
+      const countEl = container.querySelector('.example-count');
+      if (countEl) countEl.textContent = '';
+    }
+  });
+}
+  
+
+
+
+  // ============================================
+  // INITIALIZE ALL FEATURES
+  // ============================================
+  async function initializeAllFeatures() {
+    const features = [
+      'datetime', 'number', 'naturalstring', 'plainstring',
+      'ipaddress', 'percentage', 'filesize', 'version', 'currency'
+    ];
+    
+    for (const feature of features) {
+      setupEventListeners(feature);
     }
   }
 
-
-  function renderExampleSelector() {
-    if (!selectEl || examplesList.length === 0) return;
-
-    selectEl.innerHTML = '';
-    examplesList.forEach(ex => {
-      const option = document.createElement('option');
-      option.value = ex.folder;
-      const displayName = ex.folder.replace(/^example(\d+)$/, 'Example $1') || ex.folder;
-      option.textContent = displayName;
-      selectEl.appendChild(option);
-    });
-
-    selectEl.disabled = false;
-    selectEl.addEventListener('change', handleExampleSelect);
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeAllFeatures);
+  } else {
+    initializeAllFeatures();
   }
-
-  async function handleExampleSelect(event) {
-    const folder = event.target.value;
-    const example = examplesList.find(ex => ex.folder === folder);
-    if (!example || example.folder === currentExample) return;
-    await loadExample(example);
-  }
-
-
-  async function loadExample(example) {
-    if (!currentFeature || !example) return;
-
-    try {
-      showLoader();
-      hideError();
-
-      const { folder, file } = example;
-      const codeUrl = `${FEATURES_BASE}/${currentFeature}/${folder}/${file}`;
-
-      const codeResp = await fetch(codeUrl);
-      if (!codeResp.ok) throw new Error(`HTTP ${codeResp.status}: ${file}`);
-
-      let codeText = await codeResp.text();
-      if (!codeText.trim()) throw new Error('Empty code file');
-
-      // ✅ MOBILE WRAP FIX: Insert zero-width space after commas inside "strings"
-      if (window.innerWidth < 768) {
-        codeText = codeText.replace(/("([^"\\]|\\.)*")/g, (match) =>
-          match.replace(/,/g, ',\u200B')
-        );
-      }
-
-      codeEl.textContent = codeText;
-      preEl.classList.remove('d-none');
-
-      if (typeof Prism !== 'undefined') {
-        Prism.highlightElement(codeEl);
-      }
-
-      const copyBtn = codeEl.closest('.feature-examples')?.querySelector('.copy-code-btn');
-      if (copyBtn) {
-        const oldListener = copyBtn._clickListener;
-        if (oldListener) copyBtn.removeEventListener('click', oldListener);
-
-        const newListener = () => {
-          navigator.clipboard.writeText(codeText).then(() => {
-            const originalIcon = copyBtn.innerHTML;
-            copyBtn.innerHTML = '<i class="fa-solid fa-check"></i>';
-            copyBtn.classList.replace('btn-outline-secondary', 'btn-success');
-            setTimeout(() => {
-              copyBtn.innerHTML = originalIcon;
-              copyBtn.classList.replace('btn-success', 'btn-outline-secondary');
-            }, 2000);
-          }).catch(err => {
-            console.error('Copy failed:', err);
-          });
-        };
-
-        copyBtn.addEventListener('click', newListener);
-        copyBtn._clickListener = newListener;
-      }
-
-      currentExample = folder;
-
-    } catch (err) {
-      showError(`Failed to load example: ${err.message}`);
-      console.error('Example load error:', err);
-      preEl.classList.add('d-none');
-    } finally {
-      hideLoader();
-    }
-  }
-
-  function showLoader() {
-    if (loaderEl) loaderEl.classList.remove('d-none');
-  }
-
-  function hideLoader() {
-    if (loaderEl) loaderEl.classList.add('d-none');
-  }
-
-  function showError(message) {
-    if (errorEl) {
-      errorEl.textContent = message;
-      errorEl.classList.remove('d-none');
-    }
-  }
-
-  function hideError() {
-    if (errorEl) errorEl.classList.add('d-none');
-  }
-
-  function resetUI() {
-    if (selectEl) {
-      selectEl.innerHTML = '<option>Loading examples...</option>';
-      selectEl.disabled = true;
-      selectEl.removeEventListener('change', handleExampleSelect);
-    }
-    if (preEl) preEl.classList.add('d-none');
-    hideError();
-  }
-
-  window.reloadFeatureExamples = () => {
-    const hash = window.location.hash.substring(1);
-    const validFeatures = ['number', 'datetime', 'naturalstring', 'plainstring', 'ipaddress', 'percentage', 'filesize', 'version', 'currency'];
-    if (validFeatures.includes(hash)) {
-      // Reset state to force reload
-      currentFeature = null;
-      handleHashChange();
-    }
-  };
-
-  init();
 })();
-

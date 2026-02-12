@@ -1,17 +1,78 @@
 {
-  "examples": [
-    { "folder": "example1", "file": "Test1_PositiveIntegers.cs" },
-    { "folder": "example2", "file": "Test2_NegativeIntegers.cs" },
-    { "folder": "example3", "file": "Test3_MixedIntegers.cs" },
-    { "folder": "example4", "file": "Test4_PositiveDecimals.cs" },
-    { "folder": "example5", "file": "Test5_PositiveMixedDecimals.cs" },
-    { "folder": "example6", "file": "Test6_NegativeDecimals.cs" },
-    { "folder": "example7", "file": "Test7_NegativeMixedDecimals.cs" },
-    { "folder": "example8", "file": "Test8_MixedPositiveNegativeDecimals.cs" },
-    { "folder": "example9", "file": "Test9_AllDecimals.cs" },
-    { "folder": "example10", "file": "Test10_AllTypesMixed.cs" },
-    { "folder": "example11", "file": "Test11_ScientificNotation.cs" },
-    { "folder": "example12", "file": "InvalidInputRejectionTest.cs" },
-    { "folder": "example13", "file": "NumberParserOWASPSecurityTest.cs" }
+  "Variation 1": [
+    { 
+      "folder": "example1", 
+      "file": "Test1_PositiveIntegers.cs", 
+      "name": "Positive Integers" 
+    },
+    { 
+      "folder": "example2", 
+      "file": "Test2_NegativeIntegers.cs", 
+      "name": "Negative Integers" 
+    },
+    { 
+      "folder": "example3", 
+      "file": "Test3_MixedIntegers.cs", 
+      "name": "Mixed Integers" 
+    },
+    { 
+      "folder": "example4", 
+      "file": "Test4_PositiveDecimals.cs", 
+      "name": "Positive Decimals (1 decimal place)" 
+    },
+    { 
+      "folder": "example5", 
+      "file": "Test5_PositiveMixedDecimals.cs", 
+      "name": "Positive Mixed Decimals (varying places)" 
+    },
+    { 
+      "folder": "example6", 
+      "file": "Test6_NegativeDecimals.cs", 
+      "name": "Negative Decimals (1 decimal place)" 
+    },
+    { 
+      "folder": "example7", 
+      "file": "Test7_NegativeMixedDecimals.cs", 
+      "name": "Negative Mixed Decimals (varying places)" 
+    }
+  ],
+  "Variation 2": [
+    { 
+      "folder": "example8", 
+      "file": "Test8_MixedPositiveNegativeDecimals.cs", 
+      "name": "Mixed Positive/Negative Decimals" 
+    },
+    { 
+      "folder": "example9", 
+      "file": "Test9_AllDecimals.cs", 
+      "name": "All Decimal Types (varying precision)" 
+    },
+    { 
+      "folder": "example10", 
+      "file": "Test10_AllTypesMixed.cs", 
+      "name": "All Types Mixed (integers & decimals)" 
+    },
+    { 
+      "folder": "example11", 
+      "file": "Test11_ScientificNotation.cs", 
+      "name": "Scientific Notation",
+      "badge": "1e2"
+    }
+  ],
+  "Variation 3": [
+    { 
+      "folder": "example12", 
+      "file": "InvalidInputRejectionTest.cs", 
+      "name": "Invalid Input Rejection Test",
+      "badge": "Validation",
+      "badgeClass": "bg-warning"
+    },
+    { 
+      "folder": "example13", 
+      "file": "NumberParserOWASPSecurityTest.cs", 
+      "name": "OWASP Security Test",
+      "badge": "SECURITY",
+      "badgeClass": "bg-danger"
+    }
   ]
 }

@@ -1,17 +1,61 @@
 {
-  "examples": [
-    
-    { "folder": "example1", "file": "TestIndianRupee.cs" },
-    { "folder": "example2", "file": "TestUSDDollar.cs" },
-    { "folder": "example3", "file": "TestChineseYuan.cs" },
-    { "folder": "example4", "file": "TestEuro.cs" },
-    { "folder": "example5", "file": "TestBritishPound.cs" },
-    { "folder": "example6", "file": "TestJapaneseYen.cs" },
-    { "folder": "example7", "file": "TestKoreanWon.cs" },
-    { "folder": "example8", "file": "TestRussianRuble.cs" },
-    { "folder": "example9", "file": "TestTurkishLira.cs" },
-    { "folder": "example10", "file": "TestPolishZloty.cs" },
-    { "folder": "example11", "file": "TestIsraeliShekel.cs" }
-    
-  ]
+  "Variation 1": [
+    {
+      "folder": "example1",
+      "file": "TestIndianRupee.cs",
+      "name": "TestIndianRupee.cs - Indian Rupee (₹)"
+    },
+    {
+      "folder": "example2",
+      "file": "TestUSDDollar.cs",
+      "name": "TestUSDDollar.cs - US Dollar ($)"
+    },
+    {
+      "folder": "example3",
+      "file": "TestChineseYuan.cs",
+      "name": "TestChineseYuan.cs - Chinese Yuan (¥)"
+    },
+    {
+      "folder": "example4",
+      "file": "TestEuro.cs",
+      "name": "TestEuro.cs - Euro (€)"
+    },
+    {
+      "folder": "example5",
+      "file": "TestBritishPound.cs",
+      "name": "TestBritishPound.cs - British Pound (£)"
+    },
+    {
+      "folder": "example6",
+      "file": "TestJapaneseYen.cs",
+      "name": "TestJapaneseYen.cs - Japanese Yen (¥)"
+    },
+    {
+      "folder": "example7",
+      "file": "TestKoreanWon.cs",
+      "name": "TestKoreanWon.cs - Korean Won (₩)"
+    },
+    {
+      "folder": "example8",
+      "file": "TestRussianRuble.cs",
+      "name": "TestRussianRuble.cs - Russian Ruble (₽)"
+    },
+    {
+      "folder": "example9",
+      "file": "TestTurkishLira.cs",
+      "name": "TestTurkishLira.cs - Turkish Lira (₺)"
+    },
+    {
+      "folder": "example10",
+      "file": "TestPolishZloty.cs",
+      "name": "TestPolishZloty.cs - Polish Złoty (zł)"
+    },
+    {
+      "folder": "example11",
+      "file": "TestIsraeliShekel.cs",
+      "name": "TestIsraeliShekel.cs - Israeli Shekel (₪)"
+    }
+  ],
+  "Variation 2": [],
+  "Variation 3": []
 }
