@@ -37,6 +37,5 @@
       "file": "TestBinaryAndDecimalMixed.cs",
       "name": "TestBinaryAndDecimalMixed.cs - Binary (KiB) vs Decimal (KB) units"
     }
-  ],
-  "advanced": []
+  ]
 }
