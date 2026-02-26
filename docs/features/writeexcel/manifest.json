@@ -1,0 +1,14 @@
+{
+  "Basic Examples": [
+    {
+      "folder": "example1",
+      "file": "ExcelWritePubs.cs",
+      "name": "VelocityExcel Pubs Employee Export Demo"
+    },
+    {
+      "folder": "example2",
+      "file": "ExcelWriteNorthWind.cs",
+      "name": "VelocityExcel NorthWind Employee Export Demo"
+    }
+  ]
+}

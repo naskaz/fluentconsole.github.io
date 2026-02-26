@@ -1,0 +1,16 @@
+{
+  "Basic Examples": [
+    {
+      "folder": "example1",
+      "file": "ExcelReadPubs.cs",
+      "name": "Reading Pubs Employee Data from Excel"
+    },
+    {
+      "folder": "example2",
+      "file": "ExcelReadNorthWind.cs",
+      "name": "Reading NorthWind Orders Data from Excel"
+    }
+  ]
+}
+
+

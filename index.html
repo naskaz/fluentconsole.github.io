@@ -37,6 +37,10 @@
              data-bs-display="static" id="productsDropdown"
              data-bs-auto-close="inside">Documents</a>
             <ul class="dropdown-menu dropdown-menu-end shadow-sm">
+              <li><a class="dropdown-item d-flex align-items-center gap-2" href="docs/velocityexcel/index.html">
+                <i class="fa-regular fa-file-excel text-primary"></i> VelocityExcel
+              </a></li>
+              <li><hr class="dropdown-divider" /></li>
               <li><a class="dropdown-item d-flex align-items-center gap-2" href="docs/intellidatasort/index.html">
                 <i class="fa-solid fa-arrow-up-wide-short text-primary"></i> IntelliDataSort
               </a></li>
@@ -63,9 +67,10 @@
           for .NET applications.
         </p>
 
-        <div class="mt-4 d-flex flex-wrap justify-content-center gap-3">
+        
+        <div class="mt-4 d-flex flex-wrap justify-content-center gap-3 equal-width-buttons px-3 px-sm-4">
   <!-- FluidWidth Button -->
-  <div class="text-center">
+  <div class="text-center button-wrapper">
     <a href="https://www.nuget.org/packages/FluidWidth" target="_blank"
        class="btn btn-outline-primary d-inline-flex align-items-center px-4 py-2 nuget-btn">
       <div class="text-start me-3">
@@ -81,7 +86,7 @@
   </div>
 
   <!-- IntelliDataSort Button -->
-  <div class="text-center">
+  <div class="text-center button-wrapper">
     <a href="https://www.nuget.org/packages/IntelliDataSort" target="_blank"
        class="btn btn-outline-primary d-inline-flex align-items-center px-4 py-2 nuget-btn">
       <div class="text-start me-3">
@@ -95,7 +100,25 @@
       Available on NuGet
     </div>
   </div>
+
+  <!-- VelocityExcel Button -->
+  <div class="text-center button-wrapper">
+    <a href="https://www.nuget.org/packages/VelocityExcel" target="_blank"
+       class="btn btn-outline-primary d-inline-flex align-items-center px-4 py-2 nuget-btn">
+      <div class="text-start me-3">
+        <div class="fw-bold">VelocityExcel</div>
+        <div class="small text-muted">High-Performance Excel Processing</div>
+      </div>
+      <i class="fa-solid fa-external-link-alt ms-2"></i>
+    </a>
+    <div class="mt-2 text-muted small">
+      <i class="fa-solid fa-box me-1"></i>
+      Available on NuGet
+    </div>
+  </div>
 </div>
+        
+
 
         <!-- FluentConsoleTable Banner -->
         <div

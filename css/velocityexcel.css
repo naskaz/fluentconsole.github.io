@@ -1,0 +1,371 @@
+/* Hide all sections by default */
+#main-content section {
+  display: none;
+}
+
+/* Show active section */
+#main-content section.active {
+  display: block;
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Mobile-first introduction styles */
+
+.world-record-banner {
+  background: white;
+  border-radius: 1.5rem;
+  padding: 2.5rem 2rem;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+@media (min-width: 768px) {
+  .world-record-banner {
+    padding: 3rem;
+  }
+}
+
+.badge-pill-custom {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1.25rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: 40px;
+  background: #f8f9fa;
+  color: #2c3e50;
+  border: 1px solid #e9ecef;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+  transition: all 0.2s ease;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.badge-pill-custom:hover {
+  background: #e95420;
+  color: white;
+  border-color: #e95420;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(233, 84, 32, 0.15);
+}
+
+.badge-pill-custom:hover i {
+  color: white !important;
+}
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+
+@media (min-width: 576px) {
+  .stat-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+.stat-item {
+  background: #f8f9fa;
+  border-radius: 1.25rem;
+  padding: 1.25rem 1rem;
+  text-align: center;
+  border: 1px solid #e9ecef;
+  transition: all 0.2s ease;
+}
+
+.stat-item:hover {
+  border-color: #e95420;
+  box-shadow: 0 8px 20px rgba(233, 84, 32, 0.08);
+  transform: translateY(-2px);
+  background: white;
+}
+
+.stat-value {
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #1a1e24;
+  margin-bottom: 0.25rem;
+}
+
+@media (min-width: 768px) {
+  .stat-value {
+    font-size: 2.25rem;
+  }
+}
+
+.stat-label {
+  font-size: 0.7rem;
+  color: #6c757d;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+}
+
+@media (min-width: 768px) {
+  .stat-label {
+    font-size: 0.75rem;
+  }
+}
+
+.world-record-banner h2 {
+  color: #1a1e24;
+  letter-spacing: -0.02em;
+}
+
+.world-record-banner .lead {
+  font-size: 1.1rem;
+  max-width: 90%;
+}
+
+@media (max-width: 768px) {
+  .world-record-banner {
+    padding: 1.5rem 1.25rem;
+    border-radius: 1.25rem;
+  }
+  
+  .world-record-banner h2 {
+    font-size: 1.75rem;
+  }
+  
+  .world-record-banner .lead {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+  
+  .stat-item {
+    padding: 1rem 0.5rem;
+  }
+  
+  .badge-pill-custom {
+    padding: 0.4rem 1rem;
+    font-size: 0.7rem;
+  }
+}
+
+.feature-card {
+  background: white;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  height: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(233, 84, 32, 0.1);
+}
+
+.feature-icon {
+  font-size: 2rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(233, 84, 32, 0.1);
+  border-radius: 1rem;
+  margin-bottom: 1.25rem;
+  color: #e95420;
+}
+
+.feature-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.feature-value {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #e95420;
+  line-height: 1.2;
+  margin-bottom: 0.25rem;
+}
+
+@media (min-width: 768px) {
+  .feature-value {
+    font-size: 2rem;
+  }
+}
+
+.feature-compare {
+  font-size: 0.8rem;
+  color: #28a745;
+  font-weight: 500;
+}
+
+.table-comparison {
+  font-size: 0.9rem;
+}
+
+@media (max-width: 576px) {
+  .table-comparison {
+    font-size: 0.8rem;
+  }
+  .table-comparison td, 
+  .table-comparison th {
+    padding: 0.75rem 0.5rem;
+  }
+}
+
+.victory-row {
+  background: rgba(233, 84, 32, 0.05);
+  font-weight: 600;
+}
+
+.victory-row td {
+  border-left: 3px solid #e95420;
+}
+
+.badge-world-record {
+  background: #ffc107;
+  color: #000;
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  border-radius: 2rem;
+  font-size: 0.7rem;
+  display: inline-block;
+  margin-left: 0.5rem;
+}
+
+.achievement-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  background: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.achievement-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  background: rgba(233, 84, 32, 0.1);
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #e95420;
+  font-size: 1.25rem;
+}
+
+
+/* Installation section styles - matching IntelliDataSort */
+
+.intellidatasort-code-block pre {
+  overflow-x: auto;
+  font-size: 0.95rem;
+}
+
+/* === PRISM CODE BLOCK FIXES — MUST OVERRIDE BOOTSTRAP & CUSTOM STYLES === */
+
+.intellidatasort-code-block pre.line-numbers {
+  /* Reset Bootstrap interference */
+  margin: 0 !important;
+  padding: 1.25rem 1.5rem !important; /* Enough for line numbers + code */
+  background-color: #fdfdfd !important; /* Prism default light */
+  border-radius: 0.5rem !important;
+  border: 1px solid #e9ecef !important;
+  overflow-x: auto !important;
+  font-family: 'SFMono-Regular', Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace !important;
+  font-size: 0.875rem !important;
+  line-height: 1.5 !important;
+  tab-size: 2 !important;
+  position: relative !important;
+}
+
+/* Ensure line numbers are visible and aligned */
+.intellidatasort-code-block pre.line-numbers > code {
+  display: block !important;
+  padding-left: 0 !important;
+  white-space: pre !important;
+  overflow: visible !important;
+}
+
+/* Line number styling (override Prism's default if needed) */
+.intellidatasort-code-block pre.line-numbers .line-numbers-rows {
+  border-right: 1px solid #e9ecef !important;
+  padding-right: 0.75rem !important;
+  padding-left: 0.5rem !important;
+}
+
+.intellidatasort-code-block pre.line-numbers .line-numbers-rows > span {
+  color: #6c757d !important;
+  font-size: 0.875rem !important;
+  user-select: none !important;
+}
+
+/* For mobile: prevent horizontal overflow from breaking layout */
+@media (max-width: 768px) {
+  .intellidatasort-code-block pre.line-numbers {
+    padding: 1rem 1.25rem !important;
+    font-size: 0.8125rem !important;
+    padding-left: 3.2em; /* Make room for line numbers */
+  }
+}
+
+/* Mobile adjustments for headings and text */
+@media (max-width: 767.98px) {
+  
+  #installation h2 {
+    font-size: 1.35rem;
+    line-height: 1.3;
+  }
+  
+  #installation h4 {
+    font-size: 1rem;
+    line-height: 1.4;
+    margin-top: 1.25rem;
+    margin-bottom: 0.6rem;
+  }
+  
+  #installation p {
+    font-size: 0.95rem;
+    margin-bottom: 0.85rem;
+  }
+  
+  .badge.bg-secondary {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.4rem;
+  }
+}
+
+/* Ensure code blocks don't get too tall */
+pre.line-numbers {
+  max-height: 600px;
+  overflow: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* Ensure proper wrapping for long lines */
+code.language-bash,
+code.language-powershell,
+code.language-xml {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+i.fa-chevron-down.rotated {
+  transform: rotate(180deg);
+  transition: transform 0.2s ease;
+}
+
+
+
+
+
+
+

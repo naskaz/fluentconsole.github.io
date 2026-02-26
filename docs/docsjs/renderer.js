@@ -218,7 +218,8 @@ function setupEventListeners(feature) {
   async function initializeAllFeatures() {
     const features = [
       'datetime', 'number', 'naturalstring', 'plainstring',
-      'ipaddress', 'percentage', 'filesize', 'version', 'currency'
+      'ipaddress', 'percentage', 'filesize', 'version', 'currency',
+      'readexcel', 'writeexcel'
     ];
     
     for (const feature of features) {

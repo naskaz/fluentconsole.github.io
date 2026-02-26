@@ -377,6 +377,73 @@ header.bg-light {
 }
 
 
+/* Equal width buttons for desktop and mobile */
+.equal-width-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
 
+.equal-width-buttons .button-wrapper {
+  flex: 1 1 0;
+  min-width: 250px; /* Minimum width before wrapping */
+  max-width: 300px; /* Maximum width to prevent too wide on desktop */
+  display: flex;
+  flex-direction: column;
+}
 
+.equal-width-buttons .nuget-btn {
+  width: 100%; /* Make button fill the wrapper */
+  height: 100%; /* Make button fill wrapper height */
+  min-height: 85px; /* Minimum height for consistency */
+  justify-content: space-between; /* Spread content */
+  align-items: center;
+  display: flex;
+}
 
+.equal-width-buttons .nuget-btn .text-start {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.equal-width-buttons .nuget-btn .fw-bold {
+  white-space: nowrap; /* Prevent product name from wrapping on desktop */
+}
+
+.equal-width-buttons .nuget-btn .small {
+  white-space: nowrap; /* Prevent description from wrapping on desktop */
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+  .equal-width-buttons .button-wrapper {
+    min-width: 280px; /* Slightly larger minimum on mobile */
+    max-width: 100%; /* Allow full width if needed */
+  }
+  
+  .equal-width-buttons .nuget-btn {
+    min-height: 80px;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  
+  /* Allow text to wrap on mobile */
+  .equal-width-buttons .nuget-btn .fw-bold,
+  .equal-width-buttons .nuget-btn .small {
+    white-space: normal;
+  }
+}
+
+/* Very small screens */
+@media (max-width: 400px) {
+  .equal-width-buttons .button-wrapper {
+    min-width: 100%; /* Full width on very small screens */
+  }
+  
+  .equal-width-buttons .nuget-btn {
+    min-height: 70px;
+  }
+}

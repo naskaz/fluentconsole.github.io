@@ -1,0 +1,544 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+  <title>VelocityExcel — Documentation</title>
+
+  <!-- Your existing assets -->
+  <link href="../../css/bstrap/bootstrap.min.css" rel="stylesheet" />
+  <link href="../../css/fawesome/all.min.css" rel="stylesheet" />
+  <link href="../../css/prismcss/prism.min.css" rel="stylesheet" />
+  <link href="../../css/prismcss/prism-line-numbers.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../../css/docs.css" />
+  <link rel="stylesheet" href="../../css/velocityexcel.css" />
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+
+  <!-- EXACT NAVBAR FROM MAIN SITE -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-semibold" href="../../index.html">
+        <i class="fa-solid fa-terminal me-2"></i>
+        FluentConsoleBuilder
+      </a>
+
+
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+        <span class="visually-hidden">Toggle navigation</span>
+      </button>
+
+
+
+
+      <div id="nav" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="../../index.html#showcase">Showcase</a></li>
+          <li class="nav-item"><a class="nav-link" href="../../index.html#overview">Overview</a></li>
+          <li class="nav-item"><a class="nav-link" href="../../index.html#features">Features</a></li>
+          <li class="nav-item"><a class="nav-link" href="../../index.html#evidence">Evidence</a></li>
+          <li class="nav-item"><a class="nav-link" href="../../index.html#code">Code</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Documents</a>
+            <ul class="dropdown-menu dropdown-menu-end shadow-sm">
+              <li><a class="dropdown-item d-flex align-items-center gap-2" href="./index.html">
+                  <i class="fa-regular fa-file-excel text-primary"></i> VelocityExcel
+                </a>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li><a class="dropdown-item d-flex align-items-center gap-2" href="../intellidatasort/index.html">
+                  <i class="fa-solid fa-arrow-up-wide-short text-primary"></i> IntelliDataSort
+                </a>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li><a class="dropdown-item d-flex align-items-center gap-2" href="../fluidwidth/index.html"
+                  aria-current="page">
+                  <i class="fa-solid fa-ruler-horizontal text-primary"></i> FluidWidth
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="../../index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MAIN LAYOUT -->
+  <div class="flex-grow-1 d-flex docs-main-layout" style="margin-top: 56px;">
+
+
+    <!-- SIDEBAR -->
+    <aside id="sidebar" class="bg-light border-end overflow-y-auto">
+      <!-- MOBILE CLOSE BUTTON -->
+      <button id="sidebar-close-btn" class="btn position-absolute top-0 end-0 m-2 d-md-none" aria-label="Close sidebar">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="p-3">
+        <h5 class="text-primary mb-3">VelocityExcel Docs</h5>
+        <ul class="nav flex-column nav-pills">
+          <li class="nav-item"><a class="nav-link active" href="#introduction">Introduction</a></li>
+          <li class="nav-item"><a class="nav-link" href="#installation">Installation</a></li>
+
+          <!-- Examples Dropdown -->
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="collapse" href="#examples-collapse" role="button" aria-expanded="false">
+              Examples <i class="fa-solid fa-chevron-down ms-2"></i>
+            </a>
+            <div class="collapse" id="examples-collapse">
+              <ul class="nav flex-column ms-3 mt-1">
+                <li class="nav-item"><a class="nav-link" href="#read-excel">Read Excel</a></li>
+                <li class="nav-item"><a class="nav-link" href="#write-excel">Write Excel</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </aside>
+
+
+
+    <!-- MOBILE TOGGLE -->
+    <button id="sidebar-toggle-btn"
+      class="btn btn-outline-primary d-md-none position-fixed start-0 top-50 translate-middle-y z-3 rounded-0 rounded-end">
+      <i class="fa-solid fa-chevron-right"></i>
+    </button>
+
+
+    <!-- MAIN CONTENT -->
+<main id="main-content" class="flex-grow-1 p-3 p-md-4 overflow-auto">
+  <div class="container-fluid">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h1>VelocityExcel Documentation</h1>
+      <span class="badge bg-secondary">v1.0.1</span>
+    </div>
+
+    <!-- Introduction Section -->
+            <!-- Sections — all static, no JS injection -->
+        <section id="introduction" class="mb-5 active">
+          <!-- World Record Banner -->
+
+          <div class="world-record-banner">
+            <div class="d-flex flex-wrap gap-2 mb-3">
+              <span class="badge-pill-custom"><i class="fa-solid fa-trophy me-1"></i> World Record Holder</span>
+              <span class="badge-pill-custom"><i class="fa-solid fa-gem me-1"></i> Perfect GC</span>
+              <span class="badge-pill-custom"><i class="fa-solid fa-chart-line me-1"></i> 0% Variance</span>
+            </div>
+
+            <h2 class="display-5 fw-bold mb-3">2.6 Million Cells Per Second</h2>
+            <p class="lead mb-4">The only Excel library that dominates both reads and writes at massive scale. No
+              compromises. No competition.</p>
+
+            <!-- Stats Grid -->
+            <div class="stat-grid">
+              <div class="stat-item">
+                <div class="stat-value">10 to 15 sec</div>
+                <div class="stat-label">Write 1M rows</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-value">40 to 45 sec</div>
+                <div class="stat-label">Read 1M rows</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-value">40 to 45 MB</div>
+                <div class="stat-label">Memory usage</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-value">0%</div>
+                <div class="stat-label">GC variance</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Feature Cards -->
+          <div class="row g-3 g-md-4 mb-5">
+            <div class="col-6 col-lg-3">
+              <div class="feature-card">
+                <div class="feature-icon">
+                  <i class="fa-solid fa-bolt"></i>
+                </div>
+                <div class="feature-title">Write Speed</div>
+                <div class="feature-value">2.62M</div>
+                <div class="small text-muted mb-2">cells/second</div>
+                <div class="feature-compare">
+                  <i class="fa-solid fa-arrow-up me-1"></i>Faster
+                </div>
+              </div>
+            </div>
+
+            <div class="col-6 col-lg-3">
+              <div class="feature-card">
+                <div class="feature-icon">
+                  <i class="fa-solid fa-book-open"></i>
+                </div>
+                <div class="feature-title">Read Speed</div>
+                <div class="feature-value">24.8K</div>
+                <div class="small text-muted mb-2">rows/second</div>
+                <div class="feature-compare">
+                  <i class="fa-solid fa-arrow-up me-1"></i>Faster
+                </div>
+              </div>
+            </div>
+
+            <div class="col-6 col-lg-3">
+              <div class="feature-card">
+                <div class="feature-icon">
+                  <i class="fa-solid fa-microchip"></i>
+                </div>
+                <div class="feature-title">Memory</div>
+                <div class="feature-value">38.6</div>
+                <div class="small text-muted mb-2">MB for 1M rows</div>
+                <div class="feature-compare">
+                  <i class="fa-solid fa-arrow-down me-1"></i>Lowest
+                </div>
+              </div>
+            </div>
+
+            <div class="col-6 col-lg-3">
+              <div class="feature-card">
+                <div class="feature-icon">
+                  <i class="fa-solid fa-gem"></i>
+                </div>
+                <div class="feature-title">GC Perfect</div>
+                <div class="feature-value">0%</div>
+                <div class="small text-muted mb-2">variance</div>
+                <div class="feature-compare">
+                  <i class="fa-solid fa-check-circle me-1"></i>Deterministic
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Performance Comparison -->
+          <div class="card shadow-sm mb-5">
+            <div class="card-header bg-primary text-white py-3">
+              <h3 class="h5 mb-0 fw-bold">
+                <i class="fa-solid fa-chart-simple me-2"></i>Performance Comparison
+              </h3>
+            </div>
+            <div class="card-body p-0">
+              <div class="table-responsive">
+                <table class="table table-comparison mb-0">
+                  <thead class="table-light">
+                    <tr>
+                      <th class="px-3 px-md-4 py-3">Metric</th>
+                      <th class="px-3 px-md-4 py-3 text-end">VelocityExcel</th>
+                      <th class="px-3 px-md-4 py-3 text-end">Other Library</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="victory-row">
+                      <td class="px-3 px-md-4 py-3">
+                        <i class="fa-solid fa-crown text-warning me-2"></i>Write (1M rows)
+                      </td>
+                      <td class="px-3 px-md-4 py-3 text-end fw-bold text-success">10 to 15 sec</td>
+                      <td class="px-3 px-md-4 py-3 text-end text-danger fw-bold">Very Long</td>
+                    </tr>
+                    <tr class="victory-row">
+                      <td class="px-3 px-md-4 py-3">
+                        <i class="fa-solid fa-crown text-warning me-2"></i>Read (1M rows)
+                      </td>
+                      <td class="px-3 px-md-4 py-3 text-end fw-bold text-success">40 to 45 sec</td>
+                      <td class="px-3 px-md-4 py-3 text-end text-danger fw-bold">Very Long</td>
+                    </tr>
+                    <tr class="victory-row">
+                      <td class="px-3 px-md-4 py-3">
+                        <i class="fa-solid fa-crown text-warning me-2"></i>Memory (Read)
+                      </td>
+                      <td class="px-3 px-md-4 py-3 text-end fw-bold text-success">40 to 45 MB</td>
+                      <td class="px-3 px-md-4 py-3 text-end text-danger fw-bold">Very High</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="card-footer bg-light py-2 px-3 px-md-4">
+              <small class="text-muted"><i class="fa-regular fa-circle-check text-success me-1"></i> Benchmarks:
+                <label class="fw-bold">1,000,000 rows × 29 columns</label>.</small>
+            </div>
+          </div>
+
+          <!-- World Records -->
+          <div class="row g-3 mb-4">
+            <div class="col-12">
+              <h4 class="h6 fw-bold text-uppercase text-muted mb-3">
+                <i class="fa-solid fa-medal me-2 text-warning"></i>World Records Held
+              </h4>
+              <div class="row g-2 g-md-3">
+                <div class="col-6 col-md-3">
+                  <div class="achievement-item">
+                    <div class="achievement-icon">
+                      <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <div>
+                      <div class="fw-bold">2.62M c/s</div>
+                      <small class="text-muted">Write Speed</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6 col-md-3">
+                  <div class="achievement-item">
+                    <div class="achievement-icon">
+                      <i class="fa-solid fa-book-open"></i>
+                    </div>
+                    <div>
+                      <div className="fw-bold">24.8K r/s</div>
+                      <small class="text-muted">Read Speed</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6 col-md-3">
+                  <div class="achievement-item">
+                    <div class="achievement-icon">
+                      <i class="fa-solid fa-microchip"></i>
+                    </div>
+                    <div>
+                      <div class="fw-bold">38.6 MB</div>
+                      <small class="text-muted">Memory</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6 col-md-3">
+                  <div class="achievement-item">
+                    <div class="achievement-icon">
+                      <i class="fa-solid fa-gem"></i>
+                    </div>
+                    <div>
+                      <div class="fw-bold">0% GC</div>
+                      <small class="text-muted">Variance</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Key Differentiators -->
+          <div class="bg-light p-4 rounded-3">
+            <h4 class="h6 fw-bold text-uppercase text-muted mb-3">Why VelocityExcel is Different</h4>
+            <div class="row g-3">
+              <div class="col-12 col-md-6">
+                <div class="d-flex gap-3">
+                  <i class="fa-solid fa-circle-check text-success fs-5 mt-1"></i>
+                  <div>
+                    <strong>Only library with elite speed in both operations</strong>
+                    <p class="text-muted small mb-0">Others excel at one thing. VelocityExcel dominates everything.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="d-flex gap-3">
+                  <i class="fa-solid fa-circle-check text-success fs-5 mt-1"></i>
+                  <div>
+                    <strong>Perfect garbage collection at any scale</strong>
+                    <p class="text-muted small mb-0">0% variance means predictable performance every single run.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="d-flex gap-3">
+                  <i class="fa-solid fa-circle-check text-success fs-5 mt-1"></i>
+                  <div>
+                    <strong>Linear scaling to 10M+ rows</strong>
+                    <p class="text-muted small mb-0">Others OOM at 200K. VelocityExcel scales forever.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="d-flex gap-3">
+                  <i class="fa-solid fa-circle-check text-success fs-5 mt-1"></i>
+                  <div>
+                    <strong>38.6MB memory for 1M rows</strong>
+                    <p class="text-muted small mb-0">Most efficient Excel reader ever created.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+
+                <section id="installation" class="mb-5">
+          <h2><i class="fa-solid fa-download me-2 text-primary"></i>Installation</h2>
+
+          <p class="mb-3">VelocityExcel is available as a NuGet package. Install version <span
+              class="badge bg-secondary">1.0.1</span>:</p>
+
+          <h4 class="fw-semibold mb-2"><i class="fa-solid fa-terminal text-info me-2"></i> .NET CLI</h4>
+          <div class="intellidatasort-code-block mb-4">
+            <pre class="line-numbers">
+      <code class="language-bash">dotnet add package VelocityExcel --version 1.0.1</code>
+    </pre>
+          </div>
+
+          <h4 class="fw-semibold mb-2"><i class="fa-brands fa-microsoft text-danger me-2"></i> Nuget Package Manager
+            Console</h4>
+          <div class="intellidatasort-code-block mb-4">
+            <pre class="line-numbers">
+      <code class="language-powershell">Install-Package VelocityExcel -Version 1.0.1</code>
+    </pre>
+          </div>
+
+          <h4 class="fw-semibold mb-2"><i class="fa-solid fa-file-code text-success me-2"></i> PackageReference (csproj)
+          </h4>
+          <div class="intellidatasort-code-block mb-4">
+            <pre class="line-numbers">
+      <code class="language-xml">&lt;PackageReference Include="VelocityExcel" Version="1.0.1" /&gt;</code>
+    </pre>
+          </div>
+        </section>
+
+
+
+    <!-- Read Excel Examples Section -->
+    <section id="read-excel" class="mb-5 feature-section">
+      <h2><i class="fa-solid fa-book-open me-2 text-primary"></i>Read Excel</h2>
+      <p class="text-muted mb-3">Streaming Excel reader with minimal memory footprint.</p>
+
+      <div class="feature-examples" data-feature="readexcel">
+        <!-- TWO-DROPDOWN SYSTEM - DYNAMIC VARIATIONS -->
+        <div class="row g-3 mb-4">
+          <!-- Variation Selector -->
+          <div class="col-md-5">
+            <label class="form-label fw-semibold">
+              <i class="fa-solid fa-layer-group me-1 text-primary"></i> Variation
+            </label>
+            <select class="form-select variation-selector">
+              <option value="" selected disabled>— Loading variations... —</option>
+            </select>
+          </div>
+
+          <!-- Example Selector -->
+          <div class="col-md-7">
+            <label class="form-label fw-semibold">
+              <i class="fa-solid fa-code me-1 text-primary"></i> Example
+            </label>
+            <select class="form-select example-selector" disabled>
+              <option value="" selected>— First select a variation —</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Example count -->
+        <div class="d-flex justify-content-end mb-2">
+          <small class="text-muted example-count"></small>
+        </div>
+
+        <!-- Loader -->
+        <div class="example-loader text-center py-3 d-none">
+          <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
+
+        <!-- Error message -->
+        <div class="example-error alert alert-danger d-none" role="alert"></div>
+
+        <!-- Code block with copy button -->
+        <div class="position-relative mt-3">
+          <pre class="line-numbers d-none">
+            <code class="language-csharp example-code"></code>
+          </pre>
+          <button class="btn btn-sm btn-outline-secondary copy-code-btn position-absolute top-0 end-0 m-2"
+            type="button" aria-label="Copy code to clipboard">
+            <i class="fa-regular fa-copy"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Write Excel Examples Section -->
+    <section id="write-excel" class="mb-5 feature-section">
+      <h2><i class="fa-solid fa-pen-to-square me-2 text-primary"></i>Write Excel</h2>
+      <p class="text-muted mb-3">High-performance Excel writer with world-record speed.</p>
+
+      <div class="feature-examples" data-feature="writeexcel">
+        <!-- TWO-DROPDOWN SYSTEM - DYNAMIC VARIATIONS -->
+        <div class="row g-3 mb-4">
+          <!-- Variation Selector -->
+          <div class="col-md-5">
+            <label class="form-label fw-semibold">
+              <i class="fa-solid fa-layer-group me-1 text-primary"></i> Variation
+            </label>
+            <select class="form-select variation-selector">
+              <option value="" selected disabled>— Loading variations... —</option>
+            </select>
+          </div>
+
+          <!-- Example Selector -->
+          <div class="col-md-7">
+            <label class="form-label fw-semibold">
+              <i class="fa-solid fa-code me-1 text-primary"></i> Example
+            </label>
+            <select class="form-select example-selector" disabled>
+              <option value="" selected>— First select a variation —</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Example count -->
+        <div class="d-flex justify-content-end mb-2">
+          <small class="text-muted example-count"></small>
+        </div>
+
+        <!-- Loader -->
+        <div class="example-loader text-center py-3 d-none">
+          <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
+
+        <!-- Error message -->
+        <div class="example-error alert alert-danger d-none" role="alert"></div>
+
+        <!-- Code block with copy button -->
+        <div class="position-relative mt-3">
+          <pre class="line-numbers d-none">
+            <code class="language-csharp example-code"></code>
+          </pre>
+          <button class="btn btn-sm btn-outline-secondary copy-code-btn position-absolute top-0 end-0 m-2"
+            type="button" aria-label="Copy code to clipboard">
+            <i class="fa-regular fa-copy"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+
+
+  </div>
+
+  <footer class="bg-primary text-white py-3 mt-auto">
+    <div class="container-fluid text-center">
+      <span id="footer_year"></span> FluentConsoleBuilder — All rights reserved
+  </footer>
+  </footer>
+  <script>
+    const currentYear = new Date().getFullYear();
+    document.getElementById("footer_year").textContent = currentYear;
+  </script>
+  <script src="../../js/bootstrap.bundle.min.js"></script>
+  <script src="../../js/prismjs/prism-core.min.js"></script>
+  <script src="../../js/prismjs/prism-markup.min.js"></script>
+  <script src="../../js/prismjs/prism-clike.min.js"></script>
+  <script src="../../js/prismjs/prism-csharp.min.js"></script>
+  <script src="../../js/prismjs/prism-line-numbers.min.js"></script>
+
+  <script src="../../js/docs.js"></script>
+  <script src="../../js/velocityexcel.js"></script>
+  <script src="../docsjs/renderer.js"></script>
+</body>
+
+</html>
