@@ -1,5 +1,5 @@
 {
-  "Basic Examples": [
+  "Excel Read Examples": [
     {
       "folder": "example1",
       "file": "ExcelReadPubs.cs",
@@ -9,6 +9,21 @@
       "folder": "example2",
       "file": "ExcelReadNorthWind.cs",
       "name": "Reading NorthWind Orders Data from Excel"
+    },
+    {
+      "folder": "example3",
+      "file": "ExcelMergeCellRead.cs",
+      "name": "Demo of How to Read Merge Cell Content from Excel using VelocityExcel"
+    },
+    {
+      "folder": "example4",
+      "file": "ExcelMergeCellReadComplex.cs",
+      "name": "Complex Demo of How to Read Merge Cell Content from Excel using VelocityExcel"
+    },
+    {
+      "folder": "example5",
+      "file": "ComplexExcelReader.cs",
+      "name": "ComplexExcelReader Program Demonstrating How to Read any Excel file using VelocityExcel"
     }
   ]
 }

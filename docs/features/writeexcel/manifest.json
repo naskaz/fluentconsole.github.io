@@ -9,6 +9,16 @@
       "folder": "example2",
       "file": "ExcelWriteNorthWind.cs",
       "name": "VelocityExcel NorthWind Employee Export Demo"
+    },
+    {
+      "folder": "example3",
+      "file": "ExcelMergeCellWrite.cs",
+      "name": "Basic Demo of How to Create Excel with Merged Cells using VelocityExcel"
+    },
+    {
+      "folder": "example4",
+      "file": "ExcelMergeCellWriteComplex.cs",
+      "name": "Complex Demo of How to Create Excel with Merged Cells using VelocityExcel"
     }
   ]
 }
