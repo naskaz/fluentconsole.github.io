@@ -5,7 +5,7 @@
 
   const CONFIG = {
     name: "VelocityExcel",
-    version: "1.0.3",
+    version: "1.0.4",
     sectionIds: [
       "introduction",
       "installation",
