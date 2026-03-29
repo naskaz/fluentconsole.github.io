@@ -24,6 +24,16 @@
       "folder": "example5",
       "file": "ComplexExcelReader.cs",
       "name": "ComplexExcelReader Program Demonstrating How to Read any Excel file using VelocityExcel"
+    },
+    {
+      "folder": "example6",
+      "file": "ExcelDateTimeRoundingRead.cs",
+      "name": "Basic Demo of How to Read Excel DateTime with Rounding using VelocityExcel"
+    },
+    {
+      "folder": "example7",
+      "file": "ExcelDateTimeNoRoundingRead.cs",
+      "name": "Basic Demo of How to Read Excel DateTime without Rounding using VelocityExcel"
     }
   ]
 }
