@@ -24,6 +24,11 @@
       "folder": "example5",
       "file": "ExcelDateTimeWrite.cs",
       "name": "Basic Demo of How to Create Excel with DateTime Values using VelocityExcel and to Understand Datetime Rounding while reading Excel Files"
+    },
+    {
+      "folder": "example6",
+      "file": "ExcelMergeCellWriteComplexRowSkip.cs",
+      "name": "Complex Demo of How to Create Excel with Merged Cells and Row Skipping using VelocityExcel"
     }
   ]
 }

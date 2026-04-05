@@ -34,6 +34,11 @@
       "folder": "example7",
       "file": "ExcelDateTimeNoRoundingRead.cs",
       "name": "Basic Demo of How to Read Excel DateTime without Rounding using VelocityExcel"
+    },
+    {
+      "folder": "example8",
+      "file": "ExcelMergeCellReadComplexRowSkip.cs",
+      "name": "Complex Demo of How to Read Merge Cell Content with row skipping from Excel using VelocityExcel"
     }
   ]
 }

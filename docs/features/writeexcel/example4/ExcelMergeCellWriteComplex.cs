@@ -77,8 +77,8 @@ namespace ExcelMergeCellWriteComplex
         sheet2.WriteRow(new object[] { null, new DateTime(2024, 4, 1), new DateTime(2024, 4, 15), "Pending" });
         sheet2.WriteRow(new object[] { null, new DateTime(2024, 4, 16), new DateTime(2024, 4, 30), "Pending" });
 
-        // Merge footer (A9:D9)
-        sheet2.MergeCells(9, 1, 9, 4);
+        // Merge footer (A8:D8)
+        sheet2.MergeCells(8, 1, 8, 4);
         sheet2.WriteRow(new object[] { "Note: All dates are subject to change" });
       }
 
@@ -124,8 +124,8 @@ namespace ExcelMergeCellWriteComplex
         sheet3.WriteRow(new object[] { "Europe" });
         sheet3.WriteRow(new object[] { null, "UK", "$180,000" });
 
-        // Footer (A16:F16)
-        sheet3.MergeCells(16, 1, 16, 6);
+        // Footer (A15:F15)
+        sheet3.MergeCells(15, 1, 15, 6);
         sheet3.WriteRow(new object[] { "Confidential - Internal Use Only" });
       }
 
