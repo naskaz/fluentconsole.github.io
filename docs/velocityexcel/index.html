@@ -124,6 +124,7 @@
 
     <!-- Introduction Section -->
             <!-- Sections — all static, no JS injection -->
+
         <section id="introduction" class="mb-5 active">
           <!-- World Record Banner -->
 
@@ -134,14 +135,14 @@
               <span class="badge-pill-custom"><i class="fa-solid fa-chart-line me-1"></i> 0% Variance</span>
             </div>
 
-            <h2 class="display-5 fw-bold mb-3">2.6 Million Cells Per Second</h2>
+            <h2 class="display-5 fw-bold mb-3">5 Million Cells Per Second</h2>
             <p class="lead mb-4">The only Excel library that dominates both reads and writes at massive scale. No
               compromises. No competition.</p>
 
             <!-- Stats Grid -->
             <div class="stat-grid">
               <div class="stat-item">
-                <div class="stat-value">Under 10 sec</div>
+                <div class="stat-value">Under 5 sec</div>
                 <div class="stat-label">Write 1M rows</div>
               </div>
               <div class="stat-item">
@@ -149,7 +150,7 @@
                 <div class="stat-label">Read 1M rows</div>
               </div>
               <div class="stat-item">
-                <div class="stat-value">40 to 45 MB</div>
+                <div class="stat-value">35 to 40 MB</div>
                 <div class="stat-label">Memory usage(Read)</div>
                 <div class="stat-label">For 1 million rows and 30 columns</div>
               </div>
@@ -168,7 +169,7 @@
                   <i class="fa-solid fa-bolt"></i>
                 </div>
                 <div class="feature-title">Write Speed</div>
-                <div class="feature-value">2.62M</div>
+                <div class="feature-value">5M</div>
                 <div class="small text-muted mb-2">cells/second</div>
                 <div class="feature-compare">
                   <i class="fa-solid fa-arrow-up me-1"></i>Faster
@@ -182,7 +183,7 @@
                   <i class="fa-solid fa-book-open"></i>
                 </div>
                 <div class="feature-title">Read Speed</div>
-                <div class="feature-value">24.8K</div>
+                <div class="feature-value">38.1K</div>
                 <div class="small text-muted mb-2">rows/second</div>
                 <div class="feature-compare">
                   <i class="fa-solid fa-arrow-up me-1"></i>Faster
@@ -196,7 +197,7 @@
                   <i class="fa-solid fa-microchip"></i>
                 </div>
                 <div class="feature-title">Memory</div>
-                <div class="feature-value">38.6</div>
+                <div class="feature-value">35 - 37</div>
                 <div class="small text-muted mb-2">MB for 1M rows</div>
                 <div class="feature-compare">
                   <i class="fa-solid fa-arrow-down me-1"></i>Lowest
@@ -241,7 +242,7 @@
                       <td class="px-3 px-md-4 py-3">
                         <i class="fa-solid fa-crown text-warning me-2"></i>Write (1M rows)
                       </td>
-                      <td class="px-3 px-md-4 py-3 text-end fw-bold text-success">10 to 15 sec</td>
+                      <td class="px-3 px-md-4 py-3 text-end fw-bold text-success">Under 5 sec</td>
                       <td class="px-3 px-md-4 py-3 text-end text-danger fw-bold">Very Long</td>
                     </tr>
                     <tr class="victory-row">
@@ -255,7 +256,7 @@
                       <td class="px-3 px-md-4 py-3">
                         <i class="fa-solid fa-crown text-warning me-2"></i>Memory (Read)
                       </td>
-                      <td class="px-3 px-md-4 py-3 text-end fw-bold text-success">40 to 45 MB</td>
+                      <td class="px-3 px-md-4 py-3 text-end fw-bold text-success">35 to 40 MB</td>
                       <td class="px-3 px-md-4 py-3 text-end text-danger fw-bold">Very High</td>
                     </tr>
                   </tbody>
@@ -264,7 +265,7 @@
             </div>
             <div class="card-footer bg-light py-2 px-3 px-md-4">
               <small class="text-muted"><i class="fa-regular fa-circle-check text-success me-1"></i> Benchmarks:
-                <label class="fw-bold">1,000,000 rows × 29 columns</label>.</small>
+                <label class="fw-bold">1,000,000 rows × 30 columns</label>.</small>
             </div>
           </div>
 
@@ -281,7 +282,7 @@
                       <i class="fa-solid fa-bolt"></i>
                     </div>
                     <div>
-                      <div class="fw-bold">2.62M c/s</div>
+                      <div class="fw-bold">5M c/s</div>
                       <small class="text-muted">Write Speed</small>
                     </div>
                   </div>
@@ -292,7 +293,7 @@
                       <i class="fa-solid fa-book-open"></i>
                     </div>
                     <div>
-                      <div class="fw-bold">24.8K r/s</div>
+                      <div class="fw-bold">38.1K r/s</div>
                       <small class="text-muted">Read Speed</small>
                     </div>
                   </div>
@@ -303,7 +304,7 @@
                       <i class="fa-solid fa-microchip"></i>
                     </div>
                     <div>
-                      <div class="fw-bold">38.6 MB</div>
+                      <div class="fw-bold">36.996 MB</div>
                       <small class="text-muted">Memory</small>
                     </div>
                   </div>
@@ -358,7 +359,7 @@
                 <div class="d-flex gap-3">
                   <i class="fa-solid fa-circle-check text-success fs-5 mt-1"></i>
                   <div>
-                    <strong>38.6MB memory for 1M rows</strong>
+                    <strong>36.996 MB memory for 1M rows</strong>
                     <p class="text-muted small mb-0">Most efficient Excel reader ever created.</p>
                   </div>
                 </div>
@@ -373,12 +374,12 @@
           <h2><i class="fa-solid fa-download me-2 text-primary"></i>Installation</h2>
 
           <p class="mb-3">VelocityExcel is available as a NuGet package. Install version <span
-              class="badge bg-secondary">1.0.7</span>:</p>
+              class="badge bg-secondary">1.0.9</span>:</p>
 
           <h4 class="fw-semibold mb-2"><i class="fa-solid fa-terminal text-info me-2"></i> .NET CLI</h4>
           <div class="intellidatasort-code-block mb-4">
             <pre class="line-numbers">
-      <code class="language-bash">dotnet add package VelocityExcel --version 1.0.7</code>
+      <code class="language-bash">dotnet add package VelocityExcel --version 1.0.9</code>
     </pre>
           </div>
 
@@ -386,7 +387,7 @@
             Console</h4>
           <div class="intellidatasort-code-block mb-4">
             <pre class="line-numbers">
-      <code class="language-powershell">Install-Package VelocityExcel -Version 1.0.7</code>
+      <code class="language-powershell">Install-Package VelocityExcel -Version 1.0.9</code>
     </pre>
           </div>
 
@@ -394,7 +395,7 @@
           </h4>
           <div class="intellidatasort-code-block mb-4">
             <pre class="line-numbers">
-      <code class="language-xml">&lt;PackageReference Include="VelocityExcel" Version="1.0.7" /&gt;</code>
+      <code class="language-xml">&lt;PackageReference Include="VelocityExcel" Version="1.0.9" /&gt;</code>
     </pre>
           </div>
         </section>
